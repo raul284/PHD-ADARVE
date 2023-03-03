@@ -1,0 +1,490 @@
+{
+    "global": {
+        "tutorial": {
+            "time_info": {
+                "duration": {
+                    "mean": 115,
+                    "stdev": 0.0
+                }
+            },
+            "events": {
+                "gameplay": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 14,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 10,
+                            "stdev": 0.0
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 8.923076923076923,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 12.88888888888889,
+                            "stdev": 0.0
+                        }
+                    }
+                },
+                "interact": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 78,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 50,
+                            "stdev": 0.0
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 1.103896103896104,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 1.7346938775510203,
+                            "stdev": 0.0
+                        }
+                    }
+                },
+                "move": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 13,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 13,
+                            "stdev": 0.0
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 7.5,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 7.5,
+                            "stdev": 0.0
+                        }
+                    },
+                    "total_distance": {
+                        "mean": 186.36145799999997,
+                        "stdev": 0.0
+                    }
+                }
+            }
+        },
+        "game": {
+            "time_info": {
+                "duration": {
+                    "mean": 77,
+                    "stdev": 0.0
+                }
+            },
+            "events": {
+                "gameplay": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 15,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 9,
+                            "stdev": 0.0
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 5.642857142857143,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 9.875,
+                            "stdev": 0.0
+                        }
+                    }
+                },
+                "interact": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 60,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 48,
+                            "stdev": 0.0
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 1.1016949152542372,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 1.3829787234042554,
+                            "stdev": 0.0
+                        }
+                    }
+                },
+                "move": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 17,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 17,
+                            "stdev": 0.0
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 4.25,
+                            "stdev": 0.0
+                        },
+                        "without_rep": {
+                            "mean": 4.25,
+                            "stdev": 0.0
+                        }
+                    },
+                    "total_distance": {
+                        "mean": 159.615442,
+                        "stdev": 0.0
+                    }
+                }
+            }
+        }
+    },
+    "scenarios": {
+        "car_accident": {
+            "tutorial": {
+                "time_info": {
+                    "duration": {
+                        "mean": 115,
+                        "stdev": 0.0
+                    }
+                },
+                "events": {
+                    "gameplay": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 14,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 10,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 8.923076923076923,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 12.88888888888889,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "interact": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 78,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 50,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 1.103896103896104,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 1.7346938775510203,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "move": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 13,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 13,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 7.5,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 7.5,
+                                "stdev": 0.0
+                            }
+                        },
+                        "total_distance": {
+                            "mean": 186.36145799999997,
+                            "stdev": 0.0
+                        }
+                    }
+                }
+            },
+            "game": {
+                "time_info": {
+                    "duration": {
+                        "mean": 77,
+                        "stdev": 0.0
+                    }
+                },
+                "events": {
+                    "gameplay": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 15,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 9,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 5.642857142857143,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 9.875,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "interact": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 60,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 48,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 1.1016949152542372,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 1.3829787234042554,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "move": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 17,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 17,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 4.25,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 4.25,
+                                "stdev": 0.0
+                            }
+                        },
+                        "total_distance": {
+                            "mean": 159.615442,
+                            "stdev": 0.0
+                        }
+                    }
+                }
+            }
+        },
+        "laboratory": {
+            "tutorial": {
+                "time_info": {
+                    "duration": {
+                        "mean": 115,
+                        "stdev": 0.0
+                    }
+                },
+                "events": {
+                    "gameplay": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 14,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 10,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 8.923076923076923,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 12.88888888888889,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "interact": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 78,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 50,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 1.103896103896104,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 1.7346938775510203,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "move": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 13,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 13,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 7.5,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 7.5,
+                                "stdev": 0.0
+                            }
+                        },
+                        "total_distance": {
+                            "mean": 186.36145799999997,
+                            "stdev": 0.0
+                        }
+                    }
+                }
+            },
+            "game": {
+                "time_info": {
+                    "duration": {
+                        "mean": 77,
+                        "stdev": 0.0
+                    }
+                },
+                "events": {
+                    "gameplay": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 15,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 9,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 5.642857142857143,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 9.875,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "interact": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 60,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 48,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 1.1016949152542372,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 1.3829787234042554,
+                                "stdev": 0.0
+                            }
+                        }
+                    },
+                    "move": {
+                        "numOfInteractions": {
+                            "with_rep": {
+                                "mean": 17,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 17,
+                                "stdev": 0.0
+                            }
+                        },
+                        "meanTimeBetweenInteraction": {
+                            "with_rep": {
+                                "mean": 4.25,
+                                "stdev": 0.0
+                            },
+                            "without_rep": {
+                                "mean": 4.25,
+                                "stdev": 0.0
+                            }
+                        },
+                        "total_distance": {
+                            "mean": 159.615442,
+                            "stdev": 0.0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

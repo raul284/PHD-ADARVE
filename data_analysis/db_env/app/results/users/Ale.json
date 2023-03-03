@@ -1,0 +1,4126 @@
+{
+    "car_accident": {
+        "tutorial": {
+            "time_info": {
+                "start_time": 1675873287,
+                "end_time": 1675873402,
+                "duration": 115
+            },
+            "events": {
+                "gameplay": {
+                    "raw": [
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873287
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToWorker",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873335
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ReportToOffice",
+                            "event_datetime": 1675873398
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873403
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873287
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToWorker",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873335
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ReportToOffice",
+                            "event_datetime": 1675873398
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873403
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 14,
+                        "without_rep": 10
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 8.923076923076923,
+                        "without_rep": 12.88888888888889
+                    },
+                    "completed": {
+                        "allSteps": true,
+                        "repeatedSteps": {
+                            "CA_Start": 1,
+                            "CA_TalkToWorker": 1,
+                            "CA_ProtectDriver": 1,
+                            "CA_TalkToDriver": 1,
+                            "CA_StopTraffic": 1,
+                            "CA_InspectVan": 1,
+                            "CA_MeasureRadiation": 1,
+                            "CA_ReportToOffice": 1,
+                            "CA_Finish": 6
+                        }
+                    },
+                    "order": {
+                        "inOrder": true,
+                        "stepsOrder": {
+                            "CA_Start": 0,
+                            "CA_TalkToWorker": 1,
+                            "CA_ProtectDriver": 2,
+                            "CA_TalkToDriver": 3,
+                            "CA_StopTraffic": 4,
+                            "CA_InspectVan": 5,
+                            "CA_MeasureRadiation": 6,
+                            "CA_ReportToOffice": 7,
+                            "CA_Finish": 8
+                        }
+                    }
+                },
+                "interact": {
+                    "raw": [
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873312
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873315
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873317
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873319
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873320
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873341
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873352
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873353
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873355
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873355
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873357
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873362
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_inspect",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_inspect",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873373
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "drop",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873396
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873312
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873315
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873317
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873319
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873320
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873341
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873352
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873353
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873355
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873357
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873362
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_inspect",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_inspect",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873373
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "drop",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873396
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 78,
+                        "without_rep": 50
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 1.103896103896104,
+                        "without_rep": 1.7346938775510203
+                    }
+                },
+                "move": {
+                    "raw": [
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873308,
+                            "end_datetime": 1675873309,
+                            "start_position": "X=-1022.246 Y=1004.959 Z=1.887",
+                            "end_position": "X=-356.816 Y=537.083 Z=6.658",
+                            "distance": 8.335298
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873310,
+                            "end_datetime": 1675873311,
+                            "start_position": "X=-341.780 Y=532.840 Z=6.658",
+                            "end_position": "X=-20.505 Y=459.593 Z=6.658",
+                            "distance": 3.442991
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873312,
+                            "end_datetime": 1675873312,
+                            "start_position": "X=-23.465 Y=439.840 Z=6.658",
+                            "end_position": "X=-16.580 Y=430.076 Z=6.658",
+                            "distance": 0.119468
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873317,
+                            "end_datetime": 1675873319,
+                            "start_position": "X=-14.976 Y=427.801 Z=6.658",
+                            "end_position": "X=1376.496 Y=222.185 Z=6.658",
+                            "distance": 14.134743
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873351,
+                            "end_datetime": 1675873352,
+                            "start_position": "X=1391.937 Y=219.808 Z=6.658",
+                            "end_position": "X=880.003 Y=459.450 Z=6.658",
+                            "distance": 6.155081
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873359,
+                            "end_datetime": 1675873362,
+                            "start_position": "X=871.104 Y=472.291 Z=6.658",
+                            "end_position": "X=-707.200 Y=1350.639 Z=1.887",
+                            "distance": 18.973904
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873363,
+                            "end_datetime": 1675873367,
+                            "start_position": "X=-722.822 Y=1350.656 Z=1.887",
+                            "end_position": "X=353.989 Y=-299.399 Z=4.150",
+                            "distance": 20.332491
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873372,
+                            "end_datetime": 1675873372,
+                            "start_position": "X=334.294 Y=-329.031 Z=4.150",
+                            "end_position": "X=377.815 Y=-392.999 Z=3.869",
+                            "distance": 0.773691
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873373,
+                            "end_datetime": 1675873377,
+                            "start_position": "X=385.479 Y=-404.329 Z=3.869",
+                            "end_position": "X=1407.541 Y=-266.981 Z=3.747",
+                            "distance": 22.796219
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873379,
+                            "end_datetime": 1675873384,
+                            "start_position": "X=1423.164 Y=-266.889 Z=3.747",
+                            "end_position": "X=-942.547 Y=1210.794 Z=2.016",
+                            "distance": 30.17708
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873385,
+                            "end_datetime": 1675873390,
+                            "start_position": "X=-947.159 Y=1199.348 Z=2.016",
+                            "end_position": "X=1485.154 Y=-241.031 Z=3.747",
+                            "distance": 29.724556
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873393,
+                            "end_datetime": 1675873394,
+                            "start_position": "X=1283.541 Y=-200.444 Z=3.747",
+                            "end_position": "X=1025.460 Y=394.732 Z=6.601",
+                            "distance": 7.143466
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873398,
+                            "end_datetime": 1675873403,
+                            "start_position": "X=1024.941 Y=410.346 Z=6.601",
+                            "end_position": "X=-1331.993 Y=868.002 Z=6.586",
+                            "distance": 24.25247
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873308,
+                            "end_datetime": 1675873309,
+                            "start_position": "X=-1022.246 Y=1004.959 Z=1.887",
+                            "end_position": "X=-356.816 Y=537.083 Z=6.658",
+                            "distance": 8.335298
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873310,
+                            "end_datetime": 1675873311,
+                            "start_position": "X=-341.780 Y=532.840 Z=6.658",
+                            "end_position": "X=-20.505 Y=459.593 Z=6.658",
+                            "distance": 3.442991
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873312,
+                            "end_datetime": 1675873312,
+                            "start_position": "X=-23.465 Y=439.840 Z=6.658",
+                            "end_position": "X=-16.580 Y=430.076 Z=6.658",
+                            "distance": 0.119468
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873317,
+                            "end_datetime": 1675873319,
+                            "start_position": "X=-14.976 Y=427.801 Z=6.658",
+                            "end_position": "X=1376.496 Y=222.185 Z=6.658",
+                            "distance": 14.134743
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873351,
+                            "end_datetime": 1675873352,
+                            "start_position": "X=1391.937 Y=219.808 Z=6.658",
+                            "end_position": "X=880.003 Y=459.450 Z=6.658",
+                            "distance": 6.155081
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873359,
+                            "end_datetime": 1675873362,
+                            "start_position": "X=871.104 Y=472.291 Z=6.658",
+                            "end_position": "X=-707.200 Y=1350.639 Z=1.887",
+                            "distance": 18.973904
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873363,
+                            "end_datetime": 1675873367,
+                            "start_position": "X=-722.822 Y=1350.656 Z=1.887",
+                            "end_position": "X=353.989 Y=-299.399 Z=4.150",
+                            "distance": 20.332491
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873372,
+                            "end_datetime": 1675873372,
+                            "start_position": "X=334.294 Y=-329.031 Z=4.150",
+                            "end_position": "X=377.815 Y=-392.999 Z=3.869",
+                            "distance": 0.773691
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873373,
+                            "end_datetime": 1675873377,
+                            "start_position": "X=385.479 Y=-404.329 Z=3.869",
+                            "end_position": "X=1407.541 Y=-266.981 Z=3.747",
+                            "distance": 22.796219
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873379,
+                            "end_datetime": 1675873384,
+                            "start_position": "X=1423.164 Y=-266.889 Z=3.747",
+                            "end_position": "X=-942.547 Y=1210.794 Z=2.016",
+                            "distance": 30.17708
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873385,
+                            "end_datetime": 1675873390,
+                            "start_position": "X=-947.159 Y=1199.348 Z=2.016",
+                            "end_position": "X=1485.154 Y=-241.031 Z=3.747",
+                            "distance": 29.724556
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873393,
+                            "end_datetime": 1675873394,
+                            "start_position": "X=1283.541 Y=-200.444 Z=3.747",
+                            "end_position": "X=1025.460 Y=394.732 Z=6.601",
+                            "distance": 7.143466
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873398,
+                            "end_datetime": 1675873403,
+                            "start_position": "X=1024.941 Y=410.346 Z=6.601",
+                            "end_position": "X=-1331.993 Y=868.002 Z=6.586",
+                            "distance": 24.25247
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 13,
+                        "without_rep": 13
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 7.5,
+                        "without_rep": 7.5
+                    },
+                    "total_distance": 186.36145799999997
+                }
+            }
+        },
+        "game": {
+            "time_info": {
+                "start_time": 1675873496,
+                "end_time": 1675873573,
+                "duration": 77
+            },
+            "events": {
+                "gameplay": {
+                    "raw": [
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873496
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873575
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873575
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873496
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873575
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 15,
+                        "without_rep": 9
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 5.642857142857143,
+                        "without_rep": 9.875
+                    },
+                    "completed": {
+                        "allSteps": false,
+                        "repeatedSteps": {
+                            "CA_Start": 1,
+                            "CA_TalkToWorker": 0,
+                            "CA_ProtectDriver": 1,
+                            "CA_TalkToDriver": 1,
+                            "CA_StopTraffic": 2,
+                            "CA_InspectVan": 1,
+                            "CA_MeasureRadiation": 1,
+                            "CA_ReportToOffice": 0,
+                            "CA_Finish": 8
+                        }
+                    },
+                    "order": {
+                        "inOrder": false,
+                        "stepsOrder": {
+                            "CA_Start": 0,
+                            "CA_TalkToWorker": -1,
+                            "CA_ProtectDriver": 2,
+                            "CA_TalkToDriver": 3,
+                            "CA_StopTraffic": 1,
+                            "CA_InspectVan": 4,
+                            "CA_MeasureRadiation": 5,
+                            "CA_ReportToOffice": -1,
+                            "CA_Finish": 6
+                        }
+                    }
+                },
+                "interact": {
+                    "raw": [
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873510
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873521
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873526
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873527
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873534
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873535
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873535
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873536
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873537
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873538
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873538
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873539
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873541
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873543
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873559
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873564
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "drop",
+                            "event_datetime": 1675873566
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873510
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873521
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873526
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873527
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873534
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873535
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873536
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873537
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873538
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873539
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873541
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873543
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873559
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873564
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "drop",
+                            "event_datetime": 1675873566
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 60,
+                        "without_rep": 48
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 1.1016949152542372,
+                        "without_rep": 1.3829787234042554
+                    }
+                },
+                "move": {
+                    "raw": [
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873500,
+                            "end_datetime": 1675873501,
+                            "start_position": "X=-9585.053 Y=-1697.849 Z=5.726",
+                            "end_position": "X=-10048.497 Y=-1649.258 Z=5.726",
+                            "distance": 4.668614
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873502,
+                            "end_datetime": 1675873505,
+                            "start_position": "X=-10064.108 Y=-1649.933 Z=5.726",
+                            "end_position": "X=-10883.442 Y=-728.147 Z=3.505",
+                            "distance": 14.096228
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873505,
+                            "end_datetime": 1675873507,
+                            "start_position": "X=-10892.092 Y=-715.138 Z=3.505",
+                            "end_position": "X=-10228.114 Y=-1623.552 Z=5.726",
+                            "distance": 11.592838
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873508,
+                            "end_datetime": 1675873511,
+                            "start_position": "X=-10229.236 Y=-1639.135 Z=5.726",
+                            "end_position": "X=-10216.740 Y=-254.528 Z=3.322",
+                            "distance": 15.139142
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873525,
+                            "end_datetime": 1675873526,
+                            "start_position": "X=-10220.883 Y=-240.027 Z=3.322",
+                            "end_position": "X=-9709.479 Y=-19.699 Z=3.322",
+                            "distance": 5.625543
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873532,
+                            "end_datetime": 1675873533,
+                            "start_position": "X=-9695.335 Y=-13.062 Z=3.322",
+                            "end_position": "X=-9336.144 Y=156.132 Z=2.914",
+                            "distance": 3.970458
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873544,
+                            "end_datetime": 1675873546,
+                            "start_position": "X=-9322.014 Y=162.795 Z=2.914",
+                            "end_position": "X=-10486.184 Y=-219.034 Z=3.319",
+                            "distance": 12.560241
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873546,
+                            "end_datetime": 1675873547,
+                            "start_position": "X=-10494.178 Y=-207.469 Z=3.319",
+                            "end_position": "X=-10512.664 Y=-223.773 Z=3.319",
+                            "distance": 0.24649
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873548,
+                            "end_datetime": 1675873550,
+                            "start_position": "X=-10658.070 Y=-125.692 Z=3.319",
+                            "end_position": "X=-10305.790 Y=-1472.774 Z=3.319",
+                            "distance": 15.310129
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873551,
+                            "end_datetime": 1675873554,
+                            "start_position": "X=-10310.251 Y=-1487.747 Z=3.319",
+                            "end_position": "X=-8862.346 Y=-1109.191 Z=3.319",
+                            "distance": 14.977421
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873554,
+                            "end_datetime": 1675873555,
+                            "start_position": "X=-8847.208 Y=-1105.325 Z=3.319",
+                            "end_position": "X=-8992.020 Y=-1121.421 Z=3.319",
+                            "distance": 1.457034
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873555,
+                            "end_datetime": 1675873557,
+                            "start_position": "X=-9058.615 Y=-1164.563 Z=3.319",
+                            "end_position": "X=-10119.649 Y=-1687.846 Z=5.537",
+                            "distance": 12.218872
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873557,
+                            "end_datetime": 1675873558,
+                            "start_position": "X=-10134.156 Y=-1693.644 Z=5.537",
+                            "end_position": "X=-10197.209 Y=-1719.863 Z=5.537",
+                            "distance": 0.682867
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873560,
+                            "end_datetime": 1675873560,
+                            "start_position": "X=-10208.573 Y=-1724.614 Z=5.537",
+                            "end_position": "X=-10330.184 Y=-1453.272 Z=3.322",
+                            "distance": 3.110688
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873561,
+                            "end_datetime": 1675873563,
+                            "start_position": "X=-10302.658 Y=-1444.664 Z=3.322",
+                            "end_position": "X=-10679.599 Y=-209.758 Z=3.322",
+                            "distance": 14.234204
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873564,
+                            "end_datetime": 1675873564,
+                            "start_position": "X=-10674.027 Y=-195.162 Z=3.322",
+                            "end_position": "X=-10592.128 Y=-126.188 Z=3.322",
+                            "distance": 1.07074
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873568,
+                            "end_datetime": 1675873573,
+                            "start_position": "X=-10649.010 Y=-203.965 Z=3.322",
+                            "end_position": "X=-9467.457 Y=-2032.150 Z=5.719",
+                            "distance": 28.653933
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873500,
+                            "end_datetime": 1675873501,
+                            "start_position": "X=-9585.053 Y=-1697.849 Z=5.726",
+                            "end_position": "X=-10048.497 Y=-1649.258 Z=5.726",
+                            "distance": 4.668614
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873502,
+                            "end_datetime": 1675873505,
+                            "start_position": "X=-10064.108 Y=-1649.933 Z=5.726",
+                            "end_position": "X=-10883.442 Y=-728.147 Z=3.505",
+                            "distance": 14.096228
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873505,
+                            "end_datetime": 1675873507,
+                            "start_position": "X=-10892.092 Y=-715.138 Z=3.505",
+                            "end_position": "X=-10228.114 Y=-1623.552 Z=5.726",
+                            "distance": 11.592838
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873508,
+                            "end_datetime": 1675873511,
+                            "start_position": "X=-10229.236 Y=-1639.135 Z=5.726",
+                            "end_position": "X=-10216.740 Y=-254.528 Z=3.322",
+                            "distance": 15.139142
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873525,
+                            "end_datetime": 1675873526,
+                            "start_position": "X=-10220.883 Y=-240.027 Z=3.322",
+                            "end_position": "X=-9709.479 Y=-19.699 Z=3.322",
+                            "distance": 5.625543
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873532,
+                            "end_datetime": 1675873533,
+                            "start_position": "X=-9695.335 Y=-13.062 Z=3.322",
+                            "end_position": "X=-9336.144 Y=156.132 Z=2.914",
+                            "distance": 3.970458
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873544,
+                            "end_datetime": 1675873546,
+                            "start_position": "X=-9322.014 Y=162.795 Z=2.914",
+                            "end_position": "X=-10486.184 Y=-219.034 Z=3.319",
+                            "distance": 12.560241
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873546,
+                            "end_datetime": 1675873547,
+                            "start_position": "X=-10494.178 Y=-207.469 Z=3.319",
+                            "end_position": "X=-10512.664 Y=-223.773 Z=3.319",
+                            "distance": 0.24649
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873548,
+                            "end_datetime": 1675873550,
+                            "start_position": "X=-10658.070 Y=-125.692 Z=3.319",
+                            "end_position": "X=-10305.790 Y=-1472.774 Z=3.319",
+                            "distance": 15.310129
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873551,
+                            "end_datetime": 1675873554,
+                            "start_position": "X=-10310.251 Y=-1487.747 Z=3.319",
+                            "end_position": "X=-8862.346 Y=-1109.191 Z=3.319",
+                            "distance": 14.977421
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873554,
+                            "end_datetime": 1675873555,
+                            "start_position": "X=-8847.208 Y=-1105.325 Z=3.319",
+                            "end_position": "X=-8992.020 Y=-1121.421 Z=3.319",
+                            "distance": 1.457034
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873555,
+                            "end_datetime": 1675873557,
+                            "start_position": "X=-9058.615 Y=-1164.563 Z=3.319",
+                            "end_position": "X=-10119.649 Y=-1687.846 Z=5.537",
+                            "distance": 12.218872
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873557,
+                            "end_datetime": 1675873558,
+                            "start_position": "X=-10134.156 Y=-1693.644 Z=5.537",
+                            "end_position": "X=-10197.209 Y=-1719.863 Z=5.537",
+                            "distance": 0.682867
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873560,
+                            "end_datetime": 1675873560,
+                            "start_position": "X=-10208.573 Y=-1724.614 Z=5.537",
+                            "end_position": "X=-10330.184 Y=-1453.272 Z=3.322",
+                            "distance": 3.110688
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873561,
+                            "end_datetime": 1675873563,
+                            "start_position": "X=-10302.658 Y=-1444.664 Z=3.322",
+                            "end_position": "X=-10679.599 Y=-209.758 Z=3.322",
+                            "distance": 14.234204
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873564,
+                            "end_datetime": 1675873564,
+                            "start_position": "X=-10674.027 Y=-195.162 Z=3.322",
+                            "end_position": "X=-10592.128 Y=-126.188 Z=3.322",
+                            "distance": 1.07074
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873568,
+                            "end_datetime": 1675873573,
+                            "start_position": "X=-10649.010 Y=-203.965 Z=3.322",
+                            "end_position": "X=-9467.457 Y=-2032.150 Z=5.719",
+                            "distance": 28.653933
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 17,
+                        "without_rep": 17
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 4.25,
+                        "without_rep": 4.25
+                    },
+                    "total_distance": 159.615442
+                }
+            }
+        }
+    },
+    "laboratory": {
+        "tutorial": {
+            "time_info": {
+                "start_time": 1675873287,
+                "end_time": 1675873402,
+                "duration": 115
+            },
+            "events": {
+                "gameplay": {
+                    "raw": [
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873287
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToWorker",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873335
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ReportToOffice",
+                            "event_datetime": 1675873398
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873403
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873287
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToWorker",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873335
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_ReportToOffice",
+                            "event_datetime": 1675873398
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873402
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873403
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 14,
+                        "without_rep": 10
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 8.923076923076923,
+                        "without_rep": 12.88888888888889
+                    },
+                    "completed": {
+                        "allSteps": true,
+                        "repeatedSteps": {
+                            "CA_Start": 1,
+                            "CA_TalkToWorker": 1,
+                            "CA_ProtectDriver": 1,
+                            "CA_TalkToDriver": 1,
+                            "CA_StopTraffic": 1,
+                            "CA_InspectVan": 1,
+                            "CA_MeasureRadiation": 1,
+                            "CA_ReportToOffice": 1,
+                            "CA_Finish": 6
+                        }
+                    },
+                    "order": {
+                        "inOrder": true,
+                        "stepsOrder": {
+                            "CA_Start": 0,
+                            "CA_TalkToWorker": 1,
+                            "CA_ProtectDriver": 2,
+                            "CA_TalkToDriver": 3,
+                            "CA_StopTraffic": 4,
+                            "CA_InspectVan": 5,
+                            "CA_MeasureRadiation": 6,
+                            "CA_ReportToOffice": 7,
+                            "CA_Finish": 8
+                        }
+                    }
+                },
+                "interact": {
+                    "raw": [
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873312
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873315
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873317
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873319
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873320
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873341
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873352
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873353
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873355
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873355
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873357
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873362
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_inspect",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_inspect",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873373
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "drop",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873396
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873311
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873312
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873314
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873315
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873316
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873317
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873319
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873320
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873341
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873352
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873353
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873354
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873355
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873356
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873357
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873362
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873363
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_inspect",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873368
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_inspect",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873370
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873372
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873373
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873377
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873378
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873379
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873384
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873385
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873390
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873391
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "drop",
+                            "event_datetime": 1675873392
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873394
+                        },
+                        {
+                            "user_id": 3,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873396
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 78,
+                        "without_rep": 50
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 1.103896103896104,
+                        "without_rep": 1.7346938775510203
+                    }
+                },
+                "move": {
+                    "raw": [
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873308,
+                            "end_datetime": 1675873309,
+                            "start_position": "X=-1022.246 Y=1004.959 Z=1.887",
+                            "end_position": "X=-356.816 Y=537.083 Z=6.658",
+                            "distance": 8.335298
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873310,
+                            "end_datetime": 1675873311,
+                            "start_position": "X=-341.780 Y=532.840 Z=6.658",
+                            "end_position": "X=-20.505 Y=459.593 Z=6.658",
+                            "distance": 3.442991
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873312,
+                            "end_datetime": 1675873312,
+                            "start_position": "X=-23.465 Y=439.840 Z=6.658",
+                            "end_position": "X=-16.580 Y=430.076 Z=6.658",
+                            "distance": 0.119468
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873317,
+                            "end_datetime": 1675873319,
+                            "start_position": "X=-14.976 Y=427.801 Z=6.658",
+                            "end_position": "X=1376.496 Y=222.185 Z=6.658",
+                            "distance": 14.134743
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873351,
+                            "end_datetime": 1675873352,
+                            "start_position": "X=1391.937 Y=219.808 Z=6.658",
+                            "end_position": "X=880.003 Y=459.450 Z=6.658",
+                            "distance": 6.155081
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873359,
+                            "end_datetime": 1675873362,
+                            "start_position": "X=871.104 Y=472.291 Z=6.658",
+                            "end_position": "X=-707.200 Y=1350.639 Z=1.887",
+                            "distance": 18.973904
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873363,
+                            "end_datetime": 1675873367,
+                            "start_position": "X=-722.822 Y=1350.656 Z=1.887",
+                            "end_position": "X=353.989 Y=-299.399 Z=4.150",
+                            "distance": 20.332491
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873372,
+                            "end_datetime": 1675873372,
+                            "start_position": "X=334.294 Y=-329.031 Z=4.150",
+                            "end_position": "X=377.815 Y=-392.999 Z=3.869",
+                            "distance": 0.773691
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873373,
+                            "end_datetime": 1675873377,
+                            "start_position": "X=385.479 Y=-404.329 Z=3.869",
+                            "end_position": "X=1407.541 Y=-266.981 Z=3.747",
+                            "distance": 22.796219
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873379,
+                            "end_datetime": 1675873384,
+                            "start_position": "X=1423.164 Y=-266.889 Z=3.747",
+                            "end_position": "X=-942.547 Y=1210.794 Z=2.016",
+                            "distance": 30.17708
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873385,
+                            "end_datetime": 1675873390,
+                            "start_position": "X=-947.159 Y=1199.348 Z=2.016",
+                            "end_position": "X=1485.154 Y=-241.031 Z=3.747",
+                            "distance": 29.724556
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873393,
+                            "end_datetime": 1675873394,
+                            "start_position": "X=1283.541 Y=-200.444 Z=3.747",
+                            "end_position": "X=1025.460 Y=394.732 Z=6.601",
+                            "distance": 7.143466
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873398,
+                            "end_datetime": 1675873403,
+                            "start_position": "X=1024.941 Y=410.346 Z=6.601",
+                            "end_position": "X=-1331.993 Y=868.002 Z=6.586",
+                            "distance": 24.25247
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873308,
+                            "end_datetime": 1675873309,
+                            "start_position": "X=-1022.246 Y=1004.959 Z=1.887",
+                            "end_position": "X=-356.816 Y=537.083 Z=6.658",
+                            "distance": 8.335298
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873310,
+                            "end_datetime": 1675873311,
+                            "start_position": "X=-341.780 Y=532.840 Z=6.658",
+                            "end_position": "X=-20.505 Y=459.593 Z=6.658",
+                            "distance": 3.442991
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873312,
+                            "end_datetime": 1675873312,
+                            "start_position": "X=-23.465 Y=439.840 Z=6.658",
+                            "end_position": "X=-16.580 Y=430.076 Z=6.658",
+                            "distance": 0.119468
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873317,
+                            "end_datetime": 1675873319,
+                            "start_position": "X=-14.976 Y=427.801 Z=6.658",
+                            "end_position": "X=1376.496 Y=222.185 Z=6.658",
+                            "distance": 14.134743
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873351,
+                            "end_datetime": 1675873352,
+                            "start_position": "X=1391.937 Y=219.808 Z=6.658",
+                            "end_position": "X=880.003 Y=459.450 Z=6.658",
+                            "distance": 6.155081
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873359,
+                            "end_datetime": 1675873362,
+                            "start_position": "X=871.104 Y=472.291 Z=6.658",
+                            "end_position": "X=-707.200 Y=1350.639 Z=1.887",
+                            "distance": 18.973904
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873363,
+                            "end_datetime": 1675873367,
+                            "start_position": "X=-722.822 Y=1350.656 Z=1.887",
+                            "end_position": "X=353.989 Y=-299.399 Z=4.150",
+                            "distance": 20.332491
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873372,
+                            "end_datetime": 1675873372,
+                            "start_position": "X=334.294 Y=-329.031 Z=4.150",
+                            "end_position": "X=377.815 Y=-392.999 Z=3.869",
+                            "distance": 0.773691
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873373,
+                            "end_datetime": 1675873377,
+                            "start_position": "X=385.479 Y=-404.329 Z=3.869",
+                            "end_position": "X=1407.541 Y=-266.981 Z=3.747",
+                            "distance": 22.796219
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873379,
+                            "end_datetime": 1675873384,
+                            "start_position": "X=1423.164 Y=-266.889 Z=3.747",
+                            "end_position": "X=-942.547 Y=1210.794 Z=2.016",
+                            "distance": 30.17708
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873385,
+                            "end_datetime": 1675873390,
+                            "start_position": "X=-947.159 Y=1199.348 Z=2.016",
+                            "end_position": "X=1485.154 Y=-241.031 Z=3.747",
+                            "distance": 29.724556
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873393,
+                            "end_datetime": 1675873394,
+                            "start_position": "X=1283.541 Y=-200.444 Z=3.747",
+                            "end_position": "X=1025.460 Y=394.732 Z=6.601",
+                            "distance": 7.143466
+                        },
+                        {
+                            "user_id": 3,
+                            "start_datetime": 1675873398,
+                            "end_datetime": 1675873403,
+                            "start_position": "X=1024.941 Y=410.346 Z=6.601",
+                            "end_position": "X=-1331.993 Y=868.002 Z=6.586",
+                            "distance": 24.25247
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 13,
+                        "without_rep": 13
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 7.5,
+                        "without_rep": 7.5
+                    },
+                    "total_distance": 186.36145799999997
+                }
+            }
+        },
+        "game": {
+            "time_info": {
+                "start_time": 1675873496,
+                "end_time": 1675873573,
+                "duration": 77
+            },
+            "events": {
+                "gameplay": {
+                    "raw": [
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873496
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873575
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873575
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Start",
+                            "event_datetime": 1675873496
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_ProtectDriver",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_TalkToDriver",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_InspectVan",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_StopTraffic",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_MeasureRadiation",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873573
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "CA_Finish",
+                            "event_datetime": 1675873575
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 15,
+                        "without_rep": 9
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 5.642857142857143,
+                        "without_rep": 9.875
+                    },
+                    "completed": {
+                        "allSteps": false,
+                        "repeatedSteps": {
+                            "CA_Start": 1,
+                            "CA_TalkToWorker": 0,
+                            "CA_ProtectDriver": 1,
+                            "CA_TalkToDriver": 1,
+                            "CA_StopTraffic": 2,
+                            "CA_InspectVan": 1,
+                            "CA_MeasureRadiation": 1,
+                            "CA_ReportToOffice": 0,
+                            "CA_Finish": 8
+                        }
+                    },
+                    "order": {
+                        "inOrder": false,
+                        "stepsOrder": {
+                            "CA_Start": 0,
+                            "CA_TalkToWorker": -1,
+                            "CA_ProtectDriver": 2,
+                            "CA_TalkToDriver": 3,
+                            "CA_StopTraffic": 1,
+                            "CA_InspectVan": 4,
+                            "CA_MeasureRadiation": 5,
+                            "CA_ReportToOffice": -1,
+                            "CA_Finish": 6
+                        }
+                    }
+                },
+                "interact": {
+                    "raw": [
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873510
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873521
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873526
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873527
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873534
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873535
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873535
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873536
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873537
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873538
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873538
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873539
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873541
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873543
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873559
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873564
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "drop",
+                            "event_datetime": 1675873566
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873501
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873505
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873510
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873511
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873512
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873517
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873521
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873526
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873527
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "talk_with",
+                            "event_datetime": 1675873533
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873534
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873535
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873536
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873537
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873538
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873539
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873541
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "continue_conversation",
+                            "event_datetime": 1675873542
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873543
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "interact_with",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873546
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873547
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873550
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "place_correct",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873554
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873558
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873559
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "pick_up",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873560
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873564
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "use_correct",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "stop_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "start_look_at",
+                            "event_datetime": 1675873566
+                        },
+                        {
+                            "user_id": 4,
+                            "event_type": "drop",
+                            "event_datetime": 1675873566
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 60,
+                        "without_rep": 48
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 1.1016949152542372,
+                        "without_rep": 1.3829787234042554
+                    }
+                },
+                "move": {
+                    "raw": [
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873500,
+                            "end_datetime": 1675873501,
+                            "start_position": "X=-9585.053 Y=-1697.849 Z=5.726",
+                            "end_position": "X=-10048.497 Y=-1649.258 Z=5.726",
+                            "distance": 4.668614
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873502,
+                            "end_datetime": 1675873505,
+                            "start_position": "X=-10064.108 Y=-1649.933 Z=5.726",
+                            "end_position": "X=-10883.442 Y=-728.147 Z=3.505",
+                            "distance": 14.096228
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873505,
+                            "end_datetime": 1675873507,
+                            "start_position": "X=-10892.092 Y=-715.138 Z=3.505",
+                            "end_position": "X=-10228.114 Y=-1623.552 Z=5.726",
+                            "distance": 11.592838
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873508,
+                            "end_datetime": 1675873511,
+                            "start_position": "X=-10229.236 Y=-1639.135 Z=5.726",
+                            "end_position": "X=-10216.740 Y=-254.528 Z=3.322",
+                            "distance": 15.139142
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873525,
+                            "end_datetime": 1675873526,
+                            "start_position": "X=-10220.883 Y=-240.027 Z=3.322",
+                            "end_position": "X=-9709.479 Y=-19.699 Z=3.322",
+                            "distance": 5.625543
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873532,
+                            "end_datetime": 1675873533,
+                            "start_position": "X=-9695.335 Y=-13.062 Z=3.322",
+                            "end_position": "X=-9336.144 Y=156.132 Z=2.914",
+                            "distance": 3.970458
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873544,
+                            "end_datetime": 1675873546,
+                            "start_position": "X=-9322.014 Y=162.795 Z=2.914",
+                            "end_position": "X=-10486.184 Y=-219.034 Z=3.319",
+                            "distance": 12.560241
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873546,
+                            "end_datetime": 1675873547,
+                            "start_position": "X=-10494.178 Y=-207.469 Z=3.319",
+                            "end_position": "X=-10512.664 Y=-223.773 Z=3.319",
+                            "distance": 0.24649
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873548,
+                            "end_datetime": 1675873550,
+                            "start_position": "X=-10658.070 Y=-125.692 Z=3.319",
+                            "end_position": "X=-10305.790 Y=-1472.774 Z=3.319",
+                            "distance": 15.310129
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873551,
+                            "end_datetime": 1675873554,
+                            "start_position": "X=-10310.251 Y=-1487.747 Z=3.319",
+                            "end_position": "X=-8862.346 Y=-1109.191 Z=3.319",
+                            "distance": 14.977421
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873554,
+                            "end_datetime": 1675873555,
+                            "start_position": "X=-8847.208 Y=-1105.325 Z=3.319",
+                            "end_position": "X=-8992.020 Y=-1121.421 Z=3.319",
+                            "distance": 1.457034
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873555,
+                            "end_datetime": 1675873557,
+                            "start_position": "X=-9058.615 Y=-1164.563 Z=3.319",
+                            "end_position": "X=-10119.649 Y=-1687.846 Z=5.537",
+                            "distance": 12.218872
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873557,
+                            "end_datetime": 1675873558,
+                            "start_position": "X=-10134.156 Y=-1693.644 Z=5.537",
+                            "end_position": "X=-10197.209 Y=-1719.863 Z=5.537",
+                            "distance": 0.682867
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873560,
+                            "end_datetime": 1675873560,
+                            "start_position": "X=-10208.573 Y=-1724.614 Z=5.537",
+                            "end_position": "X=-10330.184 Y=-1453.272 Z=3.322",
+                            "distance": 3.110688
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873561,
+                            "end_datetime": 1675873563,
+                            "start_position": "X=-10302.658 Y=-1444.664 Z=3.322",
+                            "end_position": "X=-10679.599 Y=-209.758 Z=3.322",
+                            "distance": 14.234204
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873564,
+                            "end_datetime": 1675873564,
+                            "start_position": "X=-10674.027 Y=-195.162 Z=3.322",
+                            "end_position": "X=-10592.128 Y=-126.188 Z=3.322",
+                            "distance": 1.07074
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873568,
+                            "end_datetime": 1675873573,
+                            "start_position": "X=-10649.010 Y=-203.965 Z=3.322",
+                            "end_position": "X=-9467.457 Y=-2032.150 Z=5.719",
+                            "distance": 28.653933
+                        }
+                    ],
+                    "cleaned": [
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873500,
+                            "end_datetime": 1675873501,
+                            "start_position": "X=-9585.053 Y=-1697.849 Z=5.726",
+                            "end_position": "X=-10048.497 Y=-1649.258 Z=5.726",
+                            "distance": 4.668614
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873502,
+                            "end_datetime": 1675873505,
+                            "start_position": "X=-10064.108 Y=-1649.933 Z=5.726",
+                            "end_position": "X=-10883.442 Y=-728.147 Z=3.505",
+                            "distance": 14.096228
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873505,
+                            "end_datetime": 1675873507,
+                            "start_position": "X=-10892.092 Y=-715.138 Z=3.505",
+                            "end_position": "X=-10228.114 Y=-1623.552 Z=5.726",
+                            "distance": 11.592838
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873508,
+                            "end_datetime": 1675873511,
+                            "start_position": "X=-10229.236 Y=-1639.135 Z=5.726",
+                            "end_position": "X=-10216.740 Y=-254.528 Z=3.322",
+                            "distance": 15.139142
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873525,
+                            "end_datetime": 1675873526,
+                            "start_position": "X=-10220.883 Y=-240.027 Z=3.322",
+                            "end_position": "X=-9709.479 Y=-19.699 Z=3.322",
+                            "distance": 5.625543
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873532,
+                            "end_datetime": 1675873533,
+                            "start_position": "X=-9695.335 Y=-13.062 Z=3.322",
+                            "end_position": "X=-9336.144 Y=156.132 Z=2.914",
+                            "distance": 3.970458
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873544,
+                            "end_datetime": 1675873546,
+                            "start_position": "X=-9322.014 Y=162.795 Z=2.914",
+                            "end_position": "X=-10486.184 Y=-219.034 Z=3.319",
+                            "distance": 12.560241
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873546,
+                            "end_datetime": 1675873547,
+                            "start_position": "X=-10494.178 Y=-207.469 Z=3.319",
+                            "end_position": "X=-10512.664 Y=-223.773 Z=3.319",
+                            "distance": 0.24649
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873548,
+                            "end_datetime": 1675873550,
+                            "start_position": "X=-10658.070 Y=-125.692 Z=3.319",
+                            "end_position": "X=-10305.790 Y=-1472.774 Z=3.319",
+                            "distance": 15.310129
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873551,
+                            "end_datetime": 1675873554,
+                            "start_position": "X=-10310.251 Y=-1487.747 Z=3.319",
+                            "end_position": "X=-8862.346 Y=-1109.191 Z=3.319",
+                            "distance": 14.977421
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873554,
+                            "end_datetime": 1675873555,
+                            "start_position": "X=-8847.208 Y=-1105.325 Z=3.319",
+                            "end_position": "X=-8992.020 Y=-1121.421 Z=3.319",
+                            "distance": 1.457034
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873555,
+                            "end_datetime": 1675873557,
+                            "start_position": "X=-9058.615 Y=-1164.563 Z=3.319",
+                            "end_position": "X=-10119.649 Y=-1687.846 Z=5.537",
+                            "distance": 12.218872
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873557,
+                            "end_datetime": 1675873558,
+                            "start_position": "X=-10134.156 Y=-1693.644 Z=5.537",
+                            "end_position": "X=-10197.209 Y=-1719.863 Z=5.537",
+                            "distance": 0.682867
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873560,
+                            "end_datetime": 1675873560,
+                            "start_position": "X=-10208.573 Y=-1724.614 Z=5.537",
+                            "end_position": "X=-10330.184 Y=-1453.272 Z=3.322",
+                            "distance": 3.110688
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873561,
+                            "end_datetime": 1675873563,
+                            "start_position": "X=-10302.658 Y=-1444.664 Z=3.322",
+                            "end_position": "X=-10679.599 Y=-209.758 Z=3.322",
+                            "distance": 14.234204
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873564,
+                            "end_datetime": 1675873564,
+                            "start_position": "X=-10674.027 Y=-195.162 Z=3.322",
+                            "end_position": "X=-10592.128 Y=-126.188 Z=3.322",
+                            "distance": 1.07074
+                        },
+                        {
+                            "user_id": 4,
+                            "start_datetime": 1675873568,
+                            "end_datetime": 1675873573,
+                            "start_position": "X=-10649.010 Y=-203.965 Z=3.322",
+                            "end_position": "X=-9467.457 Y=-2032.150 Z=5.719",
+                            "distance": 28.653933
+                        }
+                    ],
+                    "numOfInteractions": {
+                        "with_rep": 17,
+                        "without_rep": 17
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": 4.25,
+                        "without_rep": 4.25
+                    },
+                    "total_distance": 159.615442
+                }
+            }
+        }
+    }
+}

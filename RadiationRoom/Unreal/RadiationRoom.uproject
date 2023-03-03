@@ -1,0 +1,47 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{78C25731-4A0A-E967-F5A5-55A369D42922}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "RadiationRoom",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "MySQL",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/4a497572d1014beab577112d5a37c813"
+		},
+		{
+			"Name": "OpenXRMsftHandInteraction",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"HoloLens",
+				"Android"
+			]
+		},
+		{
+			"Name": "SteamVR",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"Linux"
+			]
+		},
+		{
+			"Name": "AssetsCleaner",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/3caab7c6e81f449296989122c043ae21"
+		}
+	]
+}

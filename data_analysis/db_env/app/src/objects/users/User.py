@@ -1,8 +1,9 @@
 import json
 
 from database.models import UserDB
-from objects.scenarios.CarAccidentScenary import CarAccidentScenary
-from objects.scenarios.LaboratoryScenary import LaboratoryScenary
+from objects.scenarios.SandboxScenario import SandboxScenario
+from objects.scenarios.TutorialScenario import TutorialScenario
+from objects.scenarios.CarAccidentScenario import CarAccidentScenario
 
 
 class User:
@@ -24,7 +25,7 @@ class User:
 
     # Lista de identificadores de los usuarios. Cada usuario debe tener N*2 siendo N
     # el numero de escenarios.
-    ids: list
+    id: int
 
     # Datos del usuario
     data: dict
@@ -48,7 +49,7 @@ class User:
         self.name = name
 
         # Busca los identificadores que esten relacionados con el nombre de usuario en la base de datos.
-        self.ids = self.db.query(UserDB).filter(UserDB.user_name == name).all()
+        self.id = self.db.query(UserDB).filter(UserDB.user_name == name).all()[0].id
 
         self.data = {}
         self.results = {}
@@ -61,8 +62,9 @@ class User:
         que forman la experiencia'''
 
         self.data = {
-            "car_accident": CarAccidentScenary(db=self.db, user_ids=[ self.ids[0].id,  self.ids[1].id]),
-            "laboratory": LaboratoryScenary(db=self.db, user_ids=[ self.ids[0].id,  self.ids[1].id])
+            "sandbox": SandboxScenario(db=self.db, user_id=self.id),
+            "tutorial": TutorialScenario(db=self.db, user_id=self.id),
+            "car_accident": CarAccidentScenario(db=self.db, user_id=self.id),
         }
 
         # Itera sobre cada uno de los escenarios para que asignen sus datos

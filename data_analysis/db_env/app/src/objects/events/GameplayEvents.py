@@ -1,7 +1,7 @@
 from objects.events.Events import Events
 
-GAMEPLAY_TYPES = ["CA_Start", "CA_TalkToWorker", "CA_ProtectDriver", "CA_TalkToDriver", \
-    "CA_StopTraffic", "CA_InspectVan", "CA_MeasureRadiation", "CA_ReportToOffice", "CA_Finish"]
+GAMEPLAY_TYPES = ["Start", "TalkToWorker", "ProtectDriver", "TalkToDriver", \
+    "StopTraffic", "InspectVan", "MeasureRadiation", "ReportToOffice", "Finish"]
 
 class GameplayEvents(Events):
 

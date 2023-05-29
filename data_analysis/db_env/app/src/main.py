@@ -1,6 +1,7 @@
 from reports.ReportGenerator import ReportGenerator
 from objects.experiments.Experiment import Experiment
 
+from auxfile import *
 
 def markdown_manage():
     report = ReportGenerator("../data", "clients.json", "./results", "user_report", {})

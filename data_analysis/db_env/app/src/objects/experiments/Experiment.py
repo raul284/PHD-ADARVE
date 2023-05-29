@@ -47,7 +47,12 @@ class Experiment:
 
         # Guarda la información de los usuarios que se encuentra en una base de datos MySQL
         db.Base.metadata.create_all(db.engine)
-        self.users = [User(db.session, "Ale"), User(db.session, "Ale")] # TEMPORAL
+
+        self.users = []
+        for name in ["AABA", "AABB"]:
+            self.users.append(User(db.session, name))
+
+        #self.users = [User(db.session, "Ale"), User(db.session, "Ale")] # TEMPORAL
         #for id in form_manager.main_info_form._df["id"]:
             #users_db = db.session.query(UserDB).filter(UserDB.user_name == id).all()
             #self.users.append(User(db.session, id))
@@ -82,6 +87,73 @@ class Experiment:
 
     # analyse_users
     
+    def set_extra_users_to_global_data(self) -> None:
+        results = []
+        for name in ["AAAA", "AAAB", "AAAC"]:
+            f = open('../results/users/{0}.json'.format("AAAA"))
+            data = json.load(f)
+
+            aux_dict = {
+                "car_accident": {
+                    "tutorial": {
+                        "time_info": {
+                            "duration": data["phase"]["guided"]["duration"]
+                        },
+                        "events": {
+                            "gameplay": {
+                                "numOfInteractions":{
+                                    "with_rep": data["events"]["gameplay"]["guided"]["numOfInteractions"]["with_rep"],
+                                    "without_rep": data["events"]["gameplay"]["guided"]["numOfInteractions"]["without_rep"],
+                                },
+                                "meanTimeBetweenInteraction": {
+                                    "with_rep": data["events"]["gameplay"]["guided"]["meanTimeBetweenInteraction"]["with_rep"],
+                                    "without_rep": data["events"]["gameplay"]["guided"]["meanTimeBetweenInteraction"]["without_rep"],
+                                }
+                            },
+                            "interact":{
+                                "numOfInteractions":{
+                                    "with_rep": data["events"]["interact"]["guided"]["numOfInteractions"]["with_rep"],
+                                    "without_rep": data["events"]["interact"]["guided"]["numOfInteractions"]["without_rep"],
+                                },
+                                "meanTimeBetweenInteraction": {
+                                    "with_rep": data["events"]["interact"]["guided"]["meanTimeBetweenInteraction"]["with_rep"],
+                                    "without_rep": data["events"]["interact"]["guided"]["meanTimeBetweenInteraction"]["without_rep"],
+                                }
+                            }
+                        }
+                    },
+                    "game":{
+                        "time_info": {
+                            "duration": data["phase"]["nonguided"]["duration"]
+                        },
+                        "events": {
+                            "gameplay": {
+                                "numOfInteractions":{
+                                    "with_rep": data["events"]["gameplay"]["nonguided"]["numOfInteractions"]["with_rep"],
+                                    "without_rep": data["events"]["gameplay"]["nonguided"]["numOfInteractions"]["without_rep"],
+                                },
+                                "meanTimeBetweenInteraction": {
+                                    "with_rep": data["events"]["gameplay"]["nonguided"]["meanTimeBetweenInteraction"]["with_rep"],
+                                    "without_rep": data["events"]["gameplay"]["nonguided"]["meanTimeBetweenInteraction"]["without_rep"],
+                                }
+                            },
+                            "interact":{
+                                "numOfInteractions":{
+                                    "with_rep": data["events"]["interact"]["nonguided"]["numOfInteractions"]["with_rep"],
+                                    "without_rep": data["events"]["interact"]["nonguided"]["numOfInteractions"]["without_rep"],
+                                },
+                                "meanTimeBetweenInteraction": {
+                                    "with_rep": data["events"]["interact"]["nonguided"]["meanTimeBetweenInteraction"]["with_rep"],
+                                    "without_rep": data["events"]["interact"]["nonguided"]["meanTimeBetweenInteraction"]["without_rep"],
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            results.append(aux_dict)
+        return results
 
     def set_global_data(self) -> None:
         '''Itera sobre los datos de los usuarios para obtener la informacion global
@@ -89,6 +161,8 @@ class Experiment:
 
         # Recoge la informacion de los usuario para poder realizar el analisis global
         users_results = []
+        #users_results = self.set_extra_users_to_global_data()
+        #self.set_extra_users_to_global_data()
         for user in self.users:
             users_results.append(user.get_results_for_global_analysis())
 

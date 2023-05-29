@@ -44,6 +44,20 @@ class Events:
         for event in self.events:
             if event["event_type"] == event_type:
                 return event
+            
+    def get_first_event_of_type(self, event_type):
+        aux_events = []
+        for event in self.events:
+            if event["event_type"] == event_type:
+                aux_events.append(event)
+        return aux_events[0]
+            
+    def get_last_event_of_type(self, event_type):
+        aux_events = []
+        for event in self.events:
+            if event["event_type"] == event_type:
+                aux_events.append(event)
+        return aux_events[-1]
 
 
     # Da valor al número de interacciones

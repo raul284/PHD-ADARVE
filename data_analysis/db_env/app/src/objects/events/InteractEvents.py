@@ -5,6 +5,9 @@ class InteractEvents(Events):
     def __init__(self, raw_data) -> None:
         super().__init__(raw_data)
 
+    def analyse_data(self) -> None:
+        return super().analyse_data()
+
     def get_results(self):
         return super().get_results()
 

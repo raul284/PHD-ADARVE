@@ -11,6 +11,10 @@ class MoveEvents(Events):
     def __init__(self, raw_data) -> None:
         super().__init__(raw_data)
         
+
+    def analyse_data(self) -> None:
+        super().analyse_data()
+
         self.set_total_distance()
 
         # Da valor al tiempo medio entre interacciones 
@@ -21,23 +25,24 @@ class MoveEvents(Events):
         # Por cada uno de los eventos de la lista
         for index in range(len(self.events) - 1):
             # Se resta el tiempo del evento siguiente y del actual
-            rest = int(self.events[index + 1]["start_datetime"]) - int(self.events[index]["start_datetime"])
+            rest = int(self.events.iloc[[index + 1]]["start_datetime"]) - int(self.events.iloc[[index]]["start_datetime"])
             # El resto se almacena en la lista
             times_btw.append(rest)
         # Se calcula la media de la lista
-        self.mean_time_between_interaction = statistics.mean(times_btw)
+        if len(times_btw) > 0:
+            self.mean_time_between_interaction = statistics.mean(times_btw)
 
         # Se vacía la lista de tiempos
         times_btw = []
         for index in range(len(self.events_cleaned) - 1):
-            rest = int(self.events_cleaned[index + 1]["start_datetime"]) - int(self.events_cleaned[index]["start_datetime"])
+            rest = int(self.events_cleaned.iloc[[index + 1]]["start_datetime"]) - int(self.events_cleaned.iloc[[index]]["start_datetime"])
             times_btw.append(rest)
-        self.mean_time_between_interaction_cleaned = statistics.mean(times_btw) 
+        if len(times_btw) > 0:
+            self.mean_time_between_interaction_cleaned = statistics.mean(times_btw) 
 
     def set_total_distance(self):
         self.total_distance = 0.0
-        for event in self.events:
-            self.total_distance += event["distance"]
+        self.total_distance = self.events["distance"].sum()
 
     def transform_dates(self):
         aux_list = []

@@ -1,0 +1,132 @@
+{
+    "global": {
+        "time_info": {
+            "duration": {
+                "mean": 530.5,
+                "stdev": 236.96202227361243
+            }
+        },
+        "events": {
+            "gameplay": {
+                "numOfInteractions": {
+                    "with_rep": {
+                        "mean": 9.25,
+                        "stdev": 6.3966136874651625
+                    },
+                    "without_rep": {
+                        "mean": 7.25,
+                        "stdev": 4.272001872658765
+                    }
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": {
+                        "mean": 158.54583333333332,
+                        "stdev": 199.71424742616634
+                    },
+                    "without_rep": {
+                        "mean": 170.10738636363635,
+                        "stdev": 193.05226739281306
+                    }
+                }
+            }
+        }
+    },
+    "scenarios": {
+        "sandbox": {
+            "time_info": {
+                "duration": {
+                    "mean": 456,
+                    "stdev": 456
+                }
+            },
+            "events": {
+                "gameplay": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 2,
+                            "stdev": 2
+                        },
+                        "without_rep": {
+                            "mean": 2,
+                            "stdev": 2
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 456,
+                            "stdev": 456
+                        },
+                        "without_rep": {
+                            "mean": 456,
+                            "stdev": 456
+                        }
+                    }
+                }
+            }
+        },
+        "tutorial": {
+            "time_info": {
+                "duration": {
+                    "mean": 393,
+                    "stdev": 393
+                }
+            },
+            "events": {
+                "gameplay": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 6,
+                            "stdev": 6
+                        },
+                        "without_rep": {
+                            "mean": 6,
+                            "stdev": 6
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 78.6,
+                            "stdev": 78.6
+                        },
+                        "without_rep": {
+                            "mean": 78.6,
+                            "stdev": 78.6
+                        }
+                    }
+                }
+            }
+        },
+        "car_accident": {
+            "time_info": {
+                "duration": {
+                    "mean": 636.5,
+                    "stdev": 348.6036431249679
+                }
+            },
+            "events": {
+                "gameplay": {
+                    "numOfInteractions": {
+                        "with_rep": {
+                            "mean": 14.5,
+                            "stdev": 2.1213203435596424
+                        },
+                        "without_rep": {
+                            "mean": 10.5,
+                            "stdev": 2.1213203435596424
+                        }
+                    },
+                    "meanTimeBetweenInteraction": {
+                        "with_rep": {
+                            "mean": 49.791666666666664,
+                            "stdev": 33.64649767145988
+                        },
+                        "without_rep": {
+                            "mean": 72.91477272727272,
+                            "stdev": 52.97676145866941
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

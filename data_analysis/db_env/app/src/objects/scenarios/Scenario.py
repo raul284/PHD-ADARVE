@@ -3,7 +3,7 @@ from objects.events.GameplayEvents import GameplayEvents
 from objects.events.InteractEvents import InteractEvents
 from objects.events.MoveEvents import MoveEvents
 
-import csv
+import pandas as pd
 
 class Scenario:
 
@@ -26,11 +26,11 @@ class Scenario:
     # Booleano de control que indica si el usuario ha entrado en el escenario. En el caso de que no, entonces no se hace nada
     user_enter_into_scenario: bool
 
-    # Acceso a la base de datos
-    db: None
-
     # Ids del usuario. La lista siempre debe estar formada por 2 valores, uno para el tutorial y otro para el juego.
     user_id: int
+
+    # Identificador del experimento
+    experiment_id: int
 
     # Diccionario con los datos del escenario
     data: dict
@@ -52,11 +52,11 @@ class Scenario:
 
 #region METODOS
 
-    def __init__(self, db, user_id: int):
+    def __init__(self, user_id: int, experiment_id: int):
         '''Inicializa las propiedades de la clase.'''
 
-        self.db = db
         self.user_id = user_id
+        self.experiment_id = experiment_id
 
         self.data = {}
         self.results = {}
@@ -70,20 +70,17 @@ class Scenario:
         es una fase formada por listas de tipos de eventos. 
         '''
 
-        db_gameplay_events = self.db.query(GameplayEventDB).\
+        df_gameplay = pd.read_csv("../results/exp{0}/gameplay.csv".format(self.experiment_id))
+        df_interact = pd.read_csv("../results/exp{0}/interact.csv".format(self.experiment_id))
+        df_move = pd.read_csv("../results/exp{0}/move.csv".format(self.experiment_id))
+
+        '''db_gameplay_events = self.db.query(GameplayEventDB).\
              filter(GameplayEventDB.scenary_type == self.scenario_type).\
                 filter(GameplayEventDB.user_id == self.user_id).all()
         
         gameplay_events = sorted(
             [event.as_dict() for event in db_gameplay_events], 
             key=lambda d: d["event_datetime"])
-        
-
-        '''with open("../results/users/{0}/gameplay.csv".format(self.user_id), 'w', newline='') as csvfile:
-            csvwriter = csv.writer(csvfile, delimiter=',')
-            csvwriter.writerow(["user_id", "scenary_type", "event_type", "event_datetime"])
-            for e in db_gameplay_events:
-                csvwriter.writerow([e.user_id, e.scenary_type, e.event_type, e.get_real_time()])'''
         
         db_interact_events = self.db.query(InteractEventDB).\
              filter(InteractEventDB.scenary_type == self.scenario_type).\
@@ -92,27 +89,37 @@ class Scenario:
             [event.as_dict() for event in db_interact_events], 
             key=lambda d: d["event_datetime"])
         
-        '''with open("../results/users/{0}/interact.csv".format(self.user_id), 'w', newline='') as csvfile:
-            csvwriter = csv.writer(csvfile, delimiter=',')
-            csvwriter.writerow(["user_id", "actor_id", "scenary_type", "event_type", "event_datetime"])
-            for e in db_interact_events:
-                csvwriter.writerow([e.user_id, e.actor_id, e.scenary_type, e.event_type, e.get_real_time()])'''
         
         db_move_events = self.db.query(MoveEventDB).\
              filter(MoveEventDB.scenary_type == self.scenario_type).\
                 filter(MoveEventDB.user_id == self.user_id).all()
         move_events = sorted(
             [event.as_dict() for event in db_move_events],
-            key=lambda d: d["start_datetime"])
-        
-        '''with open("../results/users/{0}/move.csv".format(self.user_id), 'w', newline='') as csvfile:
-            csvwriter = csv.writer(csvfile, delimiter=',')
-            csvwriter.writerow(["user_id", "scenary_type", "start_datetime", "end_datetime", "start_position", "end_position", "distance"])
-            for e in db_move_events:
-                csvwriter.writerow([e.user_id, e.scenary_type, e.get_real_time()[0], e.get_real_time()[1], e.start_position, e.end_position, e.distance])'''
+            key=lambda d: d["start_datetime"])'''
 
 
-        self.user_enter_into_scenario = gameplay_events and interact_events and move_events
+        self.data = {
+            "gameplay": GameplayEvents(
+                df_gameplay.loc[
+                    (df_gameplay['user_id'] == self.user_id) & 
+                    (df_gameplay['scenary_type'] == self.scenario_type)
+                    ].sort_values(by=["event_datetime"])),
+            "interact": InteractEvents(
+                df_interact.loc[
+                    (df_interact['user_id'] == self.user_id) & 
+                    (df_interact['scenary_type'] == self.scenario_type)
+                    ].sort_values(by=["event_datetime"])),
+            "move": MoveEvents(
+                df_move.loc[
+                    (df_move['user_id'] == self.user_id) & 
+                    (df_move['scenary_type'] == self.scenario_type)
+                    ].sort_values(by=["start_datetime"]))
+        }
+
+        if len(self.data["gameplay"].events) > 0:
+            self.set_time_info()
+
+        '''self.user_enter_into_scenario = gameplay_events and interact_events and move_events
         
         if self.user_enter_into_scenario:
             self.data = {
@@ -121,8 +128,9 @@ class Scenario:
                 "move": MoveEvents(move_events)
             }
 
-            # Informacion relacionada con el tiempo de la fase
-            self.set_time_info()
+                # Informacion relacionada con el tiempo de la fase
+            if "gameplay" in self.data:
+                self.set_time_info()'''
 
     # set_data
 
@@ -162,12 +170,15 @@ class Scenario:
             self.data[key].analyse_data()
             self.results[key] = self.data[key].get_results() """
 
-        if self.user_enter_into_scenario:
+        if not self.scenary_without_data():
+            for key in self.data:
+                self.data[key].analyse_data()
+        
             self.results = {
                 "time_info": {
-                    "start_time": self.start_time,
-                    "end_time": self.end_time,
-                    "duration": self.duration
+                    "start_time": int(self.start_time),
+                    "end_time": int(self.end_time),
+                    "duration": int(self.duration)
                     }, 
                 "events": {
                     key : self.data[key].get_results() for key in self.data
@@ -196,7 +207,7 @@ class Scenario:
 
         :return: Resultados del escenario para hacer el analisis
         '''
-        if self.user_enter_into_scenario:
+        '''if self.user_enter_into_scenario:
             return {
                 "time_info": {
                     "duration": self.duration
@@ -205,11 +216,19 @@ class Scenario:
                     key : self.data[key].get_results_for_global_analysis() for key in self.data
                 }
             }
-        return {}
+        return {}'''
 
-        """ return {
-            key: self.data[key].get_results_for_global_analysis() for key in self.data
-        } """
+        if self.scenary_without_data():
+            return {}
+        else:
+            return {
+                    "time_info": {
+                        "duration": int(self.duration)
+                    },
+                    "events": {
+                        key : self.data[key].get_results_for_global_analysis() for key in self.data
+                    }
+                }
 
     # get_results_for_global_analysis
 
@@ -224,6 +243,9 @@ class Scenario:
         pass
 
     # transform_dates
+
+    def scenary_without_data(self) -> bool:
+        return len(self.data["gameplay"].events) == 0
 
 #endregion
 

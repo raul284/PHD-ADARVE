@@ -1,7 +1,7 @@
 from objects.events.Events import Events
 
-GAMEPLAY_TYPES = ["Start", "TalkToWorker", "ProtectDriver", "TalkToDriver", \
-    "StopTraffic", "InspectVan", "MeasureRadiation", "ReportToOffice", "Finish"]
+GAMEPLAY_TYPES = ["Start", "CA_TalkToWorker", "CA_ProtectDriver", "CA_TalkToDriver", \
+    "CA_StopTraffic", "CA_InspectVan", "CA_MeasureRadiation", "CA_ReportToOffice", "Finish"]
 
 class GameplayEvents(Events):
 
@@ -19,13 +19,17 @@ class GameplayEvents(Events):
     def __init__(self, raw_data) -> None:
         super().__init__(raw_data)
 
+
+    def analyse_data(self) -> None:
+        super().analyse_data()
+
         self.is_completed()
         self.is_in_order()
 
 
     def is_completed(self):
         duplicate_removed = []
-        aux_events = [event["event_type"] for event in self.events]
+        aux_events = self.events["event_type"].to_list()
         [duplicate_removed.append(event) for event in aux_events if event not in duplicate_removed]
 
         self.complete_all_steps = len(duplicate_removed) == len(GAMEPLAY_TYPES)
@@ -33,7 +37,7 @@ class GameplayEvents(Events):
 
     def is_in_order(self):
         duplicate_removed = []
-        aux_events = [event["event_type"] for event in self.events]
+        aux_events = self.events["event_type"].to_list()
         [duplicate_removed.append(event) for event in aux_events if event not in duplicate_removed]
         
         order = {}

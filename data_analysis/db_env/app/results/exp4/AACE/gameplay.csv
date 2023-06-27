@@ -1,0 +1,8 @@
+user_id,scenary_type,event_type,event_datetime
+68,CarAccident,Start,1686823867
+68,CarAccident,CA_StopTraffic,1686824176
+68,CarAccident,CA_ProtectDriver,1686824226
+68,CarAccident,CA_InspectVan,1686824298
+68,CarAccident,CA_InspectVan,1686824307
+68,CarAccident,CA_MeasureRadiation,1686824313
+68,CarAccident,Finish,1686824466

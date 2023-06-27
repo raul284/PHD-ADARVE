@@ -1,11 +1,11 @@
-import json
+import json, csv
+import os
 
 import database.db as db
 
 from analysis.stress import *
 
-from form.FormManager import FormManager
-
+from database.models import UserDB, GameplayEventDB, InteractEventDB, MoveEventDB
 
 from objects.users.User import User
 from objects.FieldStatistics import FieldStatistics
@@ -24,6 +24,9 @@ class Experiment:
 
 #region VARIABLES GLOBALES
 
+    # Identificador del experimento
+    id: int
+
     # Lista con los usuarios
     users: list
 
@@ -38,25 +41,29 @@ class Experiment:
 #region METODOS
 
     
-    def __init__(self) -> None:
+    def __init__(self, id: int) -> None:
         '''Inicializa las propiedades de la clase.'''
         # Recoge la información de los cuestionarios almacenados en CSVs
         #form_manager = FormManager()
         #form_manager.form_to_dataframe()
         #calculate_stress()
 
+        self.id = id
+        if not os.path.exists("../results/exp{}".format(self.id)):
+            os.makedirs("../results/exp{}".format(self.id))
+
         # Guarda la información de los usuarios que se encuentra en una base de datos MySQL
         db.Base.metadata.create_all(db.engine)
 
         self.users = []
-        for name in ["AABA", "AABB"]:
-            self.users.append(User(db.session, name))
+        for user in db.session.query(UserDB).all():
+            #if user.user_name != "All" and user.user_name != "Developer":
+            if user.user_name in ["AACA", "AACD"]:
+                if not os.path.exists("../results/exp{0}/{1}".format(self.id, user.user_name)):
+                    os.makedirs("../results/exp{0}/{1}".format(self.id, user.user_name))
+                self.users.append(User(db.session, user.user_name, self.id))
 
-        #self.users = [User(db.session, "Ale"), User(db.session, "Ale")] # TEMPORAL
-        #for id in form_manager.main_info_form._df["id"]:
-            #users_db = db.session.query(UserDB).filter(UserDB.user_name == id).all()
-            #self.users.append(User(db.session, id))
-
+                
         # Inicialización del diccionario de datos
         self.data = {}
         self.data["global"] = {} # Datos globales
@@ -78,6 +85,46 @@ class Experiment:
 
     # set_users_data
 
+    def export_to_csv(self) -> None:
+        '''Exporta todos los datos de la BD a CSVs'''
+
+        with open("../results/exp{0}/gameplay.csv".format(self.id), "w", newline='') as outfile:
+            writer = csv.writer(outfile)
+
+            colnames = ["user_id", "scenary_type", "event_type", "event_datetime"]
+            writer.writerow(colnames)
+
+            for event in db.session.query(GameplayEventDB).all():
+                if event.user_id != 1 and event.user_id != 2:
+                    writer.writerow(event.as_dict().values())
+
+
+        with open("../results/exp{0}/interact.csv".format(self.id), "w", newline='') as outfile:
+            writer = csv.writer(outfile)
+
+            colnames = ["user_id", "actor_id", "scenary_type", "event_type", "event_datetime"]
+            writer.writerow(colnames)
+
+            for event in db.session.query(InteractEventDB).all():
+                if event.user_id != 1 and event.user_id != 2:
+                    writer.writerow(event.as_dict().values())
+
+
+        with open("../results/exp{0}/move.csv".format(self.id), "w", newline='') as outfile:
+            writer = csv.writer(outfile)
+
+            colnames = ["user_id", "scenary_type", "move_type", "start_datetime", "end_datetime", "start_position", "end_position", "distance"]
+            writer.writerow(colnames)
+
+            for event in db.session.query(MoveEventDB).all():
+                if event.user_id != 1 and event.user_id != 2:
+                    writer.writerow(event.as_dict().values())
+
+
+        for user in self.users:
+            user.export_to_csv()
+
+    # export_to_csv
 
     def analyse_users(self) -> None:
         '''Itera sobre los usuario para asignar sus resultados'''
@@ -86,74 +133,6 @@ class Experiment:
             user.analyse_data()
 
     # analyse_users
-    
-    def set_extra_users_to_global_data(self) -> None:
-        results = []
-        for name in ["AAAA", "AAAB", "AAAC"]:
-            f = open('../results/users/{0}.json'.format("AAAA"))
-            data = json.load(f)
-
-            aux_dict = {
-                "car_accident": {
-                    "tutorial": {
-                        "time_info": {
-                            "duration": data["phase"]["guided"]["duration"]
-                        },
-                        "events": {
-                            "gameplay": {
-                                "numOfInteractions":{
-                                    "with_rep": data["events"]["gameplay"]["guided"]["numOfInteractions"]["with_rep"],
-                                    "without_rep": data["events"]["gameplay"]["guided"]["numOfInteractions"]["without_rep"],
-                                },
-                                "meanTimeBetweenInteraction": {
-                                    "with_rep": data["events"]["gameplay"]["guided"]["meanTimeBetweenInteraction"]["with_rep"],
-                                    "without_rep": data["events"]["gameplay"]["guided"]["meanTimeBetweenInteraction"]["without_rep"],
-                                }
-                            },
-                            "interact":{
-                                "numOfInteractions":{
-                                    "with_rep": data["events"]["interact"]["guided"]["numOfInteractions"]["with_rep"],
-                                    "without_rep": data["events"]["interact"]["guided"]["numOfInteractions"]["without_rep"],
-                                },
-                                "meanTimeBetweenInteraction": {
-                                    "with_rep": data["events"]["interact"]["guided"]["meanTimeBetweenInteraction"]["with_rep"],
-                                    "without_rep": data["events"]["interact"]["guided"]["meanTimeBetweenInteraction"]["without_rep"],
-                                }
-                            }
-                        }
-                    },
-                    "game":{
-                        "time_info": {
-                            "duration": data["phase"]["nonguided"]["duration"]
-                        },
-                        "events": {
-                            "gameplay": {
-                                "numOfInteractions":{
-                                    "with_rep": data["events"]["gameplay"]["nonguided"]["numOfInteractions"]["with_rep"],
-                                    "without_rep": data["events"]["gameplay"]["nonguided"]["numOfInteractions"]["without_rep"],
-                                },
-                                "meanTimeBetweenInteraction": {
-                                    "with_rep": data["events"]["gameplay"]["nonguided"]["meanTimeBetweenInteraction"]["with_rep"],
-                                    "without_rep": data["events"]["gameplay"]["nonguided"]["meanTimeBetweenInteraction"]["without_rep"],
-                                }
-                            },
-                            "interact":{
-                                "numOfInteractions":{
-                                    "with_rep": data["events"]["interact"]["nonguided"]["numOfInteractions"]["with_rep"],
-                                    "without_rep": data["events"]["interact"]["nonguided"]["numOfInteractions"]["without_rep"],
-                                },
-                                "meanTimeBetweenInteraction": {
-                                    "with_rep": data["events"]["interact"]["nonguided"]["meanTimeBetweenInteraction"]["with_rep"],
-                                    "without_rep": data["events"]["interact"]["nonguided"]["meanTimeBetweenInteraction"]["without_rep"],
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            results.append(aux_dict)
-        return results
 
     def set_global_data(self) -> None:
         '''Itera sobre los datos de los usuarios para obtener la informacion global
@@ -195,7 +174,7 @@ class Experiment:
         for user in self.users:
             user.export_results()
 
-        with open("../results/{}.json".format("experiment_results"), "w") as outfile:
+        with open("../results/exp{0}/experiment_results.json".format(self.id), "w") as outfile:
             json.dump(self.results, outfile, indent=4)
 
     # export_results

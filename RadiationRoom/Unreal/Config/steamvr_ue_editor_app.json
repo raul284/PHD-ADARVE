@@ -2,15 +2,15 @@
 	"source": "UE",
 	"applications": [
 		{
-			"app_key": "application.generated.ue.radiationroom-0.ue4editor.exe",
+			"app_key": "application.generated.ue.radiationroom-18319896.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
-			"action_manifest_path": "C:/Users/alejandro/Desktop/adarve/unreal_project/RadiationRoom/Unreal/Config/SteamVRBindings/steamvr_manifest.json",
+			"action_manifest_path": "C:/Users/alejandro/Desktop/PHD-ADARVE/RadiationRoom/Unreal/Config/SteamVRBindings/steamvr_manifest.json",
 			"strings":
 			{
 				"en_us":
 				{
-					"name": "RadiationRoom-0 [UE Editor]"
+					"name": "RadiationRoom-18319896 [UE Editor]"
 				}
 			}
 		}

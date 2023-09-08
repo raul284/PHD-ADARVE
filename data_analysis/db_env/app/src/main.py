@@ -12,9 +12,9 @@ def main():
     experiment_id = input("Identificador del experimento: ")
 
     experiment = Experiment(experiment_id)
-    experiment.set_users_data()
-    experiment.export_to_csv()
-    experiment.analyse_users()
+    #experiment.set_users_data()
+    #experiment.export_to_csv()
+    #experiment.analyse_users()
     #experiment.set_global_data()
     #experiment.analyse_global()
     #experiment.export_results()

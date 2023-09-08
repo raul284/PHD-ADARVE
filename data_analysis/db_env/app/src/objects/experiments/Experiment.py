@@ -55,10 +55,12 @@ class Experiment:
         # Guarda la información de los usuarios que se encuentra en una base de datos MySQL
         db.Base.metadata.create_all(db.engine)
 
+        self.export_experiment_to_csv()
+
         self.users = []
         for user in db.session.query(UserDB).all():
-            #if user.user_name != "All" and user.user_name != "Developer":
-            if user.user_name in ["AACA", "AACD"]:
+            if user.user_name != "All" and user.user_name != "Developer":
+            #if user.user_name in ["AACA", "AACD"]:
                 if not os.path.exists("../results/exp{0}/{1}".format(self.id, user.user_name)):
                     os.makedirs("../results/exp{0}/{1}".format(self.id, user.user_name))
                 self.users.append(User(db.session, user.user_name, self.id))
@@ -85,8 +87,7 @@ class Experiment:
 
     # set_users_data
 
-    def export_to_csv(self) -> None:
-        '''Exporta todos los datos de la BD a CSVs'''
+    def export_experiment_to_csv(self) -> None:
 
         with open("../results/exp{0}/gameplay.csv".format(self.id), "w", newline='') as outfile:
             writer = csv.writer(outfile)
@@ -120,6 +121,9 @@ class Experiment:
                 if event.user_id != 1 and event.user_id != 2:
                     writer.writerow(event.as_dict().values())
 
+
+    def export_to_csv(self) -> None:
+        '''Exporta todos los datos de la BD a CSVs'''
 
         for user in self.users:
             user.export_to_csv()

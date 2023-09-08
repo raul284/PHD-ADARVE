@@ -43,6 +43,27 @@
                         "Finish": 1
                     }
                 }
+            },
+            "interact": {
+                "numOfInteractions": {
+                    "with_rep": 671,
+                    "without_rep": 471
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": 0.48656716417910445,
+                    "without_rep": 0.6936170212765957
+                }
+            },
+            "move": {
+                "numOfInteractions": {
+                    "with_rep": 376,
+                    "without_rep": 376
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": 1.2133333333333334,
+                    "without_rep": 1.2133333333333334
+                },
+                "total_distance": 214.69976200000002
             }
         }
     },
@@ -90,6 +111,27 @@
                         "Finish": 5
                     }
                 }
+            },
+            "interact": {
+                "numOfInteractions": {
+                    "with_rep": 480,
+                    "without_rep": 357
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": 0.7724425887265136,
+                    "without_rep": 1.0393258426966292
+                }
+            },
+            "move": {
+                "numOfInteractions": {
+                    "with_rep": 348,
+                    "without_rep": 348
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": 1.0778097982708934,
+                    "without_rep": 1.0778097982708934
+                },
+                "total_distance": 440.76946999999996
             }
         }
     },
@@ -137,6 +179,27 @@
                         "Finish": 7
                     }
                 }
+            },
+            "interact": {
+                "numOfInteractions": {
+                    "with_rep": 1031,
+                    "without_rep": 701
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": 0.3067961165048544,
+                    "without_rep": 0.4514285714285714
+                }
+            },
+            "move": {
+                "numOfInteractions": {
+                    "with_rep": 457,
+                    "without_rep": 457
+                },
+                "meanTimeBetweenInteraction": {
+                    "with_rep": 0.7653508771929824,
+                    "without_rep": 0.7653508771929824
+                },
+                "total_distance": 499.215909
             }
         }
     }

@@ -23,10 +23,9 @@
 			"Name": "OpenXRMsftHandInteraction",
 			"Enabled": true,
 			"SupportedTargetPlatforms": [
-				"Win32",
 				"Win64",
-				"HoloLens",
-				"Android"
+				"Android",
+				"HoloLens"
 			]
 		},
 		{
@@ -40,7 +39,11 @@
 		},
 		{
 			"Name": "LiveLinkXR",
-			"Enabled": true
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Linux"
+			]
 		},
 		{
 			"Name": "SteamVR",

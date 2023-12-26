@@ -1,0 +1,12 @@
+[   
+    {
+        "id": 0,
+        "npc_name": "Default",
+        "scenario_type": "Default"
+    },
+    {
+        "id": 1,
+        "npc_name": "Sofía",
+        "scenario_type": "S1_BasicMechanics"
+    }
+]

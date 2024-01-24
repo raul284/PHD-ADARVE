@@ -1,0 +1,3 @@
+id,user_id,scenario_type,event_type,tutorial_item_id,event_datetime
+0, "2", "Develop", "Open", "None", "2024-1-19 17:21:6"
+1, "2", "Develop", "Close", "None", "2024-1-19 17:21:7"

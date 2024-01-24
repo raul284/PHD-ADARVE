@@ -1,0 +1,2 @@
+id,user_id,scenario_type,actor_id,conversation_index,event_type,event_datetime
+0, "2", "Develop", "0", "0","start_talk_with_npc", "2024-1-19 17:22:13"

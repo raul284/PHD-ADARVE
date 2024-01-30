@@ -1,1 +1,10 @@
 id,user_id,tip_type,event_datetime
+0, "2", "Tip_Zonificar", "2024-1-29 16:54:21"
+1, "0", "Tip_EmergenciaRadiologica", "2024-1-29 16:54:25"
+2, "0", "Tip_30Min", "2024-1-29 16:54:29"
+3, "0", "Tip_Fuentes", "2024-1-29 16:54:36"
+4, "0", "Tip_RBQ", "2024-1-29 16:54:40"
+5, "0", "Tip_Walkie", "2024-1-29 16:54:48"
+6, "0", "Tip_ConoTrafico", "2024-1-29 16:54:51"
+7, "0", "Tip_TasaDosis", "2024-1-29 16:54:55"
+8, "0", "Tip_SinEquipo", "2024-1-29 16:54:59"

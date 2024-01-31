@@ -40,6 +40,15 @@ INSERT INTO PHD_tutorial_DB.user_radiation_events (user_id, scenario_type, dose_
 	values.erase(0, sToRemove.size());
 	values.erase(values.size() - 1, values.size());
 
+	std::string::size_type n = 0;
+	while (( n = values.find(", ", n)) != string::npos) {
+		values.replace(n, 2, ",");
+	}
+	/*n = 0;
+	while ((n = values.find('"', n)) != string::npos) {
+		values.erase(n, 1);
+	}*/
+
 	FQueryData queryData = FQueryData();
 	queryData.tableName = StringToFString(tableName);
 	queryData.query = StringToFString(values);
@@ -180,6 +189,8 @@ void ALocalFileDatabaseActor::AddOneQuery(FString data)
 	FQueryData queryData = GetDataFromQuery(data);
 
 	_querys[queryData.tableName].Add(queryData.query);
+
+	UE_LOG(LogTemp, Warning, TEXT("AddOneQuery: %s"), *queryData.query);
 }
 
 void ALocalFileDatabaseActor::AddMultiplesQuerys(TArray<FString> data) {
@@ -200,7 +211,7 @@ void ALocalFileDatabaseActor::InsertQuerysToTable() {
 
 			for (FString query : queryBlock.Value)
 			{
-				FString newQuery = FString::FromInt(lastEventId)+ ", " + query;
+				FString newQuery = FString::FromInt(lastEventId)+ "," + query;
 				UE_LOG(LogTemp, Warning, TEXT("InsertQuerysToTable: %s -- %s"), *queryBlock.Key, *newQuery);
 
 				file << '\n';

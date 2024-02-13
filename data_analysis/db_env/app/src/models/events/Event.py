@@ -1,5 +1,5 @@
 from datetime import datetime
-from structs.Vector2D import Vector2D
+from structs.F_Vector2D import Vector2D
 
 class Event:
     '''

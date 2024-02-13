@@ -3,7 +3,7 @@ import statistics
 from models.tables.Table import *
 
 
-class GameplayEventsTable(Table[T]):
+class GameplayEventsTable(Table):
     '''
     Class GameplayEventsTable
     ------------------------------
@@ -30,16 +30,16 @@ class GameplayEventsTable(Table[T]):
     
     #region METODOS PUBLICOS
 
-    def __init__(self, generic_type: Type[T]) -> None:
+    def __init__(self, table_name:str="") -> None:
 
-        super().__init__(generic_type=generic_type)
+        super().__init__(table_name=table_name)
 
         self._results = ResultsTable([
-            "[GAMEPLAY]total_duration", 
-            "[GAMEPLAY]num_of_started", 
-            "[GAMEPLAY]num_of_completed", 
-            "[GAMEPLAY]time_btw_steps",
-            "[GAMEPLAY]time_to_complete_steps"])
+            "TD", 
+            "GP_NUM", 
+            "GP_NUM_START", 
+            "GP_TIME",
+            "GP_TIME_START_TO_END"])
 
     # __init__
 
@@ -58,11 +58,11 @@ class GameplayEventsTable(Table[T]):
         super().analyse_data()
 
         aux_results = {
-            "[GAMEPLAY]total_duration": self.get_total_duration(),
-            "[GAMEPLAY]num_of_started": len(self._df[self._df["event_state"] == "Started"]), 
-            "[GAMEPLAY]num_of_completed": len(self._df[self._df["event_state"] == "Completed"]),
-            "[GAMEPLAY]time_btw_steps": self._results.get_time_btw_datetimes(self._df[self._df["event_state"] == "Completed"]["event_datetime"].to_list()),
-            "[GAMEPLAY]time_to_complete_steps": self.get_time_to_complete_steps()
+            "TD": self.get_total_duration(),
+            "GP_NUM": float(len(self._df[self._df["event_state"] == "Completed"])),
+            "GP_NUM_START": float(len(self._df[self._df["event_state"] == "Started"])), 
+            "GP_TIME": self._results.get_time_btw_datetimes(self._df[self._df["event_state"] == "Completed"]["event_datetime"].to_list()),
+            "GP_TIME_START_TO_END": self.get_time_to_complete_steps()
         }
 
         self._results.insert_row(aux_results)

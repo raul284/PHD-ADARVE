@@ -2,7 +2,7 @@ from models.tables.Table import *
 from enums.E_ItemType import ItemType
 from enums.E_ItemInteractionType import ItemInteractionType
 
-class ItemInteractionEventsTable(Table[T]):
+class ItemInteractionEventsTable(Table):
     '''
     Class ItemInteractionEventsTable
     ------------------------------
@@ -28,14 +28,14 @@ class ItemInteractionEventsTable(Table[T]):
     #endregion
     
     #region METODOS PUBLICOS
-    def __init__(self, generic_type: Type[T]) -> None:
+    def __init__(self, table_name:str="") -> None:
 
-        super().__init__(generic_type=generic_type)
+        super().__init__(table_name=table_name)
 
-        self._results = ResultsTable(
-            ["[ITEM_INTERACTION]num_of_interactions", "[ITEM_INTERACTION]time_btw_interactions"] + \
-                ["[ITEM_INTERACTION]num_of_interactions_with_actor_{0}".format(index) for index in range(len(ItemType))] + \
-                    ["[ITEM_INTERACTION]num_of_interactions_type_{0}".format(index.name) for index in ItemInteractionType])
+        self._results = ResultsTable(["OI_NUM"] + \
+                ["OI_NUM_ACTOR_{0}".format(index) for index in range(len(ItemType))] + \
+                    ["OI_NUM_TYPE_{0}".format(index.name) for index in ItemInteractionType] + \
+                    ["OI_TIME_INTER", "OI_TIME_CP"])
         
     # __init__    
 
@@ -52,17 +52,19 @@ class ItemInteractionEventsTable(Table[T]):
     def analyse_data(self) -> None:
     
         super().analyse_data()
-    
+
         aux_results = {
-            "[ITEM_INTERACTION]num_of_interactions": len(self._df),
-            "[ITEM_INTERACTION]time_btw_interactions": self._results.get_time_btw_datetimes(self._df["event_datetime"].to_list())
+            "OI_NUM": float(len(self._df)),
+            "OI_NUM_GP_STEPS": 0.0,
+            "OI_TIME_INTER": self._results.get_time_btw_datetimes(self._df["event_datetime"].to_list()),
+            "OI_TIME_CP": 0.0
         }
 
         for index in range(len(ItemType)):
-            aux_results["[ITEM_INTERACTION]num_of_interactions_with_actor_{0}".format(index)] = len(self._df[self._df["actor_id"] == index])
+            aux_results["OI_NUM_ACTOR_{0}".format(index)] = float(len(self._df[self._df["actor_id"] == index]))
 
         for index in ItemInteractionType:
-            aux_results["[ITEM_INTERACTION]num_of_interactions_type_{0}".format(index.name)] = len(self._df[self._df["event_type"].str.upper() == index.name])
+            aux_results["OI_NUM_TYPE_{0}".format(index.name)] = float(len(self._df[self._df["event_type"].str.upper() == index.name]))
 
         self._results.insert_row(aux_results)
     

@@ -1,30 +1,23 @@
 import pandas as pd
 from datetime import datetime
-from typing import TypeVar, Generic, Type
-import matplotlib.pyplot as plt
 
 from models.tables.ResultsTable import ResultsTable
 
-T = TypeVar('T')
 
-class Table(Generic[T]):
+class Table:
 
+    _table_name:str
     _df: pd.DataFrame
     _results: ResultsTable
 
-    def __init__(self, generic_type: Type[T]) -> None:
-        self._generic_type = generic_type
-        self._list: list[self._generic_type] = []
+    def __init__(self, table_name: str) -> None:
+        self._table_name = table_name.upper()
 
     def read_data_from_csv(self, filename: str) -> None:
         self._df = pd.read_csv("../data/{0}.csv".format(filename))
-        self._list = [self._generic_type(*row.to_list()) for index, row in self._df.iterrows()]
 
-    def get_data_list_by_user(self, user_id: int) -> list:
-        return [event for event in self._list if event.user_id == user_id]
-
-    def get_data_dataframe_by_user(self, user_id: int) -> pd.DataFrame:
-        return self._df[self._df["user_id"] == user_id]
+    def get_data_by_user(self, user_id: int) -> pd.DataFrame:
+        return self._df[self._df["ID"] == user_id]
     
     def analyse_data(self):
         self._results.analyse_data()
@@ -43,5 +36,11 @@ class Table(Generic[T]):
 
     def string_to_datetime(self, s_datetime) -> datetime:
         return datetime.strptime(s_datetime, '%Y-%m-%d %H:%M:%S')
+    
+    def set_id_column(self) -> None:
+        if "user_id" in self._df.columns:
+            self._df.drop("id", inplace=True, axis=1)
+            self._df.rename(columns={"user_id": "ID"}, inplace=True)
+        
 
 #enregion

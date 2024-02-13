@@ -2,7 +2,7 @@ from enums.E_UserInputType import UserInputType
 
 from models.tables.Table import *
 
-class UserInputEventsTable(Table[T]):
+class UserInputEventsTable(Table):
     '''
     Class UserInputEventsTable
     -------------------
@@ -16,11 +16,13 @@ class UserInputEventsTable(Table[T]):
     
 #region METODOS PUBLICOS
 
-    def __init__(self, generic_type: Type[T]) -> None:
-        super().__init__(generic_type=generic_type)
+    def __init__(self, table_name:str="") -> None:
 
-        self._results = ResultsTable(["[USER_INPUT]num_of_inputs", "[USER_INPUT]time_btw_inputs"] + \
-                                     ["[USER_INPUT]num_of_inputs_type_{0}".format(index.name) for index in UserInputType]) # Por cada tipo de user input
+        super().__init__(table_name=table_name)
+
+        self._results = ResultsTable(["UI_NUM"] + \
+                                     ["UI_NUM_TYPE_{0}".format(index.name) for index in UserInputType] + \
+                                     ["UI_TIME"])
 
 
     def read_data_from_csv(self, filename: str) -> None:
@@ -33,12 +35,13 @@ class UserInputEventsTable(Table[T]):
         super().analyse_data()
 
         aux_results = {
-            "[USER_INPUT]num_of_inputs": len(self._df),
-            "[USER_INPUT]time_btw_inputs": self._results.get_time_btw_datetimes(self._df["event_datetime"].to_list()) 
+            "UI_NUM": float(len(self._df)),
+            "UI_NUM_GP_STEPS": 0.0,
+            "UI_TIME": self._results.get_time_btw_datetimes(self._df["event_datetime"].to_list())
         }
 
         for index in UserInputType:
-            aux_results["[USER_INPUT]num_of_inputs_type_{0}".format(index.name)] = len(self._df[self._df["input_type"].str.upper() == index.name])
+            aux_results["UI_NUM_TYPE_{0}".format(index.name)] = float(len(self._df[self._df["input_type"].str.upper() == index.name]))
 
         self._results.insert_row(aux_results)
 #endregion

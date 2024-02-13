@@ -1,8 +1,0 @@
-,user_id,[USER_INPUT]num_of_inputs,[USER_INPUT]time_btw_inputs,[USER_INPUT]num_of_inputs_type_DEFAULT,[USER_INPUT]num_of_inputs_type_IA_MOVE_LEFT,[USER_INPUT]num_of_inputs_type_IA_MOVE_RIGHT,[USER_INPUT]num_of_inputs_type_IA_MENU_INTERACT_LEFT,[USER_INPUT]num_of_inputs_type_IA_MENU_INTERACT_RIGHT,[USER_INPUT]num_of_inputs_type_IA_GRAB_LEFT,[USER_INPUT]num_of_inputs_type_IA_GRAB_RIGHT
-0,0,365,2.61,0,161,36,48,82,6,32
-0,1,292,2.11,0,26,126,10,18,36,76
-0,2,423,627.07,0,29,148,16,129,41,58
-0,3,178,2.86,0,118,6,4,16,2,32
-0,4,293,2.26,0,21,142,8,80,2,40
-0,5,212,2.8,0,112,22,2,38,20,18
-0,6,462,1.83,0,46,156,60,70,40,90

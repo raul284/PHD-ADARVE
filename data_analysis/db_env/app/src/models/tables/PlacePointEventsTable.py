@@ -1,6 +1,6 @@
 from models.tables.Table import *
 
-class PlacePointEventsTable(Table[T]):
+class PlacePointEventsTable(Table):
     '''
     Class PlacePointEventsTable
     -------------------
@@ -14,8 +14,9 @@ class PlacePointEventsTable(Table[T]):
     
 #region METODOS PUBLICOS
 
-    def __init__(self, generic_type: Type[T]) -> None:
-        super().__init__(generic_type=generic_type)
+    def __init__(self, table_name:str="") -> None:
+
+        super().__init__(table_name=table_name)
 
         self._results = ResultsTable(["", ""])
 

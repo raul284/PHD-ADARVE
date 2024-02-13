@@ -1,6 +1,6 @@
 from models.tables.Table import *
 
-class TipsEventsTable(Table[T]):
+class TipsEventsTable(Table):
     '''
     Class TipsEventsTable
     -------------------
@@ -15,11 +15,11 @@ class TipsEventsTable(Table[T]):
     
 #region METODOS PUBLICOS
 
-    def __init__(self, generic_type: Type[T], tips_ingame_enabled) -> None:
-        super().__init__(generic_type=generic_type)
-        self._enabled = tips_ingame_enabled
+    def __init__(self, table_name:str="") -> None:
 
-        self._results = ResultsTable(["[TIPS]num_of_tips", "[TIPS]time_btw_tips"])
+        super().__init__(table_name=table_name)
+        
+        self._results = ResultsTable(self._table_name, ["num_of_tips", "time_btw_tips"])
 
     def read_data_from_csv(self, filename: str) -> None:
         super().read_data_from_csv(filename)

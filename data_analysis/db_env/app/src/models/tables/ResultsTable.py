@@ -18,7 +18,7 @@ class ResultsTable():
 #region METODOS PUBLICOS
 
     def __init__(self, col_names) -> None:
-        self._df = pd.DataFrame(columns=col_names)
+        self._df = pd.DataFrame(columns=["{0}".format(name) for name in col_names])
 
     def analyse_data(self):
         pass

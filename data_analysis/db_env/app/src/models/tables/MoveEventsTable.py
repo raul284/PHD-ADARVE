@@ -1,6 +1,7 @@
 from models.tables.Table import *
+import matplotlib as plt
 
-class MoveEventsTable(Table[T]):
+class MoveEventsTable(Table):
     
     #region VARIABLES PUBLICAS
 
@@ -8,10 +9,13 @@ class MoveEventsTable(Table[T]):
 
     #region METODOS PUBLICOS
 
-    def __init__(self, generic_type: Type[T]) -> None:
-        super().__init__(generic_type=generic_type)
+    def __init__(self, table_name:str="") -> None:
 
-        self._results = ResultsTable(["[MOVE]num_of_vw", "[MOVE]distance_vw", "[MOVE]num_of_rw", "[MOVE]distance_rw"])
+        super().__init__(table_name=table_name)
+
+        self._results = ResultsTable(["MV_NUM_VR", "MV_NUM_RL",
+                                      "MV_TIME_VR", "MV_TIME_RL", 
+                                      "MV_DIST_VR", "MV_DIST_RL"])
 
     def read_data_from_csv(self, filename: str) -> None:
         super().read_data_from_csv(filename)
@@ -22,11 +26,14 @@ class MoveEventsTable(Table[T]):
     def analyse_data(self) -> None:
         super().analyse_data()
 
+
         aux_results = {
-            "[MOVE]num_of_vw": len(self._df[self._df["move_type"] == "virtual_reality"]),
-            "[MOVE]distance_vw": round(sum([float(dist) for dist in self._df[self._df["move_type"] == "virtual_reality"]["distance"].to_list()]), 2), 
-            "[MOVE]num_of_rw": len(self._df[self._df["move_type"] == "real_life"]), 
-            "[MOVE]distance_rw": round(sum([float(dist) for dist in self._df[self._df["move_type"] == "real_life"]["distance"].to_list()]), 2),
+            "MV_NUM_VR": float(len(self._df[self._df["move_type"] == "virtual_reality"])),
+            "MV_NUM_RL": float(len(self._df[self._df["move_type"] == "real_life"])), 
+            "MV_TIME_VR": 0.0,
+            "MV_TIME_RL": 0.0,
+            "MV_DIST_VR": round(sum([float(dist) for dist in self._df[self._df["move_type"] == "virtual_reality"]["distance"].to_list()]), 2), 
+            "MV_DIST_RL": round(sum([float(dist) for dist in self._df[self._df["move_type"] == "real_life"]["distance"].to_list()]), 2),
         }
 
         self._results.insert_row(aux_results)
@@ -34,9 +41,10 @@ class MoveEventsTable(Table[T]):
     def create_graphs(self):
         super().create_graphs()
 
+        self._vrgraphs = []
+
         #self.create_rw_movement_graph()
-        self.create_vr_movement_graph()
-        
+        self.create_vr_movement_graph()        
 
     #endregion
 
@@ -54,7 +62,8 @@ class MoveEventsTable(Table[T]):
             y.append(float(newLoc[1]))
 
         plt.scatter(y,x)
-        plt.show()
+        self._vrgraphs.append(plt.gcf())
+        #plt.show()
         
     def create_rw_movement_graph(self):
         location_list = self._df[self._df["move_type"] == "real_life"]["end_position"].to_list()

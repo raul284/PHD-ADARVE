@@ -41,13 +41,9 @@ INSERT INTO PHD_tutorial_DB.user_radiation_events (user_id, scenario_type, dose_
 	values.erase(values.size() - 1, values.size());
 
 	std::string::size_type n = 0;
-	while (( n = values.find(", ", n)) != string::npos) {
+	while ((n = values.find(", ", n)) != string::npos) {
 		values.replace(n, 2, ",");
 	}
-	/*n = 0;
-	while ((n = values.find('"', n)) != string::npos) {
-		values.erase(n, 1);
-	}*/
 
 	FQueryData queryData = FQueryData();
 	queryData.tableName = StringToFString(tableName);
@@ -110,25 +106,40 @@ bool ALocalFileDatabaseActor::TableExists(FString tableName)
 	else return false;
 }
 
-bool ALocalFileDatabaseActor::UserExistsInDatabase(FString userName)
+pair<bool, int> ALocalFileDatabaseActor::UserExistsInDatabase(FString userName)
 {
 	fstream file;
 	file.open(GetFilePath("users"), fstream::in);
+	int tryNum = 0;
+
 
 	if (file) {
-		string line;
+		string line, userLine;
 		bool usersExists = false;
-		while (!usersExists && getline(file, line)) {
+		getline(file, line);
+		while (getline(file, line)) {
+			//UE_LOG(LogTemp, Warning, TEXT("CreateUser: %s"), *StringToFString(line));
 			if (StringToFString(line).Contains(userName)) {
 				usersExists = true;
+				userLine = line;
+				//UE_LOG(LogTemp, Warning, TEXT("Left: %s"), *left);
 			}
 		}
 		file.close();
 
-		return usersExists;
+		if (usersExists) {
+			FString left;
+			FString right;
+			StringToFString(userLine).Split(TEXT("_"), &left, &right);
+			right.Split(TEXT(","), &left, &right);
+			left.RemoveAt(left.Len() - 1, 1);
+			tryNum = stoi(FStringToString(left)) + 1;
+		}
+
+		return pair<bool, int>(usersExists, tryNum);
 	}
 
-	return false;
+	return pair<bool, int>(false, 0);
 }
 
 void ALocalFileDatabaseActor::Init()
@@ -190,7 +201,7 @@ void ALocalFileDatabaseActor::AddOneQuery(FString data)
 
 	_querys[queryData.tableName].Add(queryData.query);
 
-	UE_LOG(LogTemp, Warning, TEXT("AddOneQuery: %s"), *queryData.query);
+	//UE_LOG(LogTemp, Warning, TEXT("AddOneQuery: %s"), *queryData.query);
 }
 
 void ALocalFileDatabaseActor::AddMultiplesQuerys(TArray<FString> data) {
@@ -212,7 +223,7 @@ void ALocalFileDatabaseActor::InsertQuerysToTable() {
 			for (FString query : queryBlock.Value)
 			{
 				FString newQuery = FString::FromInt(lastEventId)+ "," + query;
-				UE_LOG(LogTemp, Warning, TEXT("InsertQuerysToTable: %s -- %s"), *queryBlock.Key, *newQuery);
+				//UE_LOG(LogTemp, Warning, TEXT("InsertQuerysToTable: %s -- %s"), *queryBlock.Key, *newQuery);
 
 				file << '\n';
 				file << FStringToString(newQuery);
@@ -231,29 +242,32 @@ void ALocalFileDatabaseActor::InsertQuerysToTable() {
 
 void ALocalFileDatabaseActor::InsertUserToTable(FString userName, FString data)
 {
-	if (!UserExistsInDatabase(userName)) {
-		FQueryData queryData = GetDataFromQuery(data);
+	pair<bool, int> exist_user_info = UserExistsInDatabase(userName);
 
-		fstream file;
-		file.open(GetFilePath(queryData.tableName));
-		if (file) {
+	string newUserName = FStringToString(userName) + "_" + to_string(exist_user_info.second);
+	FQueryData queryData = GetDataFromQuery(data);
 
-			int32 lastEventId = GetLastEventId(file);
+	fstream file;
+	file.open(GetFilePath(queryData.tableName));
+	if (file) {
 
-			FString newQuery = FString::FromInt(lastEventId) + ", " + queryData.query;
-			//UE_LOG(LogTemp, Warning, TEXT("InsertUser: %s"), *newQuery);
+		int32 lastEventId = GetLastEventId(file);
 
-			file << '\n';
-			file << FStringToString(newQuery);
+		FString left;
+		FString right;
+		queryData.query.Split(TEXT(","), &left, &right);
 
-			lastEventId++;
+		FString newQuery = FString::FromInt(lastEventId) + "," + '"' + StringToFString(newUserName) + '"' + "," + right;
+		//UE_LOG(LogTemp, Warning, TEXT("InsertUser9q867: %s"), *newQuery);
 
-		}
+		file << '\n';
+		file << FStringToString(newQuery);
 
-		file.close();
+		lastEventId++;
+
 	}
 
-
+	file.close();
 
 }
 
@@ -281,17 +295,18 @@ int32 ALocalFileDatabaseActor::GetUserIdByName(FString userName)
 	file.open(GetFilePath("users"), fstream::in);
 
 	if (file) {
-		string line;
+		string line, userLine;
 		bool usersExists = false;
+		getline(file, line);
 		while (getline(file, line)) {
 			if (StringToFString(line).Contains(userName)) {
 				usersExists = true;
-				break;
+				userLine = line;
 			}
 		}
 		file.close();
 
-		return stoi(line.substr(0, line.find(",")));
+		return stoi(userLine.substr(0, userLine.find(",")));
 	}
 
 	return -1;

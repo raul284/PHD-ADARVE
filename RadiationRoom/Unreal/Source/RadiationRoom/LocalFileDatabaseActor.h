@@ -49,7 +49,7 @@ private:
 	string GetFilePath(FString tableName);
 	FQueryData GetDataFromQuery(FString data);
 	bool TableExists(FString tableName);
-	bool UserExistsInDatabase(FString userName);
+	pair<bool, int> UserExistsInDatabase(FString userName);
 
 public:
 

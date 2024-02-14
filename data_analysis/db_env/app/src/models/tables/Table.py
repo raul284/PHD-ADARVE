@@ -15,6 +15,7 @@ class Table:
 
     def read_data_from_csv(self, filename: str) -> None:
         self._df = pd.read_csv("../data/{0}.csv".format(filename))
+        self.clean_initial_dataframe()
 
     def get_data_by_user(self, user_id: int) -> pd.DataFrame:
         return self._df[self._df["ID"] == user_id]
@@ -33,6 +34,8 @@ class Table:
 
 #region METODOS PRIVADOS
        
+    def clean_initial_dataframe(self):
+        pass
 
     def string_to_datetime(self, s_datetime) -> datetime:
         return datetime.strptime(s_datetime, '%Y-%m-%d %H:%M:%S')

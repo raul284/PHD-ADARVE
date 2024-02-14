@@ -18,7 +18,7 @@ class MoveEventsTable(Table):
                                       "MV_DIST_VR", "MV_DIST_RL"])
 
     def read_data_from_csv(self, filename: str) -> None:
-        super().read_data_from_csv(filename)
+        super().read_data_from_csv(filename)        
         
         self._df["start_datetime"] = pd.to_datetime(self._df["start_datetime"], format="%Y-%m-%d %H:%M:%S")
         self._df["end_datetime"] = pd.to_datetime(self._df["end_datetime"], format="%Y-%m-%d %H:%M:%S")
@@ -49,6 +49,14 @@ class MoveEventsTable(Table):
     #endregion
 
     #region METODOS PRIVADOS
+        
+    def clean_initial_dataframe(self):
+        super().clean_initial_dataframe()
+
+        self._df = self._df[self._df["distance"] < 10.0]
+        self._df = self._df[self._df["scenario_type"] != "MainMenu"]
+        self._df = self._df[self._df["scenario_type"] != "LoadingScreen"]
+        self._df = self._df[self._df["scenario_type"] != "PlayerScore"]
         
     def create_vr_movement_graph(self):
         location_list = self._df[self._df["move_type"] == "virtual_reality"]["end_position"].to_list()

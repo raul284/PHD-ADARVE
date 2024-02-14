@@ -33,6 +33,8 @@ class GroupManager:
         for key in self._tables._data:
             self._tables._data[key].read_data_from_csv(key)
 
+        print(self._tables.get_data_from_table("user_input_events"))
+
         # for user in self._users:
         #     self._tables._data["form_marks"].set_user_id(user)
             

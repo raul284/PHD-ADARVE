@@ -48,5 +48,11 @@ class UserInputEventsTable(Table):
     
 #region METODOS PRIVADOS
        
+    def clean_initial_dataframe(self):
+        super().clean_initial_dataframe()
+        
+        self._df = self._df[self._df["scenario_type"] != "MainMenu"]
+        self._df = self._df[self._df["scenario_type"] != "LoadingScreen"]
+        self._df = self._df[self._df["scenario_type"] != "PlayerScore"]
 
 #enregion

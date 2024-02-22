@@ -27,3 +27,8 @@ id,user_id,scenario_type,tip_type,event_datetime
 25,"19","LoadingScreen","Tip_EPD","2024-2-14 17:29:29"
 26,"19","LoadingScreen","Tip_Fuentes","2024-2-14 17:29:31"
 27,"19","LoadingScreen","Tip_Distancia","2024-2-14 17:29:33"
+28,"21","LoadingScreen","Tip_Walkie","2024-2-22 9:40:47"
+29,"21","LoadingScreen","Tip_RBQ","2024-2-22 9:40:51"
+30,"21","LoadingScreen","Tip_EPD","2024-2-22 9:40:52"
+31,"21","LoadingScreen","Tip_Fuentes","2024-2-22 9:40:54"
+32,"21","LoadingScreen","Tip_Distancia","2024-2-22 9:40:55"

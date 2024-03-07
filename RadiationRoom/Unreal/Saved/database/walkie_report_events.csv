@@ -1,1 +1,13 @@
 id,user_id,scenario_type,conversation_type,question_index,answer_index,event_datetime
+0,"2","S2_BasicEmergency","Initial","0","1","2024-3-6 15:19:19"
+1,"2","S2_BasicEmergency","Initial","1","1","2024-3-6 15:19:32"
+2,"2","S2_BasicEmergency","Initial","2","1","2024-3-6 15:19:57"
+3,"2","S2_BasicEmergency","Final","0","2","2024-3-6 15:30:26"
+4,"2","S2_BasicEmergency","Final","1","1","2024-3-6 15:30:33"
+5,"2","S2_BasicEmergency","Final","2","1","2024-3-6 15:30:47"
+6,"7","S2_BasicEmergency","Initial","0","2","2024-3-7 9:25:52"
+7,"7","S2_BasicEmergency","Initial","1","2","2024-3-7 9:25:58"
+8,"7","S2_BasicEmergency","Initial","2","1","2024-3-7 9:26:10"
+9,"7","S2_BasicEmergency","Final","0","1","2024-3-7 9:27:35"
+10,"7","S2_BasicEmergency","Final","1","2","2024-3-7 9:27:44"
+11,"7","S2_BasicEmergency","Final","2","0","2024-3-7 9:27:59"

@@ -1,1 +1,13 @@
 id,user_id,scenario_type,actor_id,actor_name,place_point_name,event_type,event_datetime
+0,"1","S1_BasicMechanics","2","TrafficCone_9","place_correct","2024-3-6 15:9:30"
+1,"1","S1_BasicMechanics","2","TrafficCone_4","place_correct","2024-3-6 15:9:53"
+2,"1","S1_BasicMechanics","2","TrafficCone_5","place_correct","2024-3-6 15:10:10"
+3,"1","S1_BasicMechanics","2","TrafficCone_2","place_correct","2024-3-6 15:10:26"
+4,"1","S1_BasicMechanics","2","TrafficCone_7","place_correct","2024-3-6 15:10:45"
+5,"1","S1_BasicMechanics","3","Dosimeter_SABG100_4","place_correct","2024-3-6 15:11:26"
+6,"1","S1_BasicMechanics","3","Dosimeter_SABG100_2","place_correct","2024-3-6 15:12:1"
+7,"1","S1_BasicMechanics","4","Dosimeter_EPD_3","place_correct","2024-3-6 15:12:10"
+8,"1","S1_BasicMechanics","3","Dosimeter_SABG100_1","place_correct","2024-3-6 15:12:39"
+9,"1","S1_BasicMechanics","4","Dosimeter_EPD_2","place_correct","2024-3-6 15:12:44"
+10,"2","S2_BasicEmergency","2","BP_TrafficCone0","place_correct","2024-3-6 15:24:19"
+11,"2","S2_BasicEmergency","2","BP_TrafficCone1","place_correct","2024-3-6 15:24:46"

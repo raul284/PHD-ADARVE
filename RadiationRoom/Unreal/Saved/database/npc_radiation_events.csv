@@ -1,1 +1,6 @@
 id,user_id,scenario_type,actor_id,dose_rate,dose_absortion,event_datetime
+0,"2","S2_BasicEmergency","2","0.015327","0.003168","2024-3-6 15:28:2"
+1,"2","S2_BasicEmergency","2","0.015327","0.00317","2024-3-6 15:28:2"
+2,"2","S2_BasicEmergency","2","0.015382","0.003463","2024-3-6 15:29:11"
+3,"2","S2_BasicEmergency","2","0.015382","0.003465","2024-3-6 15:29:11"
+4,"2","S2_BasicEmergency","2","0.015382","0.003467","2024-3-6 15:29:12"

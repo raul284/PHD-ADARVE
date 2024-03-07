@@ -1,1 +1,11 @@
 id,user_id,scenario_type,actor_id,conversation_index,event_type,event_datetime
+0,"1","S1_BasicMechanics","1","0","start_talk_with_npc","2024-3-6 15:7:20"
+1,"1","S1_BasicMechanics","1","1","stop_talk_with_npc","2024-3-6 15:7:49"
+2,"1","S1_BasicMechanics","1","2","start_talk_with_npc","2024-3-6 15:13:20"
+3,"1","S1_BasicMechanics","1","2","stop_talk_with_npc","2024-3-6 15:13:37"
+4,"2","S2_BasicEmergency","3","0","start_talk_with_npc","2024-3-6 15:25:51"
+5,"2","S2_BasicEmergency","3","0","stop_talk_with_npc","2024-3-6 15:26:1"
+6,"2","S2_BasicEmergency","2","0","start_talk_with_npc","2024-3-6 15:26:24"
+7,"2","S2_BasicEmergency","2","1","stop_talk_with_npc","2024-3-6 15:26:49"
+8,"2","S2_BasicEmergency","3","1","start_talk_with_npc","2024-3-6 15:27:7"
+9,"2","S2_BasicEmergency","3","1","stop_talk_with_npc","2024-3-6 15:27:42"

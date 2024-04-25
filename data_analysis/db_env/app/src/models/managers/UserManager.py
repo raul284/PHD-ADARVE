@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from models.tables import *
 from structs.F_TablesList import TablesList
@@ -28,7 +29,7 @@ class UserManager:
         self._results = pd.DataFrame()
         
         self._tables = TablesList()
-        self._combined_results = CombinedEventsTable()
+        #self._combined_results = CombinedEventsTable()
 
     def set_data(self, tables) -> None:
         for table_name in tables:
@@ -45,14 +46,24 @@ class UserManager:
 
             self._results = pd.concat([self._results, self._tables._data[table_name].get_results()], axis=1) 
 
-        self._combined_results.analyse_data(self._tables)
+        #self._combined_results.analyse_data(self._tables)
          
 
     def export_results(self) -> None:
         pass
 
-    def create_graphs(self) -> None:
-        pass
+    def create_graphs(self, path) -> None:
+        x_lim = (self._tables._data["gameplay_events"]._start_time, self._tables._data["gameplay_events"]._end_time)
+
+        chart_index = 0
+        for table in self._tables._data:
+            self._tables._data[table].create_graphs(path, x_lim)
+            #axs[chart_index].set_xlim(left=x_lim[0], right=x_lim[1])
+
+            chart_index += 1
+
+        #plt.show()
+
 
     #endregion
 

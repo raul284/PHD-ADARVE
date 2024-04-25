@@ -85,6 +85,6 @@ class ExperimentManager:
 
     def create_graphs(self) -> None:
         for user in self._users:
-            user._manager.export_results()
+            user.create_graphs()
 
 #endregion

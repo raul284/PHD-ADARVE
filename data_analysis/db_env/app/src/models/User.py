@@ -1,6 +1,7 @@
 import os
 
 import pandas as pd
+from datetime import datetime
 
 from enums.E_GroupType import GroupType
 from models.managers.UserManager import UserManager
@@ -16,24 +17,30 @@ class User:
 
     _id: int
     _user_name: str
-    _tips_ingame_enabled: bool
+    _group: str
+    _created: datetime
 
     _main_data_df: pd.DataFrame
 
     _manager: UserManager
 
+    _results_path: str
+
     #endregion
 
     #region METODOS PUBLICOS
 
-    def __init__(self, id:int = 0, user_name:str = "", tips_ingame_enabled:str = ""):
+    def __init__(self, id:int = 0, user_name:str = "", user_group:str = "", event_datetime:str = ""):
         self._id = id
         self._user_name = user_name
-        self._tips_ingame_enabled = tips_ingame_enabled
+        self._group = user_group
+        self._created = datetime.strptime(event_datetime, '%Y-%m-%d %H:%M:%S.%f')
 
-        self._main_data_df = pd.DataFrame({"ID": [self._user_name], "GROUP": [GroupType.G_VR.name if self._tips_ingame_enabled else GroupType.G_TRA.name]})
+        self._main_data_df = pd.DataFrame({"ID": [self._user_name], "GROUP": [self._group]})
 
         self._manager = UserManager()
+
+        self._result_path = "../results/{0}/".format(self._id)
 
     def __repr__(self):
         return f'User({self._id}, {self._user_name})'
@@ -48,10 +55,12 @@ class User:
         self._manager.analyse_data()
 
     def export_results(self):
+        if not os.path.exists(self._result_path):
+            os.makedirs(self._result_path)
         self._manager.export_results()
 
     def create_graphs(self) -> None:
-        self._manager.create_graphs()
+        self._manager.create_graphs(self._result_path)
 
     #endregion
 
@@ -67,7 +76,8 @@ class User:
         return self._manager._data._tables._data[table_name]._df
     
     def get_results(self) -> pd.DataFrame:
-        return pd.concat([self._main_data_df, self._manager._results, self._manager._combined_results._results._df], axis=1)
+        pass
+        #return pd.concat([self._main_data_df, self._manager._results, self._manager._combined_results._results._df], axis=1)
 
     def get_results_by_table_name(self, table_name) -> pd.DataFrame:
         return self._manager._results._tables._data[table_name]._results._df

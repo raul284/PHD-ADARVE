@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from datetime import datetime
 
 from models.tables.ResultsTable import ResultsTable
@@ -29,7 +30,10 @@ class Table:
     def export_results(self):
         self._results.export_results()
 
-    def create_graphs(self):
+    def create_graphs(self, path, lims):
+        self.create_graphs_for_eeg(path, lims)
+
+    def create_graphs_for_eeg(self, path, lims):
         pass
 
 #region METODOS PRIVADOS
@@ -38,7 +42,7 @@ class Table:
         pass
 
     def string_to_datetime(self, s_datetime) -> datetime:
-        return datetime.strptime(s_datetime, '%Y-%m-%d %H:%M:%S')
+        return datetime.strptime(s_datetime, '%Y-%m-%d %H:%M:%S.%f')
     
     def set_id_column(self) -> None:
         if "user_id" in self._df.columns:

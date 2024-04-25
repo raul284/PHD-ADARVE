@@ -1,5 +1,5 @@
 from models.tables.Table import *
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 class MoveEventsTable(Table):
     

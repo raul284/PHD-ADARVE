@@ -1,8 +1,2 @@
-id,user_name,tips_ingame_enabled
-0,"AB","true"
-1,"AC","false"
-2,"AA","true"
-3,"AE","false"
-4,"AF","false"
-5,"AG","true"
-6,"AH","true"
+id,user_name,user_group,event_datetime
+0,"ale_0","TSV","2024-3-14 14:46:21.828"

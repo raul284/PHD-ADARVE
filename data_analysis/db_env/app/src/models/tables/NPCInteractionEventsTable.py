@@ -17,7 +17,7 @@ class NPCInteractionEventsTable(Table):
     def read_data_from_csv(self, filename: str) -> None:
         super().read_data_from_csv(filename)
         
-        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S")
+        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
         
     def analyse_data(self) -> None:
         super().analyse_data()
@@ -35,6 +35,31 @@ class NPCInteractionEventsTable(Table):
             aux_results["NPC_NUM_TYPE_{0}".format(index.name)] = float(len(self._df[self._df["event_type"].str.upper() == index.name]))
 
         self._results.insert_row(aux_results)
+
+    def create_graphs(self, path, lims):
+        super().create_graphs(path, lims)
+
+    def create_graphs_for_eeg(self, path, lims):
+        super().create_graphs_for_eeg(path, lims)
+        
+        aux_df = self._df[["actor_id", "event_type", "event_datetime"]]
+        print(self._df)
+
+        fig, axs = plt.subplots(len(aux_df["actor_id"].drop_duplicates()) + 1, 1, figsize=(14, 6), layout='tight', sharex=True)
+
+        axis_index = 0
+        for event in aux_df["actor_id"].drop_duplicates():
+            aux_df[(aux_df["actor_id"] == event) & (aux_df["event_type"] == "start_talk_with_npc")].plot.scatter(x='event_datetime', y="actor_id", c="blue", ax=axs[axis_index])
+            aux_df[(aux_df["actor_id"] == event) & (aux_df["event_type"] == "stop_talk_with_npc")].plot.scatter(x='event_datetime', y="actor_id", c="red", ax= axs[axis_index])
+            
+            axs[axis_index].set_xlim(left=lims[0], right=lims[1])
+            axs[axis_index].set_ylabel("")
+
+            axis_index += 1
+
+        plt.xlabel("Time")
+
+        plt.savefig("{0}npc_interaction_eeg".format(path))
 
 
     

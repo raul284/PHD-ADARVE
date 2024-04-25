@@ -44,7 +44,7 @@ class ItemInteractionEventsTable(Table):
 
         super().read_data_from_csv(filename)
       
-        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S")
+        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
 
     # read_data_from_csv
 
@@ -67,6 +67,35 @@ class ItemInteractionEventsTable(Table):
             aux_results["OI_NUM_TYPE_{0}".format(index.name)] = float(len(self._df[self._df["event_type"].str.upper() == index.name]))
 
         self._results.insert_row(aux_results)
+
+
+    def create_graphs(self, path, lims):
+        super().create_graphs(path, lims)
+
+    def create_graphs_for_eeg(self, path, lims):
+        super().create_graphs_for_eeg(path, lims)
+
+        aux_df = self._df[["event_type", "hand", "event_datetime"]]
+
+        fig, axs = plt.subplots(4, 1, figsize=(14, 6), layout='tight', sharex=True)
+
+        axis_index = 0
+        for hand in aux_df["hand"].drop_duplicates():
+            aux_df[(aux_df["hand"] == hand) & (aux_df["event_type"] == "start_detection")].plot.scatter(x='event_datetime', y="hand", c="blue", ax=axs[axis_index])
+            aux_df[(aux_df["hand"] == hand) & (aux_df["event_type"] == "stop_detection")].plot.scatter(x='event_datetime', y="hand", c="red", ax= axs[axis_index])
+            axs[axis_index].set_ylabel("selection_{0}".format(str(hand).lower()))
+
+            aux_df[(aux_df["hand"] == hand) & (aux_df["event_type"] == "grab")].plot.scatter(x='event_datetime', y="hand", c="blue", ax=axs[axis_index + 1])
+            aux_df[(aux_df["hand"] == hand) & (aux_df["event_type"] == "release")].plot.scatter(x='event_datetime', y="hand", c="red", ax= axs[axis_index + 1])
+            axs[axis_index + 1].set_ylabel("manipulation_{0}".format(str(hand).lower()))
+
+            axs[axis_index].set_xlim(left=lims[0], right=lims[1])
+
+            axis_index += 2
+
+        plt.xlabel("Time")
+
+        plt.savefig("{0}item_interaction_eeg".format(path))
     
     # analyse_data
         

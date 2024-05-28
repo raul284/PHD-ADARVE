@@ -51,6 +51,8 @@ class ExperimentManager:
         self._global = Group(self._users)
         self._global.set_data()
 
+        #print(self._global._manager._tables._data["gameplay_events"]._df)
+
         for user in self._users:
             aux_dict = {}
             for key in self._global.get_data():

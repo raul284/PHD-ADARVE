@@ -41,7 +41,8 @@ class GroupManager:
         for key in self._tables._data:
             for user in self._users:
                 if "user_id" in self._tables._data[key]._df.columns:
-                    self._tables._data[key]._df.loc[self._tables._data[key]._df["user_id"] == user._id, "user_id"] = user._user_name
+                    self._tables._data[key]._df["user_id"] = self._tables._data[key]._df["user_id"].replace(str(user._id), user._user_name) #.loc[self._tables._data[key]._df["user_id"] == user._id, user._id] = 1#user._user_name
+                    
             self._tables._data[key].set_id_column()
 
 

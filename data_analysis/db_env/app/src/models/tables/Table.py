@@ -16,14 +16,15 @@ class Table:
 
     def read_data_from_csv(self, filename: str) -> None:
         self._df = pd.read_csv("../data/{0}.csv".format(filename))
+        self._df['user_id'] = self._df['user_id'].astype("string")
         self.clean_initial_dataframe()
 
-    def get_data_by_user(self, user_id: int) -> pd.DataFrame:
-        return self._df[self._df["ID"] == user_id]
+    def get_data_by_user(self, user_name: str) -> pd.DataFrame:
+        return self._df[self._df["ID"] == user_name]
     
     def analyse_data(self):
         self._results.analyse_data()
-
+        
     def get_results(self):
         return self._results._df
 
@@ -31,7 +32,8 @@ class Table:
         self._results.export_results()
 
     def create_graphs(self, path, lims):
-        self.create_graphs_for_eeg(path, lims)
+        pass
+        #self.create_graphs_for_eeg(path, lims)
 
     def create_graphs_for_eeg(self, path, lims):
         pass
@@ -50,4 +52,4 @@ class Table:
             self._df.rename(columns={"user_id": "ID"}, inplace=True)
         
 
-#enregion
+#endregion

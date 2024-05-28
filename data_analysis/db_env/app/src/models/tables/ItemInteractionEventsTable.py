@@ -1,3 +1,5 @@
+import statistics
+
 from models.tables.Table import *
 from enums.E_ItemType import ItemType
 from enums.E_ItemInteractionType import ItemInteractionType
@@ -35,7 +37,7 @@ class ItemInteractionEventsTable(Table):
         self._results = ResultsTable(["OI_NUM"] + \
                 ["OI_NUM_ACTOR_{0}".format(index) for index in range(len(ItemType))] + \
                     ["OI_NUM_TYPE_{0}".format(index.name) for index in ItemInteractionType] + \
-                    ["OI_TIME_INTER", "OI_TIME_CP"])
+                    ["OI_TIME_INTER", "OI_TIME_CP_SS", "OI_TIME_CP_GR"])
         
     # __init__    
 
@@ -57,8 +59,25 @@ class ItemInteractionEventsTable(Table):
             "OI_NUM": float(len(self._df)),
             "OI_NUM_GP_STEPS": 0.0,
             "OI_TIME_INTER": self._results.get_time_btw_datetimes(self._df["event_datetime"].to_list()),
-            "OI_TIME_CP": 0.0
+            "OI_TIME_CP_SS": 0.0,
+            "OI_TIME_CP_GR": 0.0,
         }
+
+        aux_results["OI_TIME_CP_SS"] = print(statistics.mean(
+            [self.get_time_btw_two_type_of_inter(
+                self._df[(self._df["hand"] == "Right") & (self._df["event_type"] == "start_detection")],
+                self._df[(self._df["hand"] == "Right") & (self._df["event_type"] == "stop_detection")]),
+            self.get_time_btw_two_type_of_inter(
+                self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "start_detection")],
+                self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "stop_detection")])]))
+
+        aux_results["OI_TIME_CP_GR"] = statistics.mean(
+            [self.get_time_btw_two_type_of_inter(
+                self._df[(self._df["hand"] == "Right") & (self._df["event_type"] == "grab")],
+                self._df[(self._df["hand"] == "Right") & (self._df["event_type"] == "release")]),
+            self.get_time_btw_two_type_of_inter(
+                self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "grab")],
+                self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "release")])]))
 
         for index in range(len(ItemType)):
             aux_results["OI_NUM_ACTOR_{0}".format(index)] = float(len(self._df[self._df["actor_id"] == index]))
@@ -102,6 +121,16 @@ class ItemInteractionEventsTable(Table):
     #endregion
         
     #region METODOS PRIVADOS
+
+    def get_time_btw_two_type_of_inter(self, first_inter_df, snd_inter_df):
+
+        time_btw = []
+        while not first_inter_df.empty:
+            time_btw.append(self._results.get_time_btw_datetimes([first_inter_df.iloc[0]["event_datetime"], snd_inter_df.iloc[0]["event_datetime"]]))
+            first_inter_df = first_inter_df.iloc[1:]
+            snd_inter_df = snd_inter_df.iloc[1:]
+
+        return statistics.mean(time_btw)
 
     #endregion
     

@@ -19,3 +19,4 @@ id,user_id,scenario_type,event_state,event_type,event_datetime
 17,"0","S1_BasicMechanics","Started","S1_InformToNPC","2024-3-14 14:53:28.60"
 18,"0","S1_BasicMechanics","Completed","S1_InformToNPC","2024-3-14 14:53:51.468"
 19,"0","S1_BasicMechanics","Started","S1_FinalConversation","2024-3-14 14:53:51.469"
+19,"0","S1_BasicMechanics","Started","Finish","2024-3-14 14:56:54.927"

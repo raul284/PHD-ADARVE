@@ -76,8 +76,8 @@ class User:
         return self._manager._data._tables._data[table_name]._df
     
     def get_results(self) -> pd.DataFrame:
-        pass
-        #return pd.concat([self._main_data_df, self._manager._results, self._manager._combined_results._results._df], axis=1)
+        #return self._manager._results
+        return pd.concat([self._main_data_df, self._manager._results, self._manager._combined_results._results._df], axis=1)
 
     def get_results_by_table_name(self, table_name) -> pd.DataFrame:
         return self._manager._results._tables._data[table_name]._results._df

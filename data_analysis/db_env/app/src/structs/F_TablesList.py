@@ -11,12 +11,12 @@ class TablesList:
         self._data = {}
         #self._data["form_marks"] = FormTable("form", sheet_names=["personal_data", "exam", "sus"])
         self._data["gameplay_events"] = GameplayEventsTable("gameplay")
-        #self._data["item_interaction_events"] = ItemInteractionEventsTable("item_interaction")
+        self._data["item_interaction_events"] = ItemInteractionEventsTable("item_interaction")
         self._data["npc_interaction_events"] = NPCInteractionEventsTable("npc_interaction")
-        #self._data["move_events"] = MoveEventsTable("move")
+        self._data["move_events"] = MoveEventsTable("move")
         #self._data["place_point_events"] = PlacePointEventsTable(PlacePointEvent)
         #self._data["tips_events"] = TipsEventsTable(tips_ingame_enabled=tips_ingame_enabled)
-        #self._data["user_input_events"] = UserInputEventsTable("user_inputs")
+        self._data["user_input_events"] = UserInputEventsTable("user_inputs")
 
     def get_data_from_table(self, table_name):
         return self._data[table_name]._df

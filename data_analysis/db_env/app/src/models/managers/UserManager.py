@@ -29,7 +29,7 @@ class UserManager:
         self._results = pd.DataFrame()
         
         self._tables = TablesList()
-        #self._combined_results = CombinedEventsTable()
+        self._combined_results = CombinedEventsTable()
 
     def set_data(self, tables) -> None:
         for table_name in tables:
@@ -39,14 +39,14 @@ class UserManager:
 
     def analyse_data(self) -> None:
         for table_name in self._tables._data:
-            if table_name is not "combined_events":
+            if table_name != "combined_events":
                 self._tables._data[table_name].analyse_data()
             else:
                 self._tables._data[table_name].analyse_data(self._tables)
 
             self._results = pd.concat([self._results, self._tables._data[table_name].get_results()], axis=1) 
 
-        #self._combined_results.analyse_data(self._tables)
+        self._combined_results.analyse_data(self._tables)
          
 
     def export_results(self) -> None:

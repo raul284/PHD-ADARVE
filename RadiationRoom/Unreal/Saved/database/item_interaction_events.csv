@@ -59,3 +59,7 @@ id,user_id,scenario_type,actor_id,actor_name,event_type,hand,event_datetime
 57,"9999","Develop","5","BP_WalkieTalkie","release","Left","2024-5-8 13:9:44.835"
 58,"9999","Develop","5","BP_WalkieTalkie","start_detection","Left","2024-5-8 13:9:45.49"
 59,"9999","Develop","5","BP_WalkieTalkie","stop_detection","Left","2024-5-8 13:9:45.93"
+60,"9999","Develop","5","BP_WalkieTalkie","start_detection","Left","2024-6-19 16:39:34.618"
+61,"9999","Develop","5","BP_WalkieTalkie","grab","Left","2024-6-19 16:39:35.63"
+62,"9999","Develop","5","BP_WalkieTalkie","stop_detection","Left","2024-6-19 16:39:35.63"
+63,"9999","Develop","5","BP_WalkieTalkie","release","Left","2024-6-19 16:39:36.614"

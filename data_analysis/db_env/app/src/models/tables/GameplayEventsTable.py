@@ -58,6 +58,9 @@ class GameplayEventsTable(Table):
     def analyse_data(self) -> None:
 
         super().analyse_data()
+        print(self._df[self._df["event_type"] == "Start"])
+        print(self._df[self._df["event_type"] == "Finish"])
+
         self._start_time = self._df[self._df["event_type"] == "Start"]["event_datetime"].to_list()[0]
         self._end_time = self._df[self._df["event_type"] == "Finish"]["event_datetime"].to_list()[0]
         #self._end_time = self.string_to_datetime("2024-3-14 14:56:54.927")

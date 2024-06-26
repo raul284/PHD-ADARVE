@@ -29,7 +29,7 @@ class UserManager:
         self._results = pd.DataFrame()
         
         self._tables = TablesList()
-        #self._combined_results = CombinedEventsTable()
+        self._combined_results = CombinedEventsTable()
 
     def set_data(self, tables) -> None:
         for table_name in tables:

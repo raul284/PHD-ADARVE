@@ -32,6 +32,7 @@ class User:
 
     def __init__(self, id:int = 0, user_name:str = "", user_group:str = "", event_datetime:str = ""):
         self._id = id
+
         self._user_name = user_name
         self._group = user_group
         self._created = datetime.strptime(event_datetime, '%Y-%m-%d %H:%M:%S.%f')

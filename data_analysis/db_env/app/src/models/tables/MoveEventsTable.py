@@ -20,12 +20,13 @@ class MoveEventsTable(Table):
     def read_data_from_csv(self, filename: str) -> None:
         super().read_data_from_csv(filename)        
         
+        self._df = self._df.drop(self._df[self._df["start_datetime"] == "1-1-1 0:0:0.0"].index)
+
         self._df["start_datetime"] = pd.to_datetime(self._df["start_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
         self._df["end_datetime"] = pd.to_datetime(self._df["end_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
         
     def analyse_data(self) -> None:
         super().analyse_data()
-
 
         aux_results = {
             "MV_NUM_VR": float(len(self._df[self._df["move_type"] == "virtual_reality"])),

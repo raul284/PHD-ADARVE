@@ -41,15 +41,6 @@
 			]
 		},
 		{
-			"Name": "SteamVR",
-			"Enabled": false,
-			"SupportedTargetPlatforms": [
-				"Win32",
-				"Win64",
-				"Linux"
-			]
-		},
-		{
 			"Name": "ChaosVehiclesPlugin",
 			"Enabled": true
 		},
@@ -79,9 +70,13 @@
 			"Enabled": true
 		},
 		{
-			"Name": "LabStreamingLayer",
+			"Name": "OpenXRViveTracker",
 			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/e204576bd4de4bfdaad28c06133def5c"
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Linux",
+				"Android"
+			]
 		}
 	]
 }

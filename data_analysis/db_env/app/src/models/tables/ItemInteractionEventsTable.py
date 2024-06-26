@@ -77,7 +77,7 @@ class ItemInteractionEventsTable(Table):
                 self._df[(self._df["hand"] == "Right") & (self._df["event_type"] == "release")]),
             self.get_time_btw_two_type_of_inter(
                 self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "grab")],
-                self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "release")])]))
+                self._df[(self._df["hand"] == "Left") & (self._df["event_type"] == "release")])])
 
         for index in range(len(ItemType)):
             aux_results["OI_NUM_ACTOR_{0}".format(index)] = float(len(self._df[self._df["actor_id"] == index]))

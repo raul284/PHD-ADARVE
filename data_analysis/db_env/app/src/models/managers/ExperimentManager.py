@@ -45,8 +45,9 @@ class ExperimentManager:
 
     def set_data(self) -> None:
 
-        user_scenarios_id_df = pd.read_csv("../data/users_id.csv")
+        user_scenarios_id_df = pd.read_excel("../data/users_id.xlsx")
         print(user_scenarios_id_df)
+        # Puedo intentar jugar con los IDs manteniendo la info en el user. Es decir, el usuario AA realmente es ID = 0, pero tiene varias
 
         users_df = pd.read_csv("../data/users.csv")
 

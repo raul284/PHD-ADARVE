@@ -15,7 +15,7 @@ class Table:
         self._table_name = table_name.upper()
 
     def read_data_from_csv(self, filename: str) -> None:
-        self._df = pd.read_csv("../data/{0}.csv".format(filename))
+        self._df = pd.read_csv("../data/events/{0}.csv".format(filename))
         self._df['user_id'] = self._df['user_id'].astype("string")
         self.clean_initial_dataframe()
 

@@ -45,7 +45,13 @@ class ExperimentManager:
 
     def set_data(self) -> None:
 
+        user_scenarios_id_df = pd.read_csv("../data/users_id.csv")
+        print(user_scenarios_id_df)
+
         users_df = pd.read_csv("../data/users.csv")
+
+
+
         self._users = [User(*users_df.iloc[index].to_list()) for index in users_df.index]
 
         self._global = Group(self._users)

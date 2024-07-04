@@ -49,3 +49,4 @@ id,user_id,scenario_type,actor_id,conversation_index,event_type,event_datetime
 47,"9999","Develop","0","0","stop_talk_with_npc","2024-6-26 10:30:25.787"
 48,"9999","Develop","0","0","start_talk_with_npc","2024-6-26 10:37:46.772"
 49,"9999","Develop","0","0","stop_talk_with_npc","2024-6-26 10:37:49.412"
+50,"9999","S2_BasicEmergency","3","0","start_talk_with_npc","2024-7-4 10:44:52.506"

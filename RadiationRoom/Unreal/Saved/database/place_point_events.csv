@@ -1,3 +1,9 @@
 id,user_id,scenario_type,actor_id,actor_name,place_point_name,event_type,event_datetime
 0,"0","T1_BasicMechanics","2","BP_TrafficCone7","place_correct","2024-9-5 17:1:55.793"
 1,"0","T1_BasicMechanics","3","BP_Dosimeter_SABG103","place_correct","2024-9-5 17:2:3.690"
+2,"8","T1_BasicMechanics","2","BP_TrafficCone7","place_correct","2024-9-10 12:11:3.362"
+3,"8","T1_BasicMechanics","3","BP_Dosimeter_SABG103","place_correct","2024-9-10 12:11:16.432"
+4,"9999","T1_BasicMechanics","2","BP_TrafficCone7","place_correct","2024-9-10 12:39:32.835"
+5,"9999","T1_BasicMechanics","2","BP_TrafficCone7","place_correct","2024-9-10 12:46:37.775"
+6,"9999","T1_BasicMechanics","3","BP_Dosimeter_SABG103","place_correct","2024-9-10 14:4:24.662"
+7,"9999","T1_BasicMechanics","2","BP_TrafficCone7","place_correct","2024-9-10 14:4:31.327"

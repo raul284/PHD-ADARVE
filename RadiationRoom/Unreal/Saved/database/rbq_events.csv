@@ -1,1 +1,5 @@
 id,user_id,scenario_type,actor_id,num_of_actors,event_datetime
+0,"11","T1_BasicMechanics","[2;]","[3;]","2024-9-12 15:56:28.822"
+1,"11","T1_BasicMechanics","[3;]","[1;]","2024-9-12 15:56:33.816"
+2,"9999","T1_BasicMechanics","[2;3;]","[2;1;]","2024-9-12 17:13:29.735"
+3,"9999","T1_BasicMechanics","[2;3;]","[2;1;]","2024-9-12 17:15:9.549"

@@ -1,1 +1,4 @@
 id,user_id,scenario_type,conversation_type,question_index,answer_index,event_datetime
+0,"9999","T1_BasicMechanics","Initial","0","0","2024-9-12 17:15:51.914"
+1,"9999","T1_BasicMechanics","Initial","1","1","2024-9-12 17:15:59.108"
+2,"9999","T1_BasicMechanics","Initial","2","1","2024-9-12 17:16:7.902"

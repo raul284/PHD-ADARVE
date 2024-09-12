@@ -12,3 +12,7 @@ id,user_id,scenario_type,actor_id,actor_name,dose_rate,dose_absortion,event_date
 10,"0","Default","10","BP_RadiactiveCase","421.8","0.001953","2024-9-10 15:13:21.144"
 11,"0","Default","2","BP_SmallRadiactiveItem","421.8","0.001953","2024-9-10 15:15:37.540"
 12,"0","Default","10","BP_RadiactiveCase","421.8","0.001953","2024-9-10 15:15:37.540"
+13,"9999","T1_BasicMechanics","2","BP_PickableItem2","1026.978389","24.344431","2024-9-12 17:16:31.860"
+14,"9999","T1_BasicMechanics","11","BP_RadiationEmissionPoint","28860.000595","888.447227","2024-9-12 17:16:32.706"
+15,"9999","T1_BasicMechanics","2","BP_PickableItem","155.677506","12.389675","2024-9-12 17:16:33.472"
+16,"9999","T1_BasicMechanics","2","BP_PickableItem","147.700475","12.39023","2024-9-12 17:16:33.484"

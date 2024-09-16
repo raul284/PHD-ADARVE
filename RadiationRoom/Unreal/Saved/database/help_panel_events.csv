@@ -1,1 +1,9 @@
 id,user_id,scenario_type,event_type,tutorial_item_id,event_datetime
+0,"85","T2_BasicEmergency","Open","None","2024-9-16 14:37:1.712"
+1,"85","T2_BasicEmergency","Close","None","2024-9-16 14:37:4.797"
+2,"85","T2_BasicEmergency","Open","None","2024-9-16 14:37:5.217"
+3,"85","T2_BasicEmergency","Close","None","2024-9-16 14:37:7.327"
+4,"85","T2_BasicEmergency","Open","None","2024-9-16 14:37:7.803"
+5,"88","T2_BasicEmergency","Open","None","2024-9-16 14:42:6.770"
+6,"88","T2_BasicEmergency","Close","None","2024-9-16 14:42:15.500"
+7,"88","T2_BasicEmergency","Open","None","2024-9-16 14:42:16.335"

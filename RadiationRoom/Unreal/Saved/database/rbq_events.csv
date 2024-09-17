@@ -16,3 +16,4 @@ id,user_id,scenario_type,actor_id,num_of_actors,event_datetime
 14,"76","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-16 13:4:43.199"
 15,"77","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-16 13:6:6.202"
 16,"78","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-16 13:10:29.427"
+17,"107","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-17 16:19:45.824"

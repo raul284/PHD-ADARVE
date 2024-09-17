@@ -4,3 +4,4 @@ id,user_id,scenario_type,conversation_type,question_index,answer_index,event_dat
 2,"9999","T1_BasicMechanics","Initial","2","1","2024-9-12 17:16:7.902"
 3,"68","T2_BasicEmergency","Initial","0","0","2024-9-16 11:46:39.29"
 4,"78","T2_BasicEmergency","Initial","0","0","2024-9-16 13:10:58.995"
+5,"107","T2_BasicEmergency","Initial","0","0","2024-9-17 16:20:27.755"

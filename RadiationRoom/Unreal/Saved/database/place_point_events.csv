@@ -35,3 +35,5 @@ id,user_id,scenario_type,actor_id,actor_name,place_point_name,event_type,event_d
 33,"62","S1_BasicMechanics","4","Dosimeter_EPD_1","place_correct","2024-9-16 9:51:11.544"
 34,"62","S1_BasicMechanics","3","Dosimeter_SABG100_2","place_correct","2024-9-16 9:51:32.239"
 35,"62","S1_BasicMechanics","4","Dosimeter_EPD_3","place_correct","2024-9-16 9:51:33.992"
+36,"119","S2_BasicEmergency","2","BP_TrafficCone_C_0","place_correct","2024-9-18 11:31:51.871"
+37,"119","S2_BasicEmergency","2","BP_TrafficCone_C_1","place_correct","2024-9-18 11:31:55.68"

@@ -1,4 +1,1 @@
 id,user_id,scenario_type,actor_id,num_of_actors,event_datetime
-0,"0","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-18 14:46:58.862"
-1,"1","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-18 15:4:34.743"
-2,"4","T2_BasicEmergency","[2;3;]","[2;1;]","2024-9-18 15:29:5.167"

@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <filesystem>
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
@@ -55,6 +56,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, category = "LocalFileDatabaseActor")
 	void Init();
+
+	UFUNCTION(BlueprintCallable, category = "LocalFileDatabaseActor")
+	void CreateNewDirectoryAndSetPath(FString path, FString directoryName);
 
 	UFUNCTION(BlueprintCallable, category = "LocalFileDatabaseActor")
 	void SetPath(FString path);

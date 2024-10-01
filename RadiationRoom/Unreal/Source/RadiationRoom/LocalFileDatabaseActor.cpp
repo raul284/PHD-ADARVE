@@ -147,6 +147,14 @@ void ALocalFileDatabaseActor::Init()
 	_querys = TMap<FString, TArray<FString>>();
 }
 
+void ALocalFileDatabaseActor::CreateNewDirectoryAndSetPath(FString path, FString directoryName)
+{
+	filesystem::create_directory(FStringToString(path));
+	string auxPath = FStringToString(path) + "/" + FStringToString(directoryName);
+	filesystem::create_directory(auxPath);
+	SetPath(StringToFString(auxPath));
+}
+
 void ALocalFileDatabaseActor::CreateTable(FString tableName, TArray<FString> header)
 {
 	if (!TableExists(tableName)) {
@@ -171,7 +179,7 @@ void ALocalFileDatabaseActor::CreateTable(FString tableName, TArray<FString> hea
 }
 
 
-void ALocalFileDatabaseActor::ReadTable(FString tableName, bool hasHeader,
+void ALocalFileDatabaseActor::ReadTable(FString tableName, bool hasHeader, 
 	FString& header, TArray<FString>& data)
 {
 	fstream file;

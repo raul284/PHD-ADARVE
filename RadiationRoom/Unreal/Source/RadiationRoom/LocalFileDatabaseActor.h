@@ -82,7 +82,7 @@ public:
 	UFUNCTION(BlueprintCallable, category = "LocalFileDatabaseActor")
 	void InsertUserToTable(FString userName, FString data);
 
-	UFUNCTION(BlueprintCallable, category = "LocalFileDatabaseActor")
+	UFUNCTION(BlueprintCallable, BlueprintPure, category = "LocalFileDatabaseActor")
 	bool AreThereQuerysToInsert();
 
 	UFUNCTION(BlueprintCallable, category = "LocalFileDatabaseActor")

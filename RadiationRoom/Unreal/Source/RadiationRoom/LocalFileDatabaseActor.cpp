@@ -250,9 +250,9 @@ void ALocalFileDatabaseActor::InsertQuerysToTable() {
 
 void ALocalFileDatabaseActor::InsertUserToTable(FString userName, FString data)
 {
-	pair<bool, int> exist_user_info = UserExistsInDatabase(userName);
+	//pair<bool, int> exist_user_info = UserExistsInDatabase(userName);
 
-	string newUserName = FStringToString(userName) + "_" + to_string(exist_user_info.second);
+	//string newUserName = FStringToString(userName) + "_" + to_string(exist_user_info.second);
 	FQueryData queryData = GetDataFromQuery(data);
 
 	fstream file;
@@ -265,7 +265,8 @@ void ALocalFileDatabaseActor::InsertUserToTable(FString userName, FString data)
 		FString right;
 		queryData.query.Split(TEXT(","), &left, &right);
 
-		FString newQuery = FString::FromInt(lastEventId) + "," + '"' + StringToFString(newUserName) + '"' + "," + right;
+		FString newQuery = FString::FromInt(lastEventId) + "," + '"' + userName + '"' + "," + right;
+		//FString newQuery = FString::FromInt(lastEventId) + "," + '"' + StringToFString(newUserName) + '"' + "," + right;
 		//UE_LOG(LogTemp, Warning, TEXT("InsertUser9q867: %s"), *newQuery);
 
 		file << '\n';

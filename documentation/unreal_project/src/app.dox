@@ -1,0 +1,13 @@
+/**
+ * \mainpage Radiation Room
+ * \author Alejandro Villar <avillarrubio@ucm.es>
+ * 
+ * Aplicación de realidad virtual para el aprendizaje de profesionales para emergencias radiológicas usando tutorización interactiva.
+ */
+
+/**
+ * \defgroup player Player
+ * @{
+ * Este es el grupo para los Players.
+ * @}
+ */

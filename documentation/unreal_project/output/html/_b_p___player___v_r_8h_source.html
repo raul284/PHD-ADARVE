@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Radiation Room: src/Player/BP_Player_VR.h Source File</title>
+<title>Radiation Room: unreal_project/src/Blueprints/Player/BP_Player_VR.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -100,29 +106,36 @@ $(function(){initNavTree('_b_p___player___v_r_8h_source.html',''); initResizable
   <div class="headertitle"><div class="title">BP_Player_VR.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;BP_Player.h&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_b_p___player___v_r.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_b_p___player___v_r.html">BP_Player_VR</a>: <span class="keyword">public</span> <a class="code hl_class" href="class_b_p___player.html">BP_Player</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">/* data */</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="class_b_p___player___v_r.html">BP_Player_VR</a>(<span class="comment">/* args */</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_b_p___player___v_r.html#acc67e7683063f1311225b07f831ac75a">   23</a></span>    <a class="code hl_function" href="class_b_p___player___v_r.html#acc67e7683063f1311225b07f831ac75a">~BP_Player_VR</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef BP_PLAYER_VR_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define BP_PLAYER_VR_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;BP_Player.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_b_p___player___v_r.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_b_p___player___v_r.html">BP_Player_VR</a>: <span class="keyword">public</span> <a class="code hl_class" href="class_b_p___player.html">BP_Player</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">/* data */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="class_b_p___player___v_r.html">BP_Player_VR</a>(<span class="comment">/* args */</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_b_p___player___v_r.html#acc67e7683063f1311225b07f831ac75a">   31</a></span>    <a class="code hl_function" href="class_b_p___player___v_r.html#acc67e7683063f1311225b07f831ac75a">~BP_Player_VR</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 </div>
-<div class="ttc" id="aclass_b_p___player___v_r_html"><div class="ttname"><a href="class_b_p___player___v_r.html">BP_Player_VR</a></div><div class="ttdef"><b>Definition</b> BP_Player_VR.h:8</div></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">/* BP_PLAYER_VR_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclass_b_p___player___v_r_html"><div class="ttname"><a href="class_b_p___player___v_r.html">BP_Player_VR</a></div><div class="ttdef"><b>Definition</b> BP_Player_VR.h:16</div></div>
 <div class="ttc" id="aclass_b_p___player___v_r_html_acc67e7683063f1311225b07f831ac75a"><div class="ttname"><a href="class_b_p___player___v_r.html#acc67e7683063f1311225b07f831ac75a">BP_Player_VR::~BP_Player_VR</a></div><div class="ttdeci">~BP_Player_VR()</div><div class="ttdoc">Destroy the bp player vr object.</div></div>
-<div class="ttc" id="aclass_b_p___player_html"><div class="ttname"><a href="class_b_p___player.html">BP_Player</a></div><div class="ttdef"><b>Definition</b> BP_Player.h:21</div></div>
+<div class="ttc" id="aclass_b_p___player_html"><div class="ttname"><a href="class_b_p___player.html">BP_Player</a></div><div class="ttdef"><b>Definition</b> BP_Player.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4998621c1c5dc7c07a022c0c5b821bc6.html">Player</a></li><li class="navelem"><b>BP_Player_VR.h</b></li>
+    <li class="navelem"><a class="el" href="dir_01716572fda1fc9a5f2738ec548af9c2.html">unreal_project</a></li><li class="navelem"><a class="el" href="dir_1b9cc7cb288cad8710bb1a973350f785.html">src</a></li><li class="navelem"><a class="el" href="dir_b427df0b6d89f842fbac9946156e1c25.html">Blueprints</a></li><li class="navelem"><a class="el" href="dir_6e81cfe386e717f33f85177fa0d72a1f.html">Player</a></li><li class="navelem"><b>BP_Player_VR.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>

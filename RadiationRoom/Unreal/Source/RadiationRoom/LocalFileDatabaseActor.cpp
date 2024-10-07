@@ -231,7 +231,7 @@ void ALocalFileDatabaseActor::InsertQuerysToTable() {
 			for (FString query : queryBlock.Value)
 			{
 				FString newQuery = FString::FromInt(lastEventId)+ "," + query;
-				//UE_LOG(LogTemp, Warning, TEXT("InsertQuerysToTable: %s -- %s"), *queryBlock.Key, *newQuery);
+				UE_LOG(LogTemp, Warning, TEXT("InsertQuerysToTable: %s -- %s"), *queryBlock.Key, *newQuery);
 
 				file << '\n';
 				file << FStringToString(newQuery);
@@ -267,7 +267,9 @@ void ALocalFileDatabaseActor::InsertUserToTable(FString userName, FString data)
 
 		FString newQuery = FString::FromInt(lastEventId) + "," + '"' + userName + '"' + "," + right;
 		//FString newQuery = FString::FromInt(lastEventId) + "," + '"' + StringToFString(newUserName) + '"' + "," + right;
-		//UE_LOG(LogTemp, Warning, TEXT("InsertUser9q867: %s"), *newQuery);
+
+		// Hipótesis 10 del doctorado: Si quito este "print" no se envían las cosas a la base de datos.
+		UE_LOG(LogTemp, Warning, TEXT("InsertUser: %s"), *newQuery);
 
 		file << '\n';
 		file << FStringToString(newQuery);

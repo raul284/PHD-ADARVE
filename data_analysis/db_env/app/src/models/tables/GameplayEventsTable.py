@@ -33,85 +33,46 @@ class GameplayEventsTable(Table):
     
     #region METODOS PUBLICOS
 
-    def __init__(self, table_name:str="") -> None:
+    def __init__(self, user_data) -> None:
 
-        super().__init__(table_name=table_name)
-
-        self._results = ResultsTable([
-            "TD", 
-            "GP_NUM", 
-            "GP_NUM_START", 
-            "GP_TIME",
-            "GP_TIME_START_TO_END"])
+        super().__init__(user_data=user_data, table_name="gameplay")
 
     # __init__
 
+    def set_data(self) -> None:
+        super().set_data()
 
-    def read_data_from_csv(self, filename: str) -> None:
-
-        super().read_data_from_csv(filename)
+    def read_data_from_csv(self) -> None:
+        super().read_data_from_csv()
         self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
 
     # read_data_from_csv
 
 
     def analyse_data(self) -> None:
-
         super().analyse_data()
-
-        self._start_time = self._df[self._df["event_type"] == "Start"]["event_datetime"].to_list()[0]
-        self._end_time = self._df[self._df["event_type"].str.contains("FinalConversation")]["event_datetime"].to_list()[0]
-        #self._end_time = self.string_to_datetime("2024-3-14 14:56:54.927")
-
-        aux_results = {
-            "TD": self.get_total_duration(),
-            "GP_NUM": float(len(self._df[self._df["event_state"] == "Completed"])),
-            "GP_NUM_START": float(len(self._df[self._df["event_state"] == "Started"])), 
-            "GP_TIME": self._results.get_time_btw_datetimes(self._df[self._df["event_state"] == "Completed"]["event_datetime"].to_list()),
-            "GP_TIME_START_TO_END": self.get_time_to_complete_steps()
-        }
-
-        self._results.insert_row(aux_results)
     
     # analyse_data
+
+    def analyse_df(self, df) -> dict:
+        start_time = df[df["event_type"] == "00001"].iloc[0]["event_datetime"]
+        end_time = df[df["event_type"] == "00002"].iloc[-1]["event_datetime"]
+
+        df = df[((df["event_type"] != "00001") & (df["event_type"] != "00002"))]
+
+        return {
+            "TD": round(end_time.timestamp() - start_time.timestamp(), 2),
+            "GP_NUM": float(len(df[df["event_state"] == "Completed"])),
+            "GP_TIME": self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list()),
+            "GP_TIME_STARTED_TO_COMPLETED": self.get_time_to_complete_steps()
+        }
         
-    def create_graphs(self, path, lims):
-        super().create_graphs(path, lims)
-
-    def create_graphs_for_eeg(self, path, lims):
-        super().create_graphs_for_eeg(path, lims) 
-
-        aux_df = self._df[(self._df["event_type"] != "Start") & (self._df["event_type"] != "Finish")][["event_state", "event_type", "event_datetime"]]
-
-        fig, axs = plt.subplots(len(aux_df[aux_df["event_state"] == "Started"]), 1, figsize=(14, 6), layout='tight', sharex=True)
-
-        axis_index = 0
-        for event in aux_df[aux_df["event_state"] == "Started"]["event_type"]:
-            aux_df[(aux_df["event_type"] == event) & (aux_df["event_state"] == "Started")].plot.scatter(x='event_datetime', y="event_type", c="blue", ax=axs[axis_index])
-            aux_df[(aux_df["event_type"] == event) & (aux_df["event_state"] == "Completed")].plot.scatter(x='event_datetime', y="event_type", c="red", ax= axs[axis_index])
-            
-            axs[axis_index].set_xlim(left=lims[0], right=lims[1])
-            axs[axis_index].set_ylabel("")
-
-            axis_index += 1
-
-        plt.xlabel("Time")
-
-        plt.savefig("{0}gameplay_eeg".format(path))
+    def create_graphs(self):
+        pass
 
     #endregion
         
-    #region METODOS PRIVADOS
-
-    def get_total_duration(self) -> float:
-
-        start = self._df[self._df["event_type"] == "Start"]["event_datetime"].to_list()[0].timestamp()
-        #end = self._df[self._df["event_type"] == "Finish"]["event_datetime"].to_list()[0].timestamp()
-        end = start + 600
-        return round(self._end_time.timestamp() - self._start_time.timestamp(), 2)
-    
-    # get_total_duration
-    
+    #region METODOS PRIVADOS    
 
     def get_time_to_complete_steps(self) -> list:
         

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from structs.F_TablesList import TablesList
+from models.UserTables import UserTables
 
 class GroupManager:
     '''
@@ -13,7 +13,7 @@ class GroupManager:
 
     _users: list
 
-    _tables: TablesList
+    _tables: UserTables
 
     _data: pd.DataFrame
     _results: pd.DataFrame
@@ -25,7 +25,7 @@ class GroupManager:
 
     def __init__(self, users) -> None:
         self._users = users
-        self._tables = TablesList()
+        self._tables = UserTables()
         self._data = pd.DataFrame()
         self._results = pd.DataFrame()
 

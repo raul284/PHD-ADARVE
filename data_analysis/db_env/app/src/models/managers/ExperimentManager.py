@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 from models.User import User
 from models.Group import Group
@@ -21,9 +22,7 @@ class ExperimentManager:
 
 #region VARIABLES GLOBALES
 
-    _users: list
-
-    _global: Group
+    _users: dict
 
     _form: Form
 
@@ -37,36 +36,17 @@ class ExperimentManager:
         # Recoge la información de los cuestionarios almacenados en CSVs
         #form_manager = FormManager()
         #form_manager.form_to_dataframe()
-        self._users = []
+        self._users = {}
         self._form = Form()
 
     # __init__
         
 
     def set_data(self) -> None:
+        self._users = self.get_users_dict()
 
-        user_scenarios_id_df = pd.read_excel("../data/users_id.xlsx")
-        print(user_scenarios_id_df)
-        # Puedo intentar jugar con los IDs manteniendo la info en el user. Es decir, el usuario AA realmente es ID = 0, pero tiene varias
-
-        users_df = pd.read_csv("../data/users.csv")
-
-
-
-        self._users = [User(*users_df.iloc[index].to_list()) for index in users_df.index]
-
-        self._global = Group(self._users)
-        self._global.set_data()
-
-        #print(self._global._manager._tables._data["gameplay_events"]._df)
-
-        for user in self._users:
-            aux_dict = {}
-            for key in self._global.get_data():
-                
-                aux_dict[key] = self._global._manager.get_table_data_by_user(key, user._user_name)
-
-            user.set_data(aux_dict)
+        for id in self._users:
+            self._users[id].set_data()
 
     # set_data
 
@@ -74,10 +54,8 @@ class ExperimentManager:
     def analyse_data(self) -> None:
         '''Itera sobre los usuario para asignar sus resultados'''
 
-        for user in self._users:
-            user.analyse_data()
-
-        self._global.analyse_data()
+        for id in self._users:
+            self._users[id].analyse_data()
 
     # analyse_data
 
@@ -85,15 +63,42 @@ class ExperimentManager:
     def export_results(self) -> None:
         '''Exporta los resultados de los usuarios y posteriormente los datos globales del experimento'''
 
-        self._global.export_results()
+        if not os.path.exists("../results/csv"):
+            os.makedirs("../results/csv")
+        if not os.path.exists("../results/excel"):
+            os.makedirs("../results/excel")
 
-        for user in self._users:
-            user.export_results()
+        results = {}
+
+        for id in self._users:
+            user_results = self._users[id].get_results()
+            for table in user_results:
+                if table not in results:
+                    results[table] = pd.DataFrame()
+                results[table] = pd.concat([results[table], user_results[table]], ignore_index=True)
+        
+        for table in results:
+            results[table].to_csv("../results/csv/{0}.csv".format(table))
+            results[table].to_excel("../results/excel/{0}.xlsx".format(table))
 
     # export_results
 
-    def create_graphs(self) -> None:
-        for user in self._users:
-            user.create_graphs()
+    def get_users_dict(self) -> dict:
+        users_dict = {}
+
+        for dirpath, dirnames, filenames in os.walk("../data/"):
+            for filename in [f for f in filenames if f == "users.csv"]:
+                df = pd.read_csv(os.path.join(dirpath, filename))
+                user_id = df.loc[0]["user_id"]
+
+                if user_id not in users_dict:
+                    users_dict[user_id] = User(
+                        id = user_id,
+                        group = df.loc[0]["user_group"],
+                        hmd = df.loc[0]["hmd_type"],
+                        event_datetime = df.loc[0]["event_datetime"])
+        
+        
+        return users_dict
 
 #endregion

@@ -1,8 +1,7 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
 from models.tables import *
-from structs.F_TablesList import TablesList
+from models.UserTables import TablesList
 
 class UserManager:
     '''

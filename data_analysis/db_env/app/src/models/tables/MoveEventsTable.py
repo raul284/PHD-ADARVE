@@ -8,9 +8,9 @@ class MoveEventsTable(Table):
 
     #region METODOS PUBLICOS
 
-    def __init__(self, table_name:str="") -> None:
+    def __init__(self, user_data) -> None:
 
-        super().__init__(table_name=table_name)
+        super().__init__(user_data=user_data, table_name="move")
 
         self._results = ResultsTable(["MV_NUM_VR", "MV_NUM_RL",
                                       "MV_TIME_VR", "MV_TIME_RL", 
@@ -27,16 +27,15 @@ class MoveEventsTable(Table):
     def analyse_data(self) -> None:
         super().analyse_data()
 
-        aux_results = {
-            "MV_NUM_VR": float(len(self._df[self._df["move_type"] == "virtual_reality"])),
-            "MV_NUM_RL": float(len(self._df[self._df["move_type"] == "real_life"])), 
-            "MV_TIME_VR": 0.0,
-            "MV_TIME_RL": 0.0,
-            "MV_DIST_VR": round(sum([float(dist) for dist in self._df[self._df["move_type"] == "virtual_reality"]["distance"].to_list()]), 2), 
-            "MV_DIST_RL": round(sum([float(dist) for dist in self._df[self._df["move_type"] == "real_life"]["distance"].to_list()]), 2),
-        }
+    def analyse_df(self, df) -> dict:
+        super().analyse_df(df)
 
-        self._results.insert_row(aux_results)
+        return {
+            "MV_NUM_VR": float(len(df[df["move_type"] == "virtual_reality"])),
+            "MV_NUM_RL": float(len(df[df["move_type"] == "real_life"])), 
+            "MV_DIST_VR": round(sum([float(dist) for dist in df[df["move_type"] == "virtual_reality"]["distance"].to_list()]), 2), 
+            "MV_DIST_RL": round(sum([float(dist) for dist in df[df["move_type"] == "real_life"]["distance"].to_list()]), 2),
+        }
     
     def create_graphs(self):
         pass  
@@ -47,10 +46,6 @@ class MoveEventsTable(Table):
         
     def clean_initial_dataframe(self):
         super().clean_initial_dataframe()
-
         self._df = self._df[self._df["distance"] < 10.0]
-        self._df = self._df[self._df["scenario_type"] != "MainMenu"]
-        self._df = self._df[self._df["scenario_type"] != "LoadingScreen"]
-        self._df = self._df[self._df["scenario_type"] != "PlayerScore"]
         
     #endregion

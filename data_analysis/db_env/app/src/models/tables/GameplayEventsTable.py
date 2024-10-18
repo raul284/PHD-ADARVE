@@ -26,9 +26,6 @@ class GameplayEventsTable(Table):
 
     #region VARIABLES PUBLICAS
 
-    _start_time: datetime
-    _end_time: datetime
-
     #endregion
     
     #region METODOS PUBLICOS
@@ -55,6 +52,8 @@ class GameplayEventsTable(Table):
     # analyse_data
 
     def analyse_df(self, df) -> dict:
+        super().analyse_df(df)
+
         start_time = df[df["event_type"] == "00001"].iloc[0]["event_datetime"]
         end_time = df[df["event_type"] == "00002"].iloc[-1]["event_datetime"]
 
@@ -64,7 +63,7 @@ class GameplayEventsTable(Table):
             "TD": round(end_time.timestamp() - start_time.timestamp(), 2),
             "GP_NUM": float(len(df[df["event_state"] == "Completed"])),
             "GP_TIME": self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list()),
-            "GP_TIME_STARTED_TO_COMPLETED": self.get_time_to_complete_steps()
+            "GP_TIME_STARTED_TO_COMPLETED": self.get_time_to_complete_steps(df)
         }
         
     def create_graphs(self):
@@ -74,14 +73,14 @@ class GameplayEventsTable(Table):
         
     #region METODOS PRIVADOS    
 
-    def get_time_to_complete_steps(self) -> list:
+    def get_time_to_complete_steps(self, df) -> list:
         
         times_to_complete = []
 
-        completed_df = self._df[self._df["event_state"] == "Completed"]
+        completed_df = df[df["event_state"] == "Completed"]
         for row in completed_df.iterrows():
             aux_row = row[1]
-            started_df = self._df[(self._df["event_state"] == "Started") & (self._df["event_type"] == aux_row["event_type"])]
+            started_df = df[(df["event_state"] == "Started") & (df["event_type"] == aux_row["event_type"])]
             if len(started_df):
                 start = started_df.iloc[0]["event_datetime"].timestamp()
                 end = aux_row["event_datetime"].timestamp()

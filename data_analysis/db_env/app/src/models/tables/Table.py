@@ -49,7 +49,7 @@ class Table:
         self._results = pd.DataFrame.from_records(list(results.values()))
 
     def analyse_df(self, df) -> dict:
-        pass
+        assert len(df) > 0, "El DF de la tabla <<{}>> está vacío".format(self._table_name)
         
     def get_results(self):
         return self._results

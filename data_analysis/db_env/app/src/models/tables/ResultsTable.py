@@ -29,18 +29,6 @@ class ResultsTable():
     def insert_row(self, data):
         self._df.loc[len(self._df)] = data
 
-    def get_time_btw_datetimes(self, datetimes_list) -> float:
-        # Iniciamos una lista vacia donde se irá almacenando el tiempo entre interacciones.
-        times_btw = []
-        # Por cada uno de los eventos de la lista
-        for index in range(len(datetimes_list) - 1):
-            # Se resta el tiempo del evento siguiente y del actual
-            rest = int(datetimes_list[index + 1].timestamp()) - int(datetimes_list[index].timestamp())
-            # El resto se almacena en la lista
-            times_btw.append(rest)
-
-        # Se calcula la media de la lista
-        return round(statistics.mean(times_btw), 2)
 
 
 #endregion

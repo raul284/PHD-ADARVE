@@ -96,7 +96,7 @@ class ItemInteractionEventsTable(Table):
 
         time_btw = []
         while not first_inter_df.empty and not snd_inter_df.empty:
-            time_btw.append(self._results.get_time_btw_datetimes([first_inter_df.iloc[0]["event_datetime"], snd_inter_df.iloc[0]["event_datetime"]]))
+            time_btw.append(self.get_time_btw_datetimes([first_inter_df.iloc[0]["event_datetime"], snd_inter_df.iloc[0]["event_datetime"]]))
             first_inter_df = first_inter_df.iloc[1:]
             snd_inter_df = snd_inter_df.iloc[1:]
 

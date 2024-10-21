@@ -23,7 +23,7 @@ class Table:
         self._df = pd.DataFrame()
         self._scenarios = {}
 
-        self._results = pd.DataFrame
+        self._results = pd.DataFrame()
 
     def set_data(self) -> None:
         self.read_data_from_csv()
@@ -41,21 +41,29 @@ class Table:
         self.clean_initial_dataframe()
     
     def analyse_data(self) -> None:
+        if len(self._df) == 0:
+            print("Usuario <<{0}>>. El DF de la tabla <<{1}>> está vacío".format(self._user_data["ID"], self._table_name))
+
         results = {}
+
         results["ALL"] = {**self._user_data, **{"SCENARIO": "ALL"}, **self.analyse_df(self._df)}
+        
         for scenario in self._df["scenario_type"].unique():
             results[scenario] = {**self._user_data, **{"SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario])}
 
         self._results = pd.DataFrame.from_records(list(results.values()))
 
     def analyse_df(self, df) -> dict:
-        assert len(df) > 0, "El DF de la tabla <<{}>> está vacío".format(self._table_name)
+        return {}
         
     def get_results(self):
-        return self._results
+        if len(self._results) > 0: return self._results
+        else: return pd.DataFrame()
     
     def get_results_by_scenario(self, scenario_type):
-        return self._results[self._results["SCENARIO"] == scenario_type]
+        results = self._results[self._results["SCENARIO"] == scenario_type]
+        if len(results) > 0: return results
+        else: return pd.DataFrame()
 
     def export_results(self):
         pass

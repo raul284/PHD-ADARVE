@@ -5,6 +5,14 @@ from models.tables.NPCInteractionEventsTable import NPCInteractionEventsTable
 from models.tables.MoveEventsTable import MoveEventsTable
 from models.tables.PlacePointEventsTable import PlacePointEventsTable
 from models.tables.UserInputEventsTable import UserInputEventsTable
-from models.tables.TipsEventsTable import TipsEventsTable
+from models.tables.HelpPanelEventsTable import HelpPanelEventsTable
+from models.tables.EPDRadiationEventsTable import EPDRadiationEventsTable
+from models.tables.UserRadiationEventsTable import UserRadiationEventsTable
+from models.tables.ItemRadiationEventsTable import ItemRadiationEventsTable
+from models.tables.NPCRadiationEventsTable import NPCRadiationEventsTable
+from models.tables.RBQEventsTable import RBQEventsTable
+from models.tables.TutorialTaskEventsTable import TutorialTaskEventsTable
+from models.tables.VideoEventsTable import VideoEventsTable
+from models.tables.WalkieReportEventsTable import WalkieReportEventsTable
 from models.tables.FormTable import FormTable
 from models.tables.CombinedEventsTable import CombinedEventsTable

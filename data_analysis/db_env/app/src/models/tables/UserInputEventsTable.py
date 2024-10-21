@@ -16,17 +16,16 @@ class UserInputEventsTable(Table):
     
 #region METODOS PUBLICOS
 
-    def __init__(self, table_name:str="") -> None:
+    def __init__(self, user_data) -> None:
 
-        super().__init__(table_name=table_name)
-
-        self._results = ResultsTable(["UI_NUM"] + \
-                                     ["UI_NUM_TYPE_{0}".format(index.name) for index in UserInputType] + \
-                                     ["UI_TIME"])
+        super().__init__(user_data=user_data, table_name="user_input")
 
 
-    def read_data_from_csv(self, filename: str) -> None:
-        super().read_data_from_csv(filename)
+    def set_data(self) -> None:
+        super().set_data()
+
+    def read_data_from_csv(self) -> None:
+        super().read_data_from_csv()
 
         self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
         
@@ -34,41 +33,21 @@ class UserInputEventsTable(Table):
     def analyse_data(self):
         super().analyse_data()
 
-        aux_results = {
-            "UI_NUM": float(len(self._df)),
-            "UI_NUM_GP_STEPS": 0.0,
-            "UI_TIME": self._results.get_time_btw_datetimes(self._df["event_datetime"].to_list())
-        }
 
+    def analyse_df(self, df) -> dict:
+        super().analyse_df(df)
+
+        results = {}
+        results["UI_NUM"] = float(len(df))
         for index in UserInputType:
-            aux_results["UI_NUM_TYPE_{0}".format(index.name)] = float(len(self._df[self._df["input_type"].str.upper() == index.name]))
+            results["UI_NUM_TYPE_{0}".format(index.name)] = float(len(df[df["input_type"].str.upper() == index.name]))
+        results["UI_TIME"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
 
-        self._results.insert_row(aux_results)
+        return results
 
 
-    def create_graphs(self, path, lims):
-        super().create_graphs(path, lims)
-
-    def create_graphs_for_eeg(self, path, lims):
-        super().create_graphs_for_eeg(path, lims)
-
-        aux_df = self._df[["input_type", "input_state", "event_datetime"]]
-
-        fig, axs = plt.subplots(len(aux_df["input_type"].drop_duplicates()), 1, figsize=(14, 6), layout='tight', sharex=True)
-
-        axis_index = 0
-        for event in aux_df["input_type"].drop_duplicates().sort_values():
-            aux_df[(aux_df["input_type"] == event) & (aux_df["input_state"] == "Started")].plot.scatter(x='event_datetime', y="input_type", c="blue", ax=axs[axis_index])
-            aux_df[(aux_df["input_type"] == event) & (aux_df["input_state"] == "Completed")].plot.scatter(x='event_datetime', y="input_type", c="red", ax= axs[axis_index])
-            
-            axs[axis_index].set_xlim(left=lims[0], right=lims[1])
-            axs[axis_index].set_ylabel("")
-
-            axis_index += 1
-
-        plt.xlabel("Time")
-
-        plt.savefig("{0}user_input_eeg".format(path))
+    def create_graphs(self):
+        pass
 
 #endregion
     
@@ -76,9 +55,5 @@ class UserInputEventsTable(Table):
        
     def clean_initial_dataframe(self):
         super().clean_initial_dataframe()
-        
-        self._df = self._df[self._df["scenario_type"] != "MainMenu"]
-        self._df = self._df[self._df["scenario_type"] != "LoadingScreen"]
-        self._df = self._df[self._df["scenario_type"] != "PlayerScore"]
 
 #enregion

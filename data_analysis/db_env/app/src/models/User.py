@@ -37,7 +37,7 @@ class User:
         self._hmd = hmd
         self._date_created = datetime.strptime(event_datetime, '%Y-%m-%d %H:%M:%S.%f')
 
-        self._main_data = {"ID": self._id, "GROUP": self._group}
+        self._main_data = {"ID": self._id, "GROUP": self._group, "HMD": self._hmd}
 
         #self._manager = UserManager()
 
@@ -78,10 +78,10 @@ class User:
         return self._manager._data._tables._data[table_name]._df
     
     def get_results(self) -> pd.DataFrame:        
-        return {table: self.get_results_by_table_name(table) for table in self._tables._tables}
+        return {table: self.get_results_by_table_name(table) for table in self._tables._data}
 
     def get_results_by_table_name(self, table_name) -> pd.DataFrame:
-        return self._tables._tables[table_name].get_results()
+        return self._tables._data[table_name].get_results()
     
     #endregion
 

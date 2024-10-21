@@ -54,8 +54,11 @@ class GameplayEventsTable(Table):
     def analyse_df(self, df) -> dict:
         super().analyse_df(df)
 
-        start_time = df[df["event_type"] == "00001"].iloc[0]["event_datetime"]
-        end_time = df[df["event_type"] == "00002"].iloc[-1]["event_datetime"]
+        start_event = df[df["event_type"] == "00001"].iloc[0]
+        end_event = df[df["event_type"] == "00002"].iloc[-1]
+
+        start_time = start_event["event_datetime"]
+        end_time = end_event["event_datetime"]
 
         df = df[((df["event_type"] != "00001") & (df["event_type"] != "00002"))]
 

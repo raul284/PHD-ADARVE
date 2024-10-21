@@ -75,6 +75,8 @@ class ExperimentManager:
             for table in user_results:
                 if table not in results:
                     results[table] = pd.DataFrame()
+
+                #print(table, user_results[table])
                 results[table] = pd.concat([results[table], user_results[table]], ignore_index=True)
         
         for table in results:

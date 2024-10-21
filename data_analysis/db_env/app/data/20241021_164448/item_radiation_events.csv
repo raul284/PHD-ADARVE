@@ -1,0 +1,4 @@
+id,user_id,scenario_type,actor_id,actor_name,dose_rate,dose_absortion,event_datetime
+0,"ALE","T2_BasicEmergency","2","BP_PickableItem4","477.29943","8.96727","2024-10-21 16:45:55.773"
+1,"ALE","T2_BasicEmergency","2","BP_PickableItem4","477.299411","8.971067","2024-10-21 16:45:55.827"
+2,"ALE","T2_BasicEmergency","2","BP_PickableItem4","477.344379","9.033502","2024-10-21 16:45:56.271"

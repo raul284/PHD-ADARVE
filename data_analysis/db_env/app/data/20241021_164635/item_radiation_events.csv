@@ -1,0 +1,13 @@
+id,user_id,scenario_type,actor_id,actor_name,dose_rate,dose_absortion,event_datetime
+0,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.000073","0.0","2024-10-21 16:48:5.161"
+1,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.004267","0.000001","2024-10-21 16:48:5.633"
+2,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.004323","0.000001","2024-10-21 16:48:6.172"
+3,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.00443","0.000002","2024-10-21 16:48:6.685"
+4,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.005359","0.000003","2024-10-21 16:48:7.221"
+5,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.006469","0.000003","2024-10-21 16:48:7.753"
+6,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.006472","0.000004","2024-10-21 16:48:8.311"
+7,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.009873","0.000005","2024-10-21 16:48:8.766"
+8,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.009875","0.000007","2024-10-21 16:48:9.253"
+9,"ALE","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0","0.009838","0.000008","2024-10-21 16:48:9.763"
+10,"ALE","S2_BasicEmergency","11","BP_RadiationEmissionPoint","421.8","12.715921","2024-10-21 16:48:23.878"
+11,"ALE","S2_BasicEmergency","11","BP_RadiationEmissionPoint","421.8","12.773862","2024-10-21 16:48:24.360"

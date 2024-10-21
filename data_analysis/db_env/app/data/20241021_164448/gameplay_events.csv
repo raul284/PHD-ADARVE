@@ -1,0 +1,13 @@
+id,user_id,scenario_type,event_type,event_state,event_datetime
+0,"ALE","T2_BasicEmergency","00001","Completed","2024-10-21 16:44:51.393"
+1,"ALE","T2_BasicEmergency","T2001","Started","2024-10-21 16:45:4.731"
+2,"ALE","T2_BasicEmergency","T2001","Completed","2024-10-21 16:45:16.292"
+3,"ALE","T2_BasicEmergency","T2002","Started","2024-10-21 16:45:16.338"
+4,"ALE","T2_BasicEmergency","T2002","Completed","2024-10-21 16:45:41.612"
+5,"ALE","T2_BasicEmergency","T2003","Started","2024-10-21 16:45:41.675"
+6,"ALE","T2_BasicEmergency","T2003","Completed","2024-10-21 16:45:57.694"
+7,"ALE","T2_BasicEmergency","T2004","Started","2024-10-21 16:45:57.741"
+8,"ALE","T2_BasicEmergency","T2004","Completed","2024-10-21 16:46:8.184"
+9,"ALE","T2_BasicEmergency","T2005","Started","2024-10-21 16:46:8.233"
+10,"ALE","T2_BasicEmergency","T2005","Completed","2024-10-21 16:46:21.135"
+11,"ALE","T2_BasicEmergency","00002","Completed","2024-10-21 16:46:34.299"

@@ -93,12 +93,18 @@ class ItemInteractionEventsTable(Table):
     #region METODOS PRIVADOS
 
     def get_time_btw_two_type_of_inter(self, first_inter_df, snd_inter_df):
+        
+        print("=====================")
+        print(first_inter_df)
+        print(snd_inter_df)
 
         time_btw = []
         while not first_inter_df.empty and not snd_inter_df.empty:
             time_btw.append(self.get_time_btw_datetimes([first_inter_df.iloc[0]["event_datetime"], snd_inter_df.iloc[0]["event_datetime"]]))
             first_inter_df = first_inter_df.iloc[1:]
             snd_inter_df = snd_inter_df.iloc[1:]
+
+        print(time_btw)
 
         return statistics.mean(time_btw)
 

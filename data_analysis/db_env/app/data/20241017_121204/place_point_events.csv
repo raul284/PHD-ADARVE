@@ -1,3 +1,0 @@
-id,user_id,scenario_type,actor_id,actor_name,place_point_name,event_type,event_datetime
-0,"TEST","T1_BasicMechanics","3","BP_Dosimeter_SABG105","BP_PlacePoint10","place_correct","2024-10-17 12:13:14.725"
-1,"TEST","T1_BasicMechanics","2","BP_TrafficCone5","BP_PlacePoint9","place_correct","2024-10-17 12:13:28.69"

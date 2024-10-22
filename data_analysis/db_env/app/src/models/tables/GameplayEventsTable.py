@@ -90,7 +90,8 @@ class GameplayEventsTable(Table):
 
                 times_to_complete.append(end - start)
 
-        return round(statistics.mean(times_to_complete), 2)
+        if len(times_to_complete) > 0: return round(statistics.mean(times_to_complete), 2)
+        else: -1
     
     # get_time_to_complete_steps
 

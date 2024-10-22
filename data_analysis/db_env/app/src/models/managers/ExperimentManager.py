@@ -79,9 +79,12 @@ class ExperimentManager:
                 #print(table, user_results[table])
                 results[table] = pd.concat([results[table], user_results[table]], ignore_index=True)
         
+        experiment_results = pd.DataFrame()
         for table in results:
-            results[table].to_csv("../results/csv/{0}.csv".format(table))
-            results[table].to_excel("../results/excel/{0}.xlsx".format(table))
+            print(results[table])
+
+        experiment_results.to_csv("../results/csv/results.csv".format(table))
+        experiment_results.to_excel("../results/excel/results.xlsx".format(table))
 
     # export_results
 

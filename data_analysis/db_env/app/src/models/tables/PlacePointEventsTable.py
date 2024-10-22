@@ -26,8 +26,9 @@ class PlacePointEventsTable(Table):
     def read_data_from_csv(self) -> None:
         super().read_data_from_csv()
 
-        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
-        
+        self._df["start_datetime"] = pd.to_datetime(self._df["start_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
+        self._df["end_datetime"] = pd.to_datetime(self._df["end_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
+
         
     def analyse_data(self) -> None:
         super().analyse_data()

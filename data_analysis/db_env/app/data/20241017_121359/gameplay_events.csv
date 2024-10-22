@@ -1,0 +1,13 @@
+id,user_id,scenario_type,event_type,event_state,event_datetime
+0,"TEST","S1_BasicMechanics","00001","Completed","2024-10-17 12:14:8.707"
+1,"TEST","S1_BasicMechanics","S1001","Started","2024-10-17 12:14:20.526"
+2,"TEST","S1_BasicMechanics","S1001","Completed","2024-10-17 12:14:22.462"
+3,"TEST","S1_BasicMechanics","S1002","Started","2024-10-17 12:14:22.471"
+4,"TEST","S1_BasicMechanics","S1002","Completed","2024-10-17 12:14:33.733"
+5,"TEST","S1_BasicMechanics","S1003","Started","2024-10-17 12:14:33.742"
+6,"TEST","S1_BasicMechanics","S1003","Completed","2024-10-17 12:15:46.38"
+7,"TEST","S1_BasicMechanics","S1004","Started","2024-10-17 12:15:46.46"
+8,"TEST","S1_BasicMechanics","S1004","Completed","2024-10-17 12:15:50.680"
+9,"TEST","S1_BasicMechanics","S1005","Started","2024-10-17 12:15:50.689"
+10,"TEST","S1_BasicMechanics","S1005","Completed","2024-10-17 12:16:0.722"
+11,"TEST","S1_BasicMechanics","00002","Completed","2024-10-17 12:16:0.730"

@@ -1,0 +1,11 @@
+id,user_id,scenario_type,tutorial_item_id,event_type,event_datetime
+0,"AA","T2_BasicEmergency","RBQ_Functionality","started","2024-10-22 13:57:6.872"
+1,"AA","T2_BasicEmergency","RBQ_Functionality","completed","2024-10-22 13:57:22.474"
+2,"AA","T2_BasicEmergency","OI_WalkieTalkie","started","2024-10-22 13:58:17.325"
+3,"AA","T2_BasicEmergency","OI_WalkieTalkie","completed","2024-10-22 13:58:57.242"
+4,"AA","T2_BasicEmergency","OI_SABG100","started","2024-10-22 13:59:27.854"
+5,"AA","T2_BasicEmergency","OI_SABG100","completed","2024-10-22 13:59:41.104"
+6,"AA","T2_BasicEmergency","OI_EPD","started","2024-10-22 14:0:24.964"
+7,"AA","T2_BasicEmergency","OI_EPD","completed","2024-10-22 14:0:32.501"
+8,"AA","T2_BasicEmergency","HP_Functionality","started","2024-10-22 14:1:8.167"
+9,"AA","T2_BasicEmergency","HP_Functionality","completed","2024-10-22 14:1:54.558"

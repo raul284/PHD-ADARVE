@@ -1,6 +1,0 @@
-id,user_id,scenario_type,actor_id,dose_rate,dose_absortion,event_datetime
-0,"ALE","T2_BasicEmergency","0","84.658327","1.63573","2024-10-21 16:45:57.767"
-1,"ALE","T2_BasicEmergency","0","84.658327","1.64734","2024-10-21 16:45:58.186"
-2,"ALE","T2_BasicEmergency","0","84.658327","1.659399","2024-10-21 16:45:58.686"
-3,"ALE","T2_BasicEmergency","0","84.658327","1.671497","2024-10-21 16:45:59.187"
-4,"ALE","T2_BasicEmergency","0","84.658327","1.672689","2024-10-21 16:45:59.241"

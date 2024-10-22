@@ -1,4 +1,0 @@
-id,user_id,scenario_type,conversation_type,question_index,answer_index,event_datetime
-0,"ALE","S2_BasicEmergency","Initial","0","0","2024-10-21 16:47:35.286"
-1,"ALE","S2_BasicEmergency","Final","0","0","2024-10-21 16:49:2.241"
-2,"ALE","S2_BasicEmergency","Final","1","1","2024-10-21 16:49:7.917"

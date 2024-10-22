@@ -1,0 +1,7 @@
+id,user_id,scenario_type,conversation_type,question_index,answer_index,event_datetime
+0,"AA","S2_BasicEmergency","Initial","0","2","2024-10-22 14:4:26.923"
+1,"AA","S2_BasicEmergency","Initial","1","2","2024-10-22 14:4:35.189"
+2,"AA","S2_BasicEmergency","Initial","2","0","2024-10-22 14:5:0.283"
+3,"AA","S2_BasicEmergency","Final","0","1","2024-10-22 14:10:26.671"
+4,"AA","S2_BasicEmergency","Final","1","1","2024-10-22 14:10:35.551"
+5,"AA","S2_BasicEmergency","Final","2","1","2024-10-22 14:10:48.679"

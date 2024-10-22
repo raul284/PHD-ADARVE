@@ -64,9 +64,9 @@ class GameplayEventsTable(Table):
 
         return {
             "TD": round(end_time.timestamp() - start_time.timestamp(), 2),
-            "GP_NUM": float(len(df[df["event_state"] == "Completed"])),
-            "GP_TIME": self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list()),
-            "GP_TIME_STARTED_TO_COMPLETED": self.get_time_to_complete_steps(df)
+            "GP_N": float(len(df[df["event_state"] == "Completed"])),
+            "GP_T": self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list()),
+            "GP_T_SC": self.get_time_to_complete_steps(df)
         }
         
     def create_graphs(self):
@@ -91,7 +91,7 @@ class GameplayEventsTable(Table):
                 times_to_complete.append(end - start)
 
         if len(times_to_complete) > 0: return round(statistics.mean(times_to_complete), 2)
-        else: -1
+        else: np.nan
     
     # get_time_to_complete_steps
 

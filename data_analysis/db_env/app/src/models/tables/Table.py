@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from datetime import datetime
 import statistics
+import numpy as np
 
 from models.tables.ResultsTable import ResultsTable
 
@@ -98,6 +99,8 @@ class Table:
             rest = int(datetimes_list[index + 1].timestamp()) - int(datetimes_list[index].timestamp())
             # El resto se almacena en la lista
             times_btw.append(rest)
+        print(datetimes_list)
+        print("==================", round(statistics.mean(times_btw), 2))
 
         # Se calcula la media de la lista
         return round(statistics.mean(times_btw), 2)

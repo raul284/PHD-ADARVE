@@ -54,17 +54,17 @@ class ItemInteractionEventsTable(Table):
 
         results = {}
 
-        results["OI_NUM"] = float(len(df))
+        results["OI_N"] = float(len(df))
 
         for index in ItemInteractionType:
-            results["OI_NUM_TYPE_{0}".format(index.name)] = float(len(df[df["event_type"].str.upper() == index.name]))
+            results["OI_N_type_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
 
-        for index in range(len(ItemType)):
-            results["OI_NUM_ACTOR_{0}".format(index)] = float(len(df[df["actor_id"] == index]))
+        for index in ItemType:
+            results["OI_N_actor_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
         
-        results["OI_TIME_INTER"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
+        results["OI_T"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
 
-        results["OI_TIME_CP_SS"] = round(statistics.mean(
+        results["OI_T_SS"] = round(np.nanmean(
             [self.get_time_btw_two_type_of_inter(
                 df[(df["hand"] == "Right") & (df["event_type"] == "start_detection")],
                 df[(df["hand"] == "Right") & (df["event_type"] == "stop_detection")]),
@@ -72,7 +72,7 @@ class ItemInteractionEventsTable(Table):
                 df[(df["hand"] == "Left") & (df["event_type"] == "start_detection")],
                 df[(df["hand"] == "Left") & (df["event_type"] == "stop_detection")])]), 2)
 
-        results["OI_TIME_CP_GR"] = round(statistics.mean(
+        results["OI_T_GR"] = round(np.nanmean(
             [self.get_time_btw_two_type_of_inter(
                 df[(df["hand"] == "Right") & (df["event_type"] == "grab")],
                 df[(df["hand"] == "Right") & (df["event_type"] == "release")]),
@@ -93,10 +93,6 @@ class ItemInteractionEventsTable(Table):
     #region METODOS PRIVADOS
 
     def get_time_btw_two_type_of_inter(self, first_inter_df, snd_inter_df):
-        
-        print("=====================")
-        print(first_inter_df)
-        print(snd_inter_df)
 
         time_btw = []
         while not first_inter_df.empty and not snd_inter_df.empty:
@@ -104,9 +100,8 @@ class ItemInteractionEventsTable(Table):
             first_inter_df = first_inter_df.iloc[1:]
             snd_inter_df = snd_inter_df.iloc[1:]
 
-        print(time_btw)
-
-        return statistics.mean(time_btw)
+        if len(time_btw) > 0: return statistics.mean(time_btw)
+        else: return np.nan
 
     #endregion
     

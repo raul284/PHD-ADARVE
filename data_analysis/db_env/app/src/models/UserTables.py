@@ -7,9 +7,9 @@ class UserTables:
     def __init__(self, user_data) -> None:
         self._data = {}
         #self._data["form_marks"] = FormTable("form", sheet_names=["personal_data", "exam", "sus"])
-        self._data["gameplay_events"] = GameplayEventsTable(user_data)
+        #self._data["gameplay_events"] = GameplayEventsTable(user_data)
         self._data["item_interaction_events"] = ItemInteractionEventsTable(user_data)
-        self._data["npc_interaction_events"] = NPCInteractionEventsTable(user_data)
+        '''self._data["npc_interaction_events"] = NPCInteractionEventsTable(user_data)
         self._data["move_events"] = MoveEventsTable(user_data)
         self._data["place_point_events"] = PlacePointEventsTable(user_data)
         self._data["user_input_events"] = UserInputEventsTable(user_data)
@@ -21,7 +21,7 @@ class UserTables:
         self._data["rbq_events"] = RBQEventsTable(user_data)
         self._data["tutorial_task_events"] = TutorialTaskEventsTable(user_data)
         self._data["video_events"] = VideoEventsTable(user_data)
-        self._data["walkie_report_events"] = WalkieReportEventsTable(user_data)
+        self._data["walkie_report_events"] = WalkieReportEventsTable(user_data)'''
 
     def set_data(self) -> None:
         for table in self._data:

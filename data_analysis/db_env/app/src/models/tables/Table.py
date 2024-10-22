@@ -96,14 +96,14 @@ class Table:
         # Por cada uno de los eventos de la lista
         for index in range(len(datetimes_list) - 1):
             # Se resta el tiempo del evento siguiente y del actual
-            rest = int(datetimes_list[index + 1].timestamp()) - int(datetimes_list[index].timestamp())
+            rest = int(datetimes_list[index + 1].timestamp() * 1000) - int(datetimes_list[index].timestamp() * 1000)
             # El resto se almacena en la lista
             times_btw.append(rest)
-        print(datetimes_list)
-        print("==================", round(statistics.mean(times_btw), 2))
+        #print(datetimes_list)
+        #print("==================", round(statistics.mean(times_btw), 2))
 
         # Se calcula la media de la lista
-        return round(statistics.mean(times_btw), 2)
+        return round(statistics.mean(times_btw) / 1000, 2)
 
         
 

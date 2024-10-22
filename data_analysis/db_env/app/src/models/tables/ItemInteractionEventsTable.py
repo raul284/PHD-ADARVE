@@ -95,10 +95,28 @@ class ItemInteractionEventsTable(Table):
     def get_time_btw_two_type_of_inter(self, first_inter_df, snd_inter_df):
 
         time_btw = []
+
         while not first_inter_df.empty and not snd_inter_df.empty:
-            time_btw.append(self.get_time_btw_datetimes([first_inter_df.iloc[0]["event_datetime"], snd_inter_df.iloc[0]["event_datetime"]]))
+            first_event = first_inter_df.iloc[0]
+            
+            potential_snd_events = snd_inter_df[(snd_inter_df["scenario_type"] == first_event["scenario_type"]) & (snd_inter_df["actor_name"] == first_event["actor_name"])]
+            #print(first_event["scenario_type"], snd_inter_df[snd_inter_df["scenario_type"] == first_event["scenario_type"]])
+            if not potential_snd_events.empty:
+                
+                snd_event = potential_snd_events.iloc[0]
+
+                time = self.get_time_btw_datetimes([first_event["event_datetime"], snd_event["event_datetime"]])
+                if time > 0:
+                    time_btw.append(time)
+                else:
+                    print("SEGUNDA HOSTIA")
+                snd_inter_df = snd_inter_df.drop(snd_inter_df[snd_inter_df["id"] == snd_event["id"]].index)
+            else:
+                print("PRIMERA HOSTIA", first_event["id"], first_event["scenario_type"], first_event["actor_name"])
             first_inter_df = first_inter_df.iloc[1:]
-            snd_inter_df = snd_inter_df.iloc[1:]
+            
+            #first_inter_df = first_inter_df.iloc[1:]
+            #snd_inter_df = snd_inter_df.iloc[1:]
 
         if len(time_btw) > 0: return statistics.mean(time_btw)
         else: return np.nan

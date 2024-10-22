@@ -16,7 +16,7 @@ id,user_id,scenario_type,actor_id,actor_name,event_type,hand,event_datetime
 14,"AA","T2_BasicEmergency","3","BP_Dosimeter_SABG100","stop_detection","Right","2024-10-22 13:59:32.562"
 15,"AA","T2_BasicEmergency","3","BP_Dosimeter_SABG100","release","Right","2024-10-22 13:59:47.494"
 16,"AA","T2_BasicEmergency","4","BP_Dosimeter_EPD2","start_detection","Right","2024-10-22 14:0:28.750"
-17,"AA","T2_BasicEmergency","4","BP_Dosimeter_EPD2","grab","Left","2024-10-22 14:0:29.31"
+17,"AA","T2_BasicEmergency","4","BP_Dosimeter_EPD2","grab","Right","2024-10-22 14:0:29.31"
 18,"AA","T2_BasicEmergency","4","BP_Dosimeter_EPD2","stop_detection","Right","2024-10-22 14:0:29.56"
 19,"AA","T2_BasicEmergency","11","BP_RadiationEmissionPoint3","start_detection","Left","2024-10-22 14:0:35.828"
 20,"AA","T2_BasicEmergency","11","BP_RadiationEmissionPoint3","stop_detection","Left","2024-10-22 14:0:36.286"

@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import statistics
 import numpy as np
+import re
 
 from models.tables.ResultsTable import ResultsTable
 
@@ -28,9 +29,11 @@ class Table:
 
     def set_data(self) -> None:
         self.read_data_from_csv()
+        self._df = self._df.set_index('id').reset_index(drop=True)
+        #print(self._df.to_string())
 
         for scenario in self._df["scenario_type"].unique():
-            self._scenarios[scenario] = self._df[self._df["scenario_type"] == scenario]
+            self._scenarios[scenario] = self._df[self._df["scenario_type"] == scenario].reset_index()
 
     def read_data_from_csv(self) -> None:
         filename = self._table_name + "_events.csv"
@@ -42,17 +45,26 @@ class Table:
         self.clean_initial_dataframe()
     
     def analyse_data(self) -> None:
+        #print(self._df.to_string())
         if len(self._df) == 0:
             print("Usuario <<{0}>>. El DF de la tabla <<{1}>> está vacío".format(self._user_data["ID"], self._table_name))
 
         results = {}
-
-        results["ALL"] = {**self._user_data, **{"SCENARIO": "ALL"}, **self.analyse_df(self._df)}
+        print("################ ALL")
+        results["ALL"] = {**self._user_data, **{"SCENARIO": "ALL"}, **self.analyse_df(self._df.copy())}
         
         for scenario in self._df["scenario_type"].unique():
-            results[scenario] = {**self._user_data, **{"SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario])}
+            print("################ {}".format(scenario.upper()))
+            results[scenario] = {**self._user_data, **{"SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario].copy())}
 
-        self._results = pd.DataFrame.from_records(list(results.values()))
+        for key in results:
+            self._results = self._results.join(
+                    pd.DataFrame.from_dict({col: [results[key][col]] for col in results[key]}), 
+                on="SCENARIO")
+            
+            #print(self._results)
+            
+        #self._results = pd.DataFrame.from_records(list(results.values()))
 
     def analyse_df(self, df) -> dict:
         return {}
@@ -78,7 +90,19 @@ class Table:
         pass
 
 #region METODOS PRIVADOS
-       
+    def fix_datetimes(self, df) -> list:
+        datetime_list = []
+        for date in list(df):
+            splitted_date = re.split('-|:| |\.', date)
+            for i in range(1, 6):
+                splitted_date[i] = splitted_date[i].zfill(2)
+            splitted_date[6] = splitted_date[6].zfill(3)
+            datetime_list.append("{0}-{1}-{2} {3}:{4}:{5}.{6}".format(*splitted_date))
+
+        return datetime_list
+        #pd.to_datetime(df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
+
+
     def clean_initial_dataframe(self):
         self._df = self._df.replace("T1_BasicMechanics", "T1").replace("S1_BasicMechanics", "S1").replace("T2_BasicEmergency", "T2").replace("S2_BasicEmergency", "S2")
 
@@ -103,7 +127,7 @@ class Table:
         #print("==================", round(statistics.mean(times_btw), 2))
 
         # Se calcula la media de la lista
-        return round(statistics.mean(times_btw) / 1000, 2)
+        return round(statistics.mean(times_btw) / 1000, 3)
 
         
 

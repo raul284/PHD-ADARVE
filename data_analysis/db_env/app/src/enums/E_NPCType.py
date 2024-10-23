@@ -1,11 +1,9 @@
 from enum import Enum
 
 class NPCType(Enum):
-    DEFAULT = 0
-    SOFIA = 1
-    INES = 2
-    JUAN_ANTONIO = 3
-    MARTA = 4
-    MARCOS = 5
-    ALEJANDRO = 6
-    CARLOS = 7
+    NPC_T1 = 1
+    NPC_S1 = 2
+    NPC_T21 = 3
+    NPC_T22 = 4
+    NPC_S21 = 5
+    NPC_S22 = 6

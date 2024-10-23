@@ -41,7 +41,8 @@ class GameplayEventsTable(Table):
 
     def read_data_from_csv(self) -> None:
         super().read_data_from_csv()
-        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
+
+        self._df["event_datetime"] = pd.to_datetime(self.fix_datetimes(self._df["event_datetime"]), format="%Y-%m-%d %H:%M:%S.%f")
 
     # read_data_from_csv
 
@@ -90,7 +91,7 @@ class GameplayEventsTable(Table):
 
                 times_to_complete.append(end - start)
 
-        if len(times_to_complete) > 0: return round(statistics.mean(times_to_complete), 2)
+        if len(times_to_complete) > 0: return round(statistics.mean(times_to_complete), 3)
         else: np.nan
     
     # get_time_to_complete_steps

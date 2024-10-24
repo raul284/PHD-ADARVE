@@ -27,6 +27,8 @@ class ItemInteractionEventsTable(Table):
 
     #region VARIABLES PUBLICAS
 
+    _items: pd.DataFrame
+
     #endregion
     
     #region METODOS PUBLICOS
@@ -38,9 +40,11 @@ class ItemInteractionEventsTable(Table):
 
     def set_data(self) -> None:
         super().set_data()
-
-    def read_data_from_csv(self) -> None:
-        super().read_data_from_csv()
+        self._items = self.read_data_from_csv("items.csv").set_index('id').reset_index(drop=True)
+ 
+ 
+    def read_data(self) -> None:
+        super().read_data()
         self._df["event_datetime"] = pd.to_datetime(self.fix_datetimes(self._df["event_datetime"]), format="%Y-%m-%d %H:%M:%S.%f")
 
     # read_data_from_csv
@@ -65,18 +69,18 @@ class ItemInteractionEventsTable(Table):
         results["OI_T"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
 
         results["OI_T_SS"] = round(np.nanmean(
-            [self.get_time_btw_two_type_of_inter(
+            [self.get_time_btw_two_type(
                 df[(df["hand"] == "Right") & (df["event_type"] == "start_detection")],
                 df[(df["hand"] == "Right") & (df["event_type"] == "stop_detection")]),
-            self.get_time_btw_two_type_of_inter(
+            self.get_time_btw_two_type(
                 df[(df["hand"] == "Left") & (df["event_type"] == "start_detection")],
                 df[(df["hand"] == "Left") & (df["event_type"] == "stop_detection")])]), 3)
 
         results["OI_T_GR"] = round(np.nanmean(
-            [self.get_time_btw_two_type_of_inter(
+            [self.get_time_btw_two_type(
                 df[(df["hand"] == "Right") & (df["event_type"] == "grab")],
                 df[(df["hand"] == "Right") & (df["event_type"] == "release")]),
-            self.get_time_btw_two_type_of_inter(
+            self.get_time_btw_two_type(
                 df[(df["hand"] == "Left") & (df["event_type"] == "grab")],
                 df[(df["hand"] == "Left") & (df["event_type"] == "release")])]), 3)
 
@@ -92,13 +96,15 @@ class ItemInteractionEventsTable(Table):
         
     #region METODOS PRIVADOS
 
-    def get_time_btw_two_type_of_inter(self, first_inter_df, snd_inter_df):
+    def get_time_btw_two_type(self, fst_df, snd_df):
+        super().get_time_btw_two_type(fst_df, snd_df)
+
         time_btw = []
 
-        while not first_inter_df.empty and not snd_inter_df.empty:
-            first_event = first_inter_df.iloc[0]
+        while not fst_df.empty and not snd_df.empty:
+            first_event = fst_df.iloc[0]
             
-            potential_snd_events = snd_inter_df[(snd_inter_df["scenario_type"] == first_event["scenario_type"]) & (snd_inter_df["actor_name"] == first_event["actor_name"])]
+            potential_snd_events = snd_df[(snd_df["scenario_type"] == first_event["scenario_type"]) & (snd_df["actor_name"] == first_event["actor_name"])]
             
             if not potential_snd_events.empty:
                 
@@ -108,18 +114,15 @@ class ItemInteractionEventsTable(Table):
                 if time < 0: print("Hay un tiempo entre interacciones negativo.")
 
                 time_btw.append(time)
-                snd_inter_df = snd_inter_df.drop(snd_inter_df[
-                    (snd_inter_df["scenario_type"] == first_event["scenario_type"]) & 
-                    (snd_inter_df["actor_name"] == first_event["actor_name"])].index[0])
+                snd_df = snd_df.drop(snd_df[
+                    (snd_df["scenario_type"] == first_event["scenario_type"]) & 
+                    (snd_df["actor_name"] == first_event["actor_name"])].index[0])
                 
                 
             else:
                 print("PRIMERA HOSTIA", first_event["scenario_type"], first_event["actor_name"])
 
-            first_inter_df = first_inter_df.iloc[1:]
-            
-            #first_inter_df = first_inter_df.iloc[1:]
-            #snd_inter_df = snd_inter_df.iloc[1:]
+            fst_df = fst_df.iloc[1:]
 
         if len(time_btw) > 0: return statistics.mean(time_btw)
         else: return np.nan

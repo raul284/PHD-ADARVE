@@ -39,8 +39,8 @@ class GameplayEventsTable(Table):
     def set_data(self) -> None:
         super().set_data()
 
-    def read_data_from_csv(self) -> None:
-        super().read_data_from_csv()
+    def read_data(self) -> None:
+        super().read_data()
 
         self._df["event_datetime"] = pd.to_datetime(self.fix_datetimes(self._df["event_datetime"]), format="%Y-%m-%d %H:%M:%S.%f")
 

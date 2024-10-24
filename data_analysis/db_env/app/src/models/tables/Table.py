@@ -19,6 +19,8 @@ class Table:
     _results: pd.DataFrame
 
     def __init__(self, user_data: dict, table_name: str) -> None:
+        self.SCENARIOS = ["ALL", "T1", "S1", "T2", "S2"]
+
         self._user_data = user_data
         self._table_name = table_name
 
@@ -28,14 +30,14 @@ class Table:
         self._results = pd.DataFrame()
 
     def set_data(self) -> None:
-        self.read_data_from_csv()
+        self.read_data()
         self._df = self._df.set_index('id').reset_index(drop=True)
         #print(self._df.to_string())
 
-        for scenario in self._df["scenario_type"].unique():
+        for scenario in self.SCENARIOS:
             self._scenarios[scenario] = self._df[self._df["scenario_type"] == scenario].reset_index()
 
-    def read_data_from_csv(self) -> None:
+    def read_data(self) -> None:
         filename = self._table_name + "_events.csv"
         for dirpath, dirnames, filenames in os.walk("../data/"):
             for filename in [f for f in filenames if f == filename]:
@@ -43,6 +45,15 @@ class Table:
                 self._df = pd.concat([self._df, df[df["user_id"] == self._user_data["ID"]]])
 
         self.clean_initial_dataframe()
+
+    def read_data_from_csv(self, filename) -> pd.DataFrame:
+        df = pd.DataFrame()
+        for dirpath, dirnames, filenames in os.walk("../data/"):
+            for filename in [f for f in filenames if f == filename]:
+                aux_df = pd.read_csv(os.path.join(dirpath, filename))
+                df = pd.concat([df, aux_df[aux_df["user_id"] == self._user_data["ID"]]])
+
+        return df
     
     def analyse_data(self) -> None:
         #print(self._df.to_string())
@@ -53,18 +64,15 @@ class Table:
         print("################ ALL")
         results["ALL"] = {**self._user_data, **{"SCENARIO": "ALL"}, **self.analyse_df(self._df.copy())}
         
-        for scenario in self._df["scenario_type"].unique():
+        for scenario in self.SCENARIOS[1:]:
             print("################ {}".format(scenario.upper()))
-            results[scenario] = {**self._user_data, **{"SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario].copy())}
+            if not self._scenarios[scenario].empty:
+                results[scenario] = {**self._user_data, **{"SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario].copy())}
+            else: 
+                results[scenario] = {**self._user_data, **{"SCENARIO": scenario}}
 
-        for key in results:
-            self._results = self._results.join(
-                    pd.DataFrame.from_dict({col: [results[key][col]] for col in results[key]}), 
-                on="SCENARIO")
-            
-            #print(self._results)
-            
-        #self._results = pd.DataFrame.from_records(list(results.values()))
+
+        self._results = pd.DataFrame.from_records(list(results.values()))
 
     def analyse_df(self, df) -> dict:
         return {}
@@ -128,6 +136,9 @@ class Table:
 
         # Se calcula la media de la lista
         return round(statistics.mean(times_btw) / 1000, 3)
+    
+    def get_time_btw_two_type(self, fst_df, snd_df):
+        return np.nan
 
         
 

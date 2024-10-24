@@ -1,0 +1,3 @@
+id,user_id,scenario_type,actor_id,talkable
+0,"AA","S2_BasicEmergency","5",true
+1,"AA","S2_BasicEmergency","6",true

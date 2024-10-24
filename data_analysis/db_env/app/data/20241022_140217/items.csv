@@ -1,0 +1,7 @@
+id,user_id,scenario_type,actor_id,actor_name
+0,"AA","S2_BasicEmergency","2","BP_TrafficCone_C_0"
+1,"AA","S2_BasicEmergency","2","BP_TrafficCone_C_1"
+2,"AA","S2_BasicEmergency","3","BP_Dosimeter_SABG100_C_0"
+3,"AA","S2_BasicEmergency","4","BP_Dosimeter_EPD_C_0"
+4,"AA","S2_BasicEmergency","5","BP_WalkieTalkie_C_0"
+5,"AA","S2_BasicEmergency","5","BP_WalkieTalkie_C_1"

@@ -1,0 +1,5 @@
+id,user_id,scenario_type,actor_id,conversation_index,event_type,event_datetime
+0,"AB","S1_BasicMechanics","2","0","start_talk_with_npc","2024-10-25 13:47:13.677"
+1,"AB","S1_BasicMechanics","2","0","stop_talk_with_npc","2024-10-25 13:47:43.41"
+2,"AB","S1_BasicMechanics","2","2","start_talk_with_npc","2024-10-25 13:49:15.25"
+3,"AB","S1_BasicMechanics","2","2","stop_talk_with_npc","2024-10-25 13:49:32.118"

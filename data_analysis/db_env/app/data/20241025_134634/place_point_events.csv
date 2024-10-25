@@ -1,0 +1,11 @@
+id,user_id,scenario_type,actor_id,actor_name,place_point_name,activation_count,start_datetime,end_datetime
+0,"AB","S1_BasicMechanics","1","TrafficCone_3","BP_PlacePoint4","4","2024-10-25 13:47:54.761","2024-10-25 13:47:54.762"
+1,"AB","S1_BasicMechanics","1","TrafficCone_1","BP_PlacePoint2","6","2024-10-25 13:48:3.485","2024-10-25 13:48:3.485"
+2,"AB","S1_BasicMechanics","1","TrafficCone_5","BP_PlacePoint5","8","2024-10-25 13:48:11.712","2024-10-25 13:48:11.712"
+3,"AB","S1_BasicMechanics","1","TrafficCone_4","BP_PlacePoint","10","2024-10-25 13:48:20.185","2024-10-25 13:48:20.186"
+4,"AB","S1_BasicMechanics","1","TrafficCone_2","BP_PlacePoint3","12","2024-10-25 13:48:30.853","2024-10-25 13:48:30.853"
+5,"AB","S1_BasicMechanics","3","Dosimeter_SABG100_4","BP_PlacePoint8","4","2024-10-25 13:48:41.699","2024-10-25 13:48:46.856"
+6,"AB","S1_BasicMechanics","3","Dosimeter_SABG100_1","BP_PlacePoint6","5","2024-10-25 13:48:48.82","2024-10-25 13:48:48.83"
+7,"AB","S1_BasicMechanics","3","Dosimeter_SABG100_3","BP_PlacePoint7","7","2024-10-25 13:48:53.965","2024-10-25 13:48:53.965"
+8,"AB","S1_BasicMechanics","4","Dosimeter_EPD_2","BP_PlacePoint10","4","2024-10-25 13:49:2.191","2024-10-25 13:49:2.192"
+9,"AB","S1_BasicMechanics","4","Dosimeter_EPD_1","BP_PlacePoint9","6","2024-10-25 13:49:9.589","2024-10-25 13:49:9.589"

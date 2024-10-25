@@ -8,8 +8,8 @@ class UserTables:
         self._data = {}
         #self._data["form_marks"] = FormTable("form", sheet_names=["personal_data", "exam", "sus"])
         self._data["gameplay_events"] = GameplayEventsTable(user_data)
-        self._data["item_interaction_events"] = ItemInteractionEventsTable(user_data)
-        self._data["npc_interaction_events"] = NPCInteractionEventsTable(user_data)
+        #self._data["item_interaction_events"] = ItemInteractionEventsTable(user_data)
+        #self._data["npc_interaction_events"] = NPCInteractionEventsTable(user_data)
         '''self._data["move_events"] = MoveEventsTable(user_data)
         self._data["place_point_events"] = PlacePointEventsTable(user_data)
         self._data["user_input_events"] = UserInputEventsTable(user_data)

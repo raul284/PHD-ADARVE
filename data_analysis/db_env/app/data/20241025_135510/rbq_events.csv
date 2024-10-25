@@ -1,0 +1,5 @@
+id,user_id,scenario_type,actor_id,num_of_actors,event_datetime
+0,"AB","S2_BasicEmergency","[4;5;]","[1;1;]","2024-10-25 13:56:38.259"
+1,"AB","S2_BasicEmergency","[2;]","[4;]","2024-10-25 14:0:31.504"
+2,"AB","S2_BasicEmergency","[3;]","[1;]","2024-10-25 14:1:5.686"
+3,"AB","S2_BasicEmergency","[5;]","[1;]","2024-10-25 14:1:42.830"

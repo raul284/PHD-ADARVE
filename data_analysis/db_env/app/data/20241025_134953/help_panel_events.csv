@@ -1,0 +1,4 @@
+id,user_id,scenario_type,event_type,tutorial_item_id,event_datetime
+0,"AB","T2_BasicEmergency","open","None","2024-10-25 13:54:27.115"
+1,"AB","T2_BasicEmergency","demand_help","MOV_VirtualWorldLimits","2024-10-25 13:54:36.695"
+2,"AB","T2_BasicEmergency","close","None","2024-10-25 13:54:53.696"

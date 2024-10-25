@@ -103,23 +103,6 @@ class ItemInteractionEventsTable(Table):
 
         while not fst_df.empty and not snd_df.empty:
             first_event = fst_df.iloc[0]
-            snd_event = snd_df.iloc[0]
-                
-            time = self.get_time_btw_datetimes([first_event["event_datetime"], snd_event["event_datetime"]])
-            if time < 0: print("Hay un tiempo entre interacciones de NPC negativo.")
-
-            time_btw.append(time)
-
-            fst_df = fst_df.iloc[1:]
-            snd_df = snd_df.iloc[1:]
-
-        if len(time_btw) > 0: return statistics.mean(time_btw)
-        else: return np.nan
-
-        '''time_btw = []
-
-        while not fst_df.empty and not snd_df.empty:
-            first_event = fst_df.iloc[0]
             
             potential_snd_events = snd_df[(snd_df["scenario_type"] == first_event["scenario_type"]) & (snd_df["actor_name"] == first_event["actor_name"])]
             
@@ -142,7 +125,7 @@ class ItemInteractionEventsTable(Table):
             fst_df = fst_df.iloc[1:]
 
         if len(time_btw) > 0: return statistics.mean(time_btw)
-        else: return np.nan'''
+        else: return np.nan
 
     #endregion
     

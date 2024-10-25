@@ -76,7 +76,6 @@ class ExperimentManager:
                 if table not in results:
                     results[table] = pd.DataFrame()
 
-                #print(table, user_results[table])
                 results[table] = pd.concat([results[table], user_results[table]], ignore_index=True)
         
         experiment_results = pd.DataFrame()
@@ -84,11 +83,14 @@ class ExperimentManager:
             if len(experiment_results) > 0:
                 results[table] = results[table].drop(columns=['ID', 'GROUP', 'HMD', 'SCENARIO'], axis=1)
             experiment_results = pd.concat([experiment_results, results[table]], axis=1)
-            #print(results[table])
-        #print(experiment_results.T.drop_duplicates().T)
 
-        experiment_results.to_csv("../results/results.csv", na_rep='NULL')
-        experiment_results.to_excel("../results/results.xlsx", na_rep='NULL')
+
+
+        experiment_results[experiment_results["SCENARIO"] == "ALL"].to_csv("../results/resultsALL.csv", na_rep='NULL')
+        experiment_results[experiment_results["SCENARIO"] == "ALL"].to_excel("../results/resultsALL.xlsx", na_rep='NULL')
+
+        experiment_results[experiment_results["SCENARIO"] != "ALL"].to_csv("../results/resultsSCENARIO.csv", na_rep='NULL')
+        experiment_results[experiment_results["SCENARIO"] != "ALL"].to_excel("../results/resultsSCENARIO.xlsx", na_rep='NULL')
 
     # export_results
 

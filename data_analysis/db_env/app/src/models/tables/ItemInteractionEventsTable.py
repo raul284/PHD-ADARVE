@@ -41,6 +41,7 @@ class ItemInteractionEventsTable(Table):
     def set_data(self) -> None:
         super().set_data()
         self._items = self.read_data_from_csv("items.csv").set_index('id').reset_index(drop=True)
+        self._items = self._items.replace("T1_BasicMechanics", "T1").replace("S1_BasicMechanics", "S1").replace("T2_BasicEmergency", "T2").replace("S2_BasicEmergency", "S2")
  
  
     def read_data(self) -> None:
@@ -59,30 +60,76 @@ class ItemInteractionEventsTable(Table):
         results = {}
 
         results["OI_N"] = float(len(df))
+        results["OI_N_R"] = float(len(df[(df["hand"] == "Right")]))
+        results["OI_N_L"] = float(len(df[(df["hand"] == "Left")]))
 
         for index in ItemInteractionType:
-            results["OI_N_type_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
+            results["OI_N_t_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
+            results["OI_N_t_{0}_R".format(index.value)] = float(len(df[(df["hand"] == "Right") & (df["event_type"].str.upper() == index.name)]))
+            results["OI_N_t_{0}_L".format(index.value)] = float(len(df[(df["hand"] == "Left") & (df["event_type"].str.upper() == index.name)]))
+
+        aux_items = self._items[self._items["scenario_type"].isin(df["scenario_type"].unique())]
 
         for index in ItemType:
-            results["OI_N_actor_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
+            if self.actor_is_in_scenario(index.value, aux_items):
+                results["OI_N_a_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
+            else: results["OI_N_a_{0}".format(index.value)] = np.nan
         
         results["OI_T"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
+        results["OI_T_R"] = self.get_time_btw_datetimes(df[df["hand"] == "Right"]["event_datetime"].to_list())
+        results["OI_T_L"] = self.get_time_btw_datetimes(df[df["hand"] == "Left"]["event_datetime"].to_list())
 
-        results["OI_T_SS"] = round(np.nanmean(
-            [self.get_time_btw_two_type(
+        right = self.get_time_btw_two_type(
                 df[(df["hand"] == "Right") & (df["event_type"] == "start_detection")],
-                df[(df["hand"] == "Right") & (df["event_type"] == "stop_detection")]),
-            self.get_time_btw_two_type(
+                df[(df["hand"] == "Right") & (df["event_type"] == "stop_detection")])
+        left = self.get_time_btw_two_type(
                 df[(df["hand"] == "Left") & (df["event_type"] == "start_detection")],
-                df[(df["hand"] == "Left") & (df["event_type"] == "stop_detection")])]), 3)
+                df[(df["hand"] == "Left") & (df["event_type"] == "stop_detection")])
+        
+        results["OI_T_SS"] = round(np.nanmean([right, left]), 3)
+        results["OI_T_SS_R"] = right
+        results["OI_T_SS_L"] = right
 
-        results["OI_T_GR"] = round(np.nanmean(
-            [self.get_time_btw_two_type(
+        right = self.get_time_btw_two_type(
                 df[(df["hand"] == "Right") & (df["event_type"] == "grab")],
-                df[(df["hand"] == "Right") & (df["event_type"] == "release")]),
-            self.get_time_btw_two_type(
+                df[(df["hand"] == "Right") & (df["event_type"] == "release")])
+        left = self.get_time_btw_two_type(
                 df[(df["hand"] == "Left") & (df["event_type"] == "grab")],
-                df[(df["hand"] == "Left") & (df["event_type"] == "release")])]), 3)
+                df[(df["hand"] == "Left") & (df["event_type"] == "release")])
+
+        results["OI_T_GR"] = round(np.nanmean([right, left]), 3)
+        results["OI_T_GR_R"] = right
+        results["OI_T_GR_L"] = left
+
+        for index in ItemType:
+            print(index.value, index.name)
+            if self.actor_is_in_scenario(index.value, aux_items):
+
+                right = self.get_time_btw_two_type(
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Right") & (df["event_type"] == "start_detection")],
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Right") & (df["event_type"] == "stop_detection")])
+                left = self.get_time_btw_two_type(
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Left") & (df["event_type"] == "start_detection")],
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Left") & (df["event_type"] == "stop_detection")])
+    
+                results["OI_T_SS_a_{0}".format(index.value)] = round(np.nanmean([right, left]), 3)
+
+            else: 
+                results["OI_T_SS_a_{0}".format(index.value)] = np.nan
+
+        for index in ItemType:
+            if self.actor_is_in_scenario(index.value, aux_items):     
+
+                right = self.get_time_btw_two_type(
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Right") & (df["event_type"] == "grab")],
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Right") & (df["event_type"] == "release")])
+                left = self.get_time_btw_two_type(
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Left") & (df["event_type"] == "grab")],
+                        df[(df["actor_id"] == index.value) & (df["hand"] == "Left") & (df["event_type"] == "release")])
+                results["OI_T_GR_a_{0}".format(index.value)] = round(np.nanmean([right, left]), 3)
+
+            else: 
+                results["OI_T_GR_a_{0}".format(index.value)] = np.nan
 
         return results
 
@@ -95,6 +142,9 @@ class ItemInteractionEventsTable(Table):
     #endregion
         
     #region METODOS PRIVADOS
+
+    def actor_is_in_scenario(self, actor_id, df):
+        return actor_id in df["actor_id"].unique()
 
     def get_time_btw_two_type(self, fst_df, snd_df):
         super().get_time_btw_two_type(fst_df, snd_df)
@@ -124,7 +174,7 @@ class ItemInteractionEventsTable(Table):
 
             fst_df = fst_df.iloc[1:]
 
-        if len(time_btw) > 0: return statistics.mean(time_btw)
+        if time_btw: return statistics.mean(time_btw)
         else: return np.nan
 
     #endregion

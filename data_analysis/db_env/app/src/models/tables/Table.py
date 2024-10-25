@@ -44,7 +44,7 @@ class Table:
                 df = pd.read_csv(os.path.join(dirpath, filename))
                 self._df = pd.concat([self._df, df[df["user_id"] == self._user_data["ID"]]])
 
-        self.clean_initial_dataframe()
+        self._df = self._df.replace("T1_BasicMechanics", "T1").replace("S1_BasicMechanics", "S1").replace("T2_BasicEmergency", "T2").replace("S2_BasicEmergency", "S2")
 
     def read_data_from_csv(self, filename) -> pd.DataFrame:
         df = pd.DataFrame()
@@ -110,10 +110,6 @@ class Table:
         return datetime_list
         #pd.to_datetime(df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
 
-
-    def clean_initial_dataframe(self):
-        self._df = self._df.replace("T1_BasicMechanics", "T1").replace("S1_BasicMechanics", "S1").replace("T2_BasicEmergency", "T2").replace("S2_BasicEmergency", "S2")
-
     def string_to_datetime(self, s_datetime) -> datetime:
         return datetime.strptime(s_datetime, '%Y-%m-%d %H:%M:%S.%f')
     
@@ -135,7 +131,8 @@ class Table:
         #print("==================", round(statistics.mean(times_btw), 2))
 
         # Se calcula la media de la lista
-        return round(statistics.mean(times_btw) / 1000, 3)
+        if times_btw: return round(statistics.mean(times_btw) / 1000, 3)
+        else: np.nan
     
     def get_time_btw_two_type(self, fst_df, snd_df):
         return np.nan

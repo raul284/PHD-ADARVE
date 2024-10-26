@@ -55,30 +55,48 @@ class ItemInteractionEventsTable(Table):
         super().analyse_data()
 
     def analyse_df(self, df) -> dict:
-        super().analyse_df(df)
+        return super().analyse_df(df)
         #print(df.to_string())
+
+    def analyse_number(self, df):
         results = {}
-
-        results["OI_N"] = float(len(df))
-        results["OI_N_R"] = float(len(df[(df["hand"] == "Right")]))
-        results["OI_N_L"] = float(len(df[(df["hand"] == "Left")]))
-
-        for index in ItemInteractionType:
-            results["OI_N_t_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
-            results["OI_N_t_{0}_R".format(index.value)] = float(len(df[(df["hand"] == "Right") & (df["event_type"].str.upper() == index.name)]))
-            results["OI_N_t_{0}_L".format(index.value)] = float(len(df[(df["hand"] == "Left") & (df["event_type"].str.upper() == index.name)]))
-
         aux_items = self._items[self._items["scenario_type"].isin(df["scenario_type"].unique())]
 
+        # Número de interacciones
+        results["OI_N"] = float(len(df))
+        # Número de interacciones con la mano DERECHA
+        results["OI_N_R"] = float(len(df[(df["hand"] == "Right")]))
+        # Número de interacciones con la mano IZQUIERDA 
+        results["OI_N_L"] = float(len(df[(df["hand"] == "Left")]))
+
+        # Número de interacciones en base al tipo de interacción
+        for index in ItemInteractionType:
+            results["OI_N_t_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
+            # Número de interacciones en base al tipo de interacción con la mano DERECHA
+            results["OI_N_t_{0}_R".format(index.value)] = float(len(df[(df["hand"] == "Right") & (df["event_type"].str.upper() == index.name)]))
+            # Número de interacciones en base al tipo de interacción con la mano IZQUIERDA
+            results["OI_N_t_{0}_L".format(index.value)] = float(len(df[(df["hand"] == "Left") & (df["event_type"].str.upper() == index.name)]))
+
+        # Número de interacciones en base al tipo de objeto
         for index in ItemType:
             if self.actor_is_in_scenario(index.value, aux_items):
                 results["OI_N_a_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
             else: results["OI_N_a_{0}".format(index.value)] = np.nan
         
+        return results
+    
+    def analyse_time(self, df):
+        results = {}
+        aux_items = self._items[self._items["scenario_type"].isin(df["scenario_type"].unique())]
+
+        # Tiempo entre interacciones
         results["OI_T"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
+        # Tiempo entre interacciones con la mano DERECHA
         results["OI_T_R"] = self.get_time_btw_datetimes(df[df["hand"] == "Right"]["event_datetime"].to_list())
+        # Tiempo entre interacciones con la mano IZQUIERDA
         results["OI_T_L"] = self.get_time_btw_datetimes(df[df["hand"] == "Left"]["event_datetime"].to_list())
 
+        # Tiempo entre interacciones START y STOP DETECTION
         right = self.get_time_btw_two_type(
                 df[(df["hand"] == "Right") & (df["event_type"] == "start_detection")],
                 df[(df["hand"] == "Right") & (df["event_type"] == "stop_detection")])
@@ -87,9 +105,12 @@ class ItemInteractionEventsTable(Table):
                 df[(df["hand"] == "Left") & (df["event_type"] == "stop_detection")])
         
         results["OI_T_SS"] = round(np.nanmean([right, left]), 3)
+        # Tiempo entre interacciones START y STOP DETECTION con la mano DERECHA
         results["OI_T_SS_R"] = right
-        results["OI_T_SS_L"] = right
+        # Tiempo entre interacciones START y STOP DETECTION con la mano IZQUIERDA
+        results["OI_T_SS_L"] = left
 
+        # Tiempo entre interacciones GRAB y RELEASE
         right = self.get_time_btw_two_type(
                 df[(df["hand"] == "Right") & (df["event_type"] == "grab")],
                 df[(df["hand"] == "Right") & (df["event_type"] == "release")])
@@ -98,11 +119,12 @@ class ItemInteractionEventsTable(Table):
                 df[(df["hand"] == "Left") & (df["event_type"] == "release")])
 
         results["OI_T_GR"] = round(np.nanmean([right, left]), 3)
+        # Tiempo entre interacciones GRAB y RELEASE con la mano DERECHA
         results["OI_T_GR_R"] = right
+        # Tiempo entre interacciones GRAB y RELEASE con la mano IZQUIERDA
         results["OI_T_GR_L"] = left
 
         for index in ItemType:
-            print(index.value, index.name)
             if self.actor_is_in_scenario(index.value, aux_items):
 
                 right = self.get_time_btw_two_type(
@@ -175,7 +197,7 @@ class ItemInteractionEventsTable(Table):
             fst_df = fst_df.iloc[1:]
 
         if time_btw: return statistics.mean(time_btw)
-        else: return np.nan
+        else: return 0.0
 
     #endregion
     

@@ -63,7 +63,7 @@ class GameplayEventsTable(Table):
     # analyse_data
 
     def analyse_df(self, df) -> dict:
-        super().analyse_df(df)
+        results = {}
 
         self._start_event = df[df["event_type"] == "00001"].iloc[0]
         self._end_event = df[df["event_type"] == "00002"].iloc[-1]
@@ -73,13 +73,24 @@ class GameplayEventsTable(Table):
 
         df = df[((df["event_type"] != "00001") & (df["event_type"] != "00002"))]
 
-        return {
-            "TD": round(end_time.timestamp() - start_time.timestamp(), 2),
-            "GP_N": float(len(df[df["event_state"] == "Completed"])),
-            "GP_T": self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list()),
-            "GP_T_SC": self.get_time_btw_two_type(df[df["event_state"] == "Started"], df[df["event_state"] == "Completed"])
-        }
-        
+        results["TD"] = round(end_time.timestamp() - start_time.timestamp(), 2)
+
+        return {**results, **self.analyse_number(df), **self.analyse_time(df)}
+    
+    def analyse_number(self, df):
+        results = {}
+        results["GP_N"] = float(len(df[df["event_state"] == "Completed"]))
+
+        return results
+    
+    def analyse_time(self, df):
+        results = {}
+
+        results["GP_T"] = self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list())
+        results["GP_T_SC"] = self.get_time_btw_two_type(df[df["event_state"] == "Started"], df[df["event_state"] == "Completed"])
+
+        return results
+
     def create_graphs(self):
         pass
 
@@ -91,16 +102,11 @@ class GameplayEventsTable(Table):
         
         times_to_complete = []
 
-        print(df)
-
         completed_df = df[df["event_state"] == "Completed"]
         for row in completed_df.iterrows():
             aux_row = row[1]
             started_df = df[(df["event_state"] == "Started") & (df["event_type"] == aux_row["event_type"])]
-            if started_df.empty:
-                print("hola")
-            else: 
-                print(started_df)
+            
             if len(started_df):
                 start = started_df.iloc[0]["event_datetime"].timestamp()
                 end = aux_row["event_datetime"].timestamp()

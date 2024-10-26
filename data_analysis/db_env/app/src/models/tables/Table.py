@@ -75,6 +75,12 @@ class Table:
         self._results = pd.DataFrame.from_records(list(results.values()))
 
     def analyse_df(self, df) -> dict:
+        return {**self.analyse_number(df), **self.analyse_time(df)}
+    
+    def analyse_number(self, df) -> dict:
+        return {}
+
+    def analyse_time(self, df) -> dict:
         return {}
         
     def get_results(self):
@@ -132,7 +138,7 @@ class Table:
 
         # Se calcula la media de la lista
         if times_btw: return round(statistics.mean(times_btw) / 1000, 3)
-        else: np.nan
+        else: 0.0
     
     def get_time_btw_two_type(self, fst_df, snd_df):
         return np.nan

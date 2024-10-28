@@ -27,8 +27,10 @@ class NPCInteractionEventsTable(Table):
         super().analyse_data()
     
     def analyse_df(self, df) -> dict:
-        super().analyse_df(df)
+        return super().analyse_df(df)
+        #print(df.to_string())
 
+    def analyse_number(self, df):
         results = {}
 
         #print(df.to_string())
@@ -41,6 +43,10 @@ class NPCInteractionEventsTable(Table):
         for index in NPCType:
             results["NPC_N_actor_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
 
+        return results
+
+    def analyse_time(self, df) -> dict:
+        results = {}
         # Aqui hay que hacer una distincion de tiempo entre interacciones
         results["NPC_T"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
 
@@ -52,7 +58,6 @@ class NPCInteractionEventsTable(Table):
 
 
         # Tiempo entre conversaciones. Independiente del NPC
-
         df_c = pd.DataFrame()
         for scenario in pd.unique(df["scenario_type"]):
             aux_df = df[df["scenario_type"] == scenario]

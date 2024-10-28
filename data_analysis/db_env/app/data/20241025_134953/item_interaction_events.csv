@@ -1,17 +1,17 @@
-id,user_id,scenario_type,actor_id,actor_name,event_type,hand,event_datetime
-0,"AB","T2_BasicEmergency","5","WalkieTalkie_1","start_detection","Right","2024-10-25 13:51:35.441"
-1,"AB","T2_BasicEmergency","5","WalkieTalkie_1","grab","Right","2024-10-25 13:51:35.751"
-2,"AB","T2_BasicEmergency","5","WalkieTalkie_1","stop_detection","Right","2024-10-25 13:51:35.775"
-3,"AB","T2_BasicEmergency","5","WalkieTalkie_1","release","Right","2024-10-25 13:52:13.895"
-4,"AB","T2_BasicEmergency","5","WalkieTalkie_1","start_detection","Right","2024-10-25 13:52:14.365"
-5,"AB","T2_BasicEmergency","5","WalkieTalkie_1","stop_detection","Right","2024-10-25 13:52:14.406"
-6,"AB","T2_BasicEmergency","3","Dosimeter_SABG100_3","start_detection","Right","2024-10-25 13:52:40.216"
-7,"AB","T2_BasicEmergency","3","Dosimeter_SABG100_3","grab","Right","2024-10-25 13:52:40.687"
-8,"AB","T2_BasicEmergency","3","Dosimeter_SABG100_3","stop_detection","Right","2024-10-25 13:52:40.710"
-9,"AB","T2_BasicEmergency","3","Dosimeter_SABG100_3","release","Right","2024-10-25 13:53:16.540"
-10,"AB","T2_BasicEmergency","4","Dosimeter_EPD_3","start_detection","Right","2024-10-25 13:53:43.48"
-11,"AB","T2_BasicEmergency","4","Dosimeter_EPD_3","grab","Right","2024-10-25 13:53:43.347"
-12,"AB","T2_BasicEmergency","4","Dosimeter_EPD_3","stop_detection","Right","2024-10-25 13:53:43.368"
-13,"AB","T2_BasicEmergency","4","Dosimeter_EPD_3","release","Right","2024-10-25 13:54:4.122"
-14,"AB","T2_BasicEmergency","4","Dosimeter_EPD_1","start_detection","Right","2024-10-25 13:54:4.156"
-15,"AB","T2_BasicEmergency","4","Dosimeter_EPD_1","stop_detection","Right","2024-10-25 13:54:4.329"
+id,user_id,experiment_id,scenario_type,actor_id,actor_name,event_type,hand,event_datetime
+0,AB,1,T2_BasicEmergency,5,WalkieTalkie_1,start_detection,Right,2024-10-25 13:51:35.441
+1,AB,1,T2_BasicEmergency,5,WalkieTalkie_1,grab,Right,2024-10-25 13:51:35.751
+2,AB,1,T2_BasicEmergency,5,WalkieTalkie_1,stop_detection,Right,2024-10-25 13:51:35.775
+3,AB,1,T2_BasicEmergency,5,WalkieTalkie_1,release,Right,2024-10-25 13:52:13.895
+4,AB,1,T2_BasicEmergency,5,WalkieTalkie_1,start_detection,Right,2024-10-25 13:52:14.365
+5,AB,1,T2_BasicEmergency,5,WalkieTalkie_1,stop_detection,Right,2024-10-25 13:52:14.406
+6,AB,1,T2_BasicEmergency,3,Dosimeter_SABG100_3,start_detection,Right,2024-10-25 13:52:40.216
+7,AB,1,T2_BasicEmergency,3,Dosimeter_SABG100_3,grab,Right,2024-10-25 13:52:40.687
+8,AB,1,T2_BasicEmergency,3,Dosimeter_SABG100_3,stop_detection,Right,2024-10-25 13:52:40.710
+9,AB,1,T2_BasicEmergency,3,Dosimeter_SABG100_3,release,Right,2024-10-25 13:53:16.540
+10,AB,1,T2_BasicEmergency,4,Dosimeter_EPD_3,start_detection,Right,2024-10-25 13:53:43.48
+11,AB,1,T2_BasicEmergency,4,Dosimeter_EPD_3,grab,Right,2024-10-25 13:53:43.347
+12,AB,1,T2_BasicEmergency,4,Dosimeter_EPD_3,stop_detection,Right,2024-10-25 13:53:43.368
+13,AB,1,T2_BasicEmergency,4,Dosimeter_EPD_3,release,Right,2024-10-25 13:54:4.122
+14,AB,1,T2_BasicEmergency,4,Dosimeter_EPD_1,start_detection,Right,2024-10-25 13:54:4.156
+15,AB,1,T2_BasicEmergency,4,Dosimeter_EPD_1,stop_detection,Right,2024-10-25 13:54:4.329

@@ -15,6 +15,7 @@ class User:
     #region VARIABLES PUBLICAS
 
     _id: str
+    _experiment_id: str
     _group: str
     _hmd: str
     _date_created: datetime
@@ -31,13 +32,14 @@ class User:
 
     #region METODOS PUBLICOS
 
-    def __init__(self, id:str = "", group:str = "", hmd:str = "", event_datetime:str = ""):
+    def __init__(self, id:str = "", experiment_id:str = "", group:str = "", hmd:str = "", event_datetime:str = ""):
         self._id = id
+        self._experiment_id = experiment_id
         self._group = group
         self._hmd = hmd
         self._date_created = datetime.strptime(event_datetime, '%Y-%m-%d %H:%M:%S.%f')
 
-        self._main_data = {"ID": self._id, "GROUP": self._group, "HMD": self._hmd}
+        self._main_data = {"ID": self._id, "EXP_ID": self._experiment_id, "GROUP": self._group, "HMD": self._hmd}
 
         #self._manager = UserManager()
 

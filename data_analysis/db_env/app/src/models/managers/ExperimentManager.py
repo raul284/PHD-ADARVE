@@ -105,6 +105,7 @@ class ExperimentManager:
                 if user_id not in users_dict:
                     users_dict[user_id] = User(
                         id = user_id,
+                        experiment_id = df.loc[0]["experiment_id"],
                         group = df.loc[0]["user_group"],
                         hmd = df.loc[0]["hmd_type"],
                         event_datetime = df.loc[0]["event_datetime"])

@@ -37,12 +37,27 @@ class Table:
         for scenario in self.SCENARIOS:
             self._scenarios[scenario] = self._df[self._df["scenario_type"] == scenario].reset_index()
 
+    def get_cols_till(self, df):
+        cols = []
+        i = 0
+        while df.columns[i] != "user_id":
+            cols.append(df.columns[i])
+            i += 1
+
+        return cols
+
     def read_data(self) -> None:
         filename = self._table_name + "_events.csv"
         for dirpath, dirnames, filenames in os.walk("../data/"):
             for filename in [f for f in filenames if f == filename]:
                 df = pd.read_csv(os.path.join(dirpath, filename))
-                self._df = pd.concat([self._df, df[df["user_id"] == self._user_data["ID"]]])
+                df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+                if not "id" in df:
+                    df.insert(0, "id", range(0, len(df)))
+                if not "experiment_id" in df:
+                    df.insert(2, "experiment_id", ["1" for x in range(len(df))])
+                df.to_csv(os.path.join(dirpath, filename), index=False)
+                self._df = pd.concat([self._df, df[(df["user_id"] == self._user_data["ID"]) & (df["experiment_id"] == self._user_data["EXP_ID"])]])
 
         self._df = self._df.replace("T1_BasicMechanics", "T1").replace("S1_BasicMechanics", "S1").replace("T2_BasicEmergency", "T2").replace("S2_BasicEmergency", "S2")
 

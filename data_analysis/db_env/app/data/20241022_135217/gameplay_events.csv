@@ -1,13 +1,13 @@
-id,user_id,scenario_type,event_type,event_state,event_datetime
-0,"AA","S1_BasicMechanics","00001","Completed","2024-10-22 13:52:21.481"
-1,"AA","S1_BasicMechanics","S1001","Started","2024-10-22 13:52:45.18"
-2,"AA","S1_BasicMechanics","S1001","Completed","2024-10-22 13:52:51.693"
-3,"AA","S1_BasicMechanics","S1002","Started","2024-10-22 13:52:51.703"
-4,"AA","S1_BasicMechanics","S1002","Completed","2024-10-22 13:53:26.806"
-5,"AA","S1_BasicMechanics","S1003","Started","2024-10-22 13:53:26.817"
-6,"AA","S1_BasicMechanics","S1003","Completed","2024-10-22 13:54:57.799"
-7,"AA","S1_BasicMechanics","S1004","Started","2024-10-22 13:54:57.810"
-8,"AA","S1_BasicMechanics","S1004","Completed","2024-10-22 13:55:19.581"
-9,"AA","S1_BasicMechanics","S1005","Started","2024-10-22 13:55:19.592"
-10,"AA","S1_BasicMechanics","S1005","Completed","2024-10-22 13:55:40.773"
-11,"AA","S1_BasicMechanics","00002","Completed","2024-10-22 13:55:40.787"
+id,user_id,experiment_id,scenario_type,event_type,event_state,event_datetime
+0,AA,1,S1_BasicMechanics,00001,Completed,2024-10-22 13:52:21.481
+1,AA,1,S1_BasicMechanics,S1001,Started,2024-10-22 13:52:45.18
+2,AA,1,S1_BasicMechanics,S1001,Completed,2024-10-22 13:52:51.693
+3,AA,1,S1_BasicMechanics,S1002,Started,2024-10-22 13:52:51.703
+4,AA,1,S1_BasicMechanics,S1002,Completed,2024-10-22 13:53:26.806
+5,AA,1,S1_BasicMechanics,S1003,Started,2024-10-22 13:53:26.817
+6,AA,1,S1_BasicMechanics,S1003,Completed,2024-10-22 13:54:57.799
+7,AA,1,S1_BasicMechanics,S1004,Started,2024-10-22 13:54:57.810
+8,AA,1,S1_BasicMechanics,S1004,Completed,2024-10-22 13:55:19.581
+9,AA,1,S1_BasicMechanics,S1005,Started,2024-10-22 13:55:19.592
+10,AA,1,S1_BasicMechanics,S1005,Completed,2024-10-22 13:55:40.773
+11,AA,1,S1_BasicMechanics,00002,Completed,2024-10-22 13:55:40.787

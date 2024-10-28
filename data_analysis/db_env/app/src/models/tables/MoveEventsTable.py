@@ -24,14 +24,31 @@ class MoveEventsTable(Table):
         super().analyse_data()
 
     def analyse_df(self, df) -> dict:
-        super().analyse_df(df)
+        return super().analyse_df(df)
 
-        return {
-            "MV_NUM_VR": float(len(df[df["move_type"] == "virtual_reality"])),
-            "MV_NUM_RL": float(len(df[df["move_type"] == "real_life"])), 
-            "MV_DIST_VR": round(sum([float(dist) for dist in df[df["move_type"] == "virtual_reality"]["distance"].to_list()]), 2), 
-            "MV_DIST_RL": round(sum([float(dist) for dist in df[df["move_type"] == "real_life"]["distance"].to_list()]), 2),
-        }
+    def analyse_number(self, df) -> dict:
+        results = {}
+
+        results["MV_N_VR"] =  float(len(df[df["move_type"] == "virtual_reality"]))
+        results["MV_N_RL"] = float(len(df[df["move_type"] == "real_life"]))
+
+        results["MV_D_VR"] = round(df[df["move_type"] == "virtual_reality"]["distance"].sum(), 3)
+        results["MV_D_RL"] = round(df[df["move_type"] == "real_life"]["distance"].sum(), 3)
+
+        return results
+    
+    def analyse_time(self, df) -> dict:
+        results = {}
+
+        # Tiempo medio entre teletransportes
+        results["MV_T_VR"] = 0.0
+        # Tiempo medio entre movimientos en la vida real
+        results["MV_T_RL"] = 0.0
+
+        # Tiempo medio entre que inicia el teletransporte y lo termina
+        results["MV_T_TE"] = 0.0
+
+        return results
     
     def create_graphs(self):
         pass  

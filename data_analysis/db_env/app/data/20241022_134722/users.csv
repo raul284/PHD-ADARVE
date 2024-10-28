@@ -1,2 +1,2 @@
-id,user_id,user_group,hmd_type,event_datetime
-0,"AA","TSV","QUEST","2024-10-22 13:47:23.36"
+,id,user_id,experiment_id,user_group,hmd_type,event_datetime
+0,0,AA,1,TSV,QUEST,2024-10-22 13:47:23.36

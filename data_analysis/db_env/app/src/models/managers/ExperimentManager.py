@@ -45,8 +45,8 @@ class ExperimentManager:
     def set_data(self) -> None:
         self._users = self.get_users_dict()
 
-        for id in self._users:
-            self._users[id].set_data()
+        #for id in self._users:
+        self._users["AB"].set_data()
 
     # set_data
 

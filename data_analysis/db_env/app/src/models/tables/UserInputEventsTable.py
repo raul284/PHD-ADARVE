@@ -24,24 +24,31 @@ class UserInputEventsTable(Table):
     def set_data(self) -> None:
         super().set_data()
 
-    def read_data_from_csv(self) -> None:
-        super().read_data_from_csv()
-
-        self._df["event_datetime"] = pd.to_datetime(self._df["event_datetime"], format="%Y-%m-%d %H:%M:%S.%f")
+    def read_data(self) -> None:
+        super().read_data()
+        self._df["event_datetime"] = pd.to_datetime(self.fix_datetimes(self._df["event_datetime"]), format="%Y-%m-%d %H:%M:%S.%f")
         
-
     def analyse_data(self):
         super().analyse_data()
 
-
     def analyse_df(self, df) -> dict:
-        super().analyse_df(df)
-
+        return super().analyse_df(df)
+        
+    def analyse_number(self, df):
         results = {}
-        results["UI_NUM"] = float(len(df))
+
+        results["UI_N"] = float(len(df))
+
         for index in UserInputType:
-            results["UI_NUM_TYPE_{0}".format(index.name)] = float(len(df[df["input_type"].str.upper() == index.name]))
-        results["UI_TIME"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
+            results["UI_N_t_{0}".format(index.value)] = float(len(df[df["input_type"].str.upper() == index.name]))
+
+        return results
+
+    
+    def analyse_time(self, df):
+        results = {}
+
+        results["UI_T"] = self.get_time_btw_datetimes(df["event_datetime"].to_list())
 
         return results
 
@@ -53,7 +60,5 @@ class UserInputEventsTable(Table):
     
 #region METODOS PRIVADOS
        
-    def clean_initial_dataframe(self):
-        super().clean_initial_dataframe()
 
 #enregion

@@ -51,9 +51,11 @@ class Table:
         for dirpath, dirnames, filenames in os.walk("../data/"):
             for filename in [f for f in filenames if f == filename]:
                 df = pd.read_csv(os.path.join(dirpath, filename))
-                df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
-                if not "id" in df:
-                    df.insert(0, "id", range(0, len(df)))
+                
+                #df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+                #df = df.shift(periods=1, axis="columns")
+                #if not "id" in df:
+                #    df.insert(0, "id", range(0, len(df)))
                 if not "experiment_id" in df:
                     df.insert(2, "experiment_id", ["1" for x in range(len(df))])
                 df.to_csv(os.path.join(dirpath, filename), index=False)

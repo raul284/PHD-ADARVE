@@ -8,3 +8,5 @@ class UserInputType(Enum):
     IA_MENU_INTERACT_RIGHT = 4
     IA_GRAB_LEFT = 5
     IA_GRAB_RIGHT = 6
+    IA_MENU_TOGGLE_LEFT = 7
+    IA_MENU_TOGGLE_RIGHT = 8

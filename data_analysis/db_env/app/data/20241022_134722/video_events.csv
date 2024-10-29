@@ -1,6 +1,6 @@
-id,user_id,scenario_type,tutorial_item_id,event_type,event_datetime
-0,"AA","T1_BasicMechanics","MOV_VirtualWorld","started","2024-10-22 13:48:20.746"
-1,"AA","T1_BasicMechanics","OI_Detection","started","2024-10-22 13:49:8.447"
-2,"AA","T1_BasicMechanics","OI_GrabRelease","started","2024-10-22 13:49:48.952"
-3,"AA","T1_BasicMechanics","OI_Placement","started","2024-10-22 13:50:27.117"
-4,"AA","T1_BasicMechanics","CI_Conversation","started","2024-10-22 13:51:6.884"
+id,user_id,experiment_id,scenario_type,tutorial_item_id,event_type,event_datetime
+0,AA,1,T1_BasicMechanics,MOV_VirtualWorld,started,2024-10-22 13:48:20.746
+1,AA,1,T1_BasicMechanics,OI_Detection,started,2024-10-22 13:49:8.447
+2,AA,1,T1_BasicMechanics,OI_GrabRelease,started,2024-10-22 13:49:48.952
+3,AA,1,T1_BasicMechanics,OI_Placement,started,2024-10-22 13:50:27.117
+4,AA,1,T1_BasicMechanics,CI_Conversation,started,2024-10-22 13:51:6.884

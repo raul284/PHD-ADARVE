@@ -1,139 +1,139 @@
-id,user_id,experiment_id,scenario_type,input_type,input_state,event_datetime
-0.0,0,0,0,0,0,0
-1.0,1,1,1,1,1,1
-2.0,2,2,2,2,2,2
-3.0,3,3,3,3,3,3
-4.0,4,4,4,4,4,4
-5.0,5,5,5,5,5,5
-6.0,6,6,6,6,6,6
-7.0,7,7,7,7,7,7
-8.0,8,8,8,8,8,8
-9.0,9,9,9,9,9,9
-10.0,10,10,10,10,10,10
-11.0,11,11,11,11,11,11
-12.0,12,12,12,12,12,12
-13.0,13,13,13,13,13,13
-14.0,14,14,14,14,14,14
-15.0,15,15,15,15,15,15
-16.0,16,16,16,16,16,16
-17.0,17,17,17,17,17,17
-18.0,18,18,18,18,18,18
-19.0,19,19,19,19,19,19
-20.0,20,20,20,20,20,20
-21.0,21,21,21,21,21,21
-22.0,22,22,22,22,22,22
-23.0,23,23,23,23,23,23
-24.0,24,24,24,24,24,24
-25.0,25,25,25,25,25,25
-26.0,26,26,26,26,26,26
-27.0,27,27,27,27,27,27
-28.0,28,28,28,28,28,28
-29.0,29,29,29,29,29,29
-30.0,30,30,30,30,30,30
-31.0,31,31,31,31,31,31
-32.0,32,32,32,32,32,32
-33.0,33,33,33,33,33,33
-34.0,34,34,34,34,34,34
-35.0,35,35,35,35,35,35
-36.0,36,36,36,36,36,36
-37.0,37,37,37,37,37,37
-38.0,38,38,38,38,38,38
-39.0,39,39,39,39,39,39
-40.0,40,40,40,40,40,40
-41.0,41,41,41,41,41,41
-42.0,42,42,42,42,42,42
-43.0,43,43,43,43,43,43
-44.0,44,44,44,44,44,44
-45.0,45,45,45,45,45,45
-46.0,46,46,46,46,46,46
-47.0,47,47,47,47,47,47
-48.0,48,48,48,48,48,48
-49.0,49,49,49,49,49,49
-50.0,50,50,50,50,50,50
-51.0,51,51,51,51,51,51
-52.0,52,52,52,52,52,52
-53.0,53,53,53,53,53,53
-54.0,54,54,54,54,54,54
-55.0,55,55,55,55,55,55
-56.0,56,56,56,56,56,56
-57.0,57,57,57,57,57,57
-58.0,58,58,58,58,58,58
-59.0,59,59,59,59,59,59
-60.0,60,60,60,60,60,60
-61.0,61,61,61,61,61,61
-62.0,62,62,62,62,62,62
-63.0,63,63,63,63,63,63
-64.0,64,64,64,64,64,64
-65.0,65,65,65,65,65,65
-66.0,66,66,66,66,66,66
-67.0,67,67,67,67,67,67
-68.0,68,68,68,68,68,68
-69.0,69,69,69,69,69,69
-70.0,70,70,70,70,70,70
-71.0,71,71,71,71,71,71
-72.0,72,72,72,72,72,72
-73.0,73,73,73,73,73,73
-74.0,74,74,74,74,74,74
-75.0,75,75,75,75,75,75
-76.0,76,76,76,76,76,76
-77.0,77,77,77,77,77,77
-78.0,78,78,78,78,78,78
-79.0,79,79,79,79,79,79
-80.0,80,80,80,80,80,80
-81.0,81,81,81,81,81,81
-82.0,82,82,82,82,82,82
-83.0,83,83,83,83,83,83
-84.0,84,84,84,84,84,84
-85.0,85,85,85,85,85,85
-86.0,86,86,86,86,86,86
-87.0,87,87,87,87,87,87
-88.0,88,88,88,88,88,88
-89.0,89,89,89,89,89,89
-90.0,90,90,90,90,90,90
-91.0,91,91,91,91,91,91
-92.0,92,92,92,92,92,92
-93.0,93,93,93,93,93,93
-94.0,94,94,94,94,94,94
-95.0,95,95,95,95,95,95
-96.0,96,96,96,96,96,96
-97.0,97,97,97,97,97,97
-98.0,98,98,98,98,98,98
-99.0,99,99,99,99,99,99
-100.0,100,100,100,100,100,100
-101.0,101,101,101,101,101,101
-102.0,102,102,102,102,102,102
-103.0,103,103,103,103,103,103
-104.0,104,104,104,104,104,104
-105.0,105,105,105,105,105,105
-106.0,106,106,106,106,106,106
-107.0,107,107,107,107,107,107
-108.0,108,108,108,108,108,108
-109.0,109,109,109,109,109,109
-110.0,110,110,110,110,110,110
-111.0,111,111,111,111,111,111
-112.0,112,112,112,112,112,112
-113.0,113,113,113,113,113,113
-114.0,114,114,114,114,114,114
-115.0,115,115,115,115,115,115
-116.0,116,116,116,116,116,116
-117.0,117,117,117,117,117,117
-118.0,118,118,118,118,118,118
-119.0,119,119,119,119,119,119
-120.0,120,120,120,120,120,120
-121.0,121,121,121,121,121,121
-122.0,122,122,122,122,122,122
-123.0,123,123,123,123,123,123
-124.0,124,124,124,124,124,124
-125.0,125,125,125,125,125,125
-126.0,126,126,126,126,126,126
-127.0,127,127,127,127,127,127
-128.0,128,128,128,128,128,128
-129.0,129,129,129,129,129,129
-130.0,130,130,130,130,130,130
-131.0,131,131,131,131,131,131
-132.0,132,132,132,132,132,132
-133.0,133,133,133,133,133,133
-134.0,134,134,134,134,134,134
-135.0,135,135,135,135,135,135
-136.0,136,136,136,136,136,136
-137.0,137,137,137,137,137,137
+id,user_id,experiment_id,scenario_type,input_type,input_state,hand,event_datetime
+0,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:52:50.5
+1,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:52:50.575
+2,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:52:51.232
+3,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:52:51.682
+4,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:52:53.538
+5,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:52:55.704
+6,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,started,Right,2024-10-22 13:52:56.751
+7,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,completed,Right,2024-10-22 13:52:56.881
+8,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,started,Right,2024-10-22 13:52:57.214
+9,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,completed,Right,2024-10-22 13:52:57.371
+10,AA,1,S1_BasicMechanics,IA_Menu_Toggle_Right,started,Right,2024-10-22 13:53:24.210
+11,AA,1,S1_BasicMechanics,IA_Menu_Toggle_Right,completed,Right,2024-10-22 13:53:24.520
+12,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,started,Right,2024-10-22 13:53:26.39
+13,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,completed,Right,2024-10-22 13:53:26.180
+14,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,started,Right,2024-10-22 13:53:26.593
+15,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,completed,Right,2024-10-22 13:53:26.729
+16,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:27.802
+17,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:29.187
+18,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:29.774
+19,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:29.924
+20,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:53:30.789
+21,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:53:31.75
+22,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:53:31.204
+23,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:32.463
+24,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:32.989
+25,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:33.763
+26,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:33.917
+27,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:53:34.791
+28,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:36.39
+29,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:36.272
+30,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:53:37.400
+31,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:38.511
+32,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:38.924
+33,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:53:39.958
+34,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:41.33
+35,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:41.609
+36,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:42.284
+37,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:42.441
+38,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:53:44.316
+39,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:53:44.743
+40,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:46.517
+41,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:47.146
+42,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:47.813
+43,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:47.946
+44,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:53:48.832
+45,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:53:50.17
+46,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:51.569
+47,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:53.482
+48,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:53.927
+49,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:54.159
+50,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:54.750
+51,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:55.32
+52,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:58.320
+53,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:58.702
+54,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:58.779
+55,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:53:58.934
+56,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:53:59.622
+57,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:0.205
+58,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:1.57
+59,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:1.160
+60,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:54:2.758
+61,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:54:3.0
+62,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:54:3.247
+63,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:54:7.295
+64,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:8.355
+65,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:8.485
+66,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:54:10.499
+67,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:11.225
+68,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:11.614
+69,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:54:12.997
+70,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:14.507
+71,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:15.7
+72,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:15.437
+73,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:15.835
+74,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:16.784
+75,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:16.842
+76,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:54:18.179
+77,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:54:18.457
+78,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:54:18.615
+79,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:54:19.181
+80,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:54:19.736
+81,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:54:20.608
+82,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:54:21.127
+83,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:54:21.635
+84,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:23.190
+85,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:23.554
+86,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:23.926
+87,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:25.112
+88,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:54:26.576
+89,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:27.259
+90,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:27.481
+91,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:54:28.598
+92,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:29.461
+93,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:29.562
+94,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:29.791
+95,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:30.568
+96,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:30.923
+97,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:31.400
+98,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:54:33.373
+99,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:54:34.50
+100,AA,1,S1_BasicMechanics,IA_Grab_Left,started,Left,2024-10-22 13:54:34.441
+101,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:35.836
+102,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:36.324
+103,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:36.759
+104,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:37.122
+105,AA,1,S1_BasicMechanics,IA_Grab_Left,completed,Left,2024-10-22 13:54:39.362
+106,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:42.946
+107,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:43.550
+108,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:43.994
+109,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:44.418
+110,AA,1,S1_BasicMechanics,IA_Menu_Interact_Left,started,Left,2024-10-22 13:54:45.504
+111,AA,1,S1_BasicMechanics,IA_Menu_Interact_Left,completed,Left,2024-10-22 13:54:45.649
+112,AA,1,S1_BasicMechanics,IA_Menu_Interact_Left,started,Left,2024-10-22 13:54:46.580
+113,AA,1,S1_BasicMechanics,IA_Menu_Interact_Left,completed,Left,2024-10-22 13:54:46.726
+114,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:49.256
+115,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:51.226
+116,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:51.718
+117,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:54:51.968
+118,AA,1,S1_BasicMechanics,IA_Grab_Right,started,Right,2024-10-22 13:54:53.938
+119,AA,1,S1_BasicMechanics,IA_Move_Left,started,Left,2024-10-22 13:54:54.659
+120,AA,1,S1_BasicMechanics,IA_Move_Left,completed,Left,2024-10-22 13:54:55.40
+121,AA,1,S1_BasicMechanics,IA_Move_Left,started,Left,2024-10-22 13:54:55.391
+122,AA,1,S1_BasicMechanics,IA_Move_Left,completed,Left,2024-10-22 13:54:55.697
+123,AA,1,S1_BasicMechanics,IA_Move_Left,started,Left,2024-10-22 13:54:56.346
+124,AA,1,S1_BasicMechanics,IA_Move_Left,completed,Left,2024-10-22 13:54:56.531
+125,AA,1,S1_BasicMechanics,IA_Grab_Right,completed,Right,2024-10-22 13:54:57.775
+126,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:54:59.237
+127,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:55:0.942
+128,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:55:1.303
+129,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:55:1.616
+130,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,started,Right,2024-10-22 13:55:2.329
+131,AA,1,S1_BasicMechanics,IA_Menu_Interact_Right,completed,Right,2024-10-22 13:55:2.403
+132,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:55:4.390
+133,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:55:4.547
+134,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:55:21.972
+135,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:55:22.375
+136,AA,1,S1_BasicMechanics,IA_Move_Right,started,Right,2024-10-22 13:55:39.417
+137,AA,1,S1_BasicMechanics,IA_Move_Right,completed,Right,2024-10-22 13:55:40.760

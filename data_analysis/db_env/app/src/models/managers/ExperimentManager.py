@@ -2,11 +2,7 @@ import pandas as pd
 import os
 
 from models.User import User
-from models.Group import Group
 from models.form.Form import Form
-
-from models.events import *
-from models.tables import *
 
 
 class ExperimentManager:
@@ -45,8 +41,22 @@ class ExperimentManager:
     def set_data(self) -> None:
         self._users = self.get_users_dict()
 
-        #for id in self._users:
-        self._users["AB"].set_data()
+        for id in self._users:
+            self._users[id].set_data()
+
+            if not os.path.exists("../data/{0}".format(id)):
+                os.makedirs("../data/{0}".format(id))
+            for table_name in self._users[id]._event_tables._data:
+                file_path = "../data/{0}/{1}.csv".format(id, table_name)
+                if not os.path.exists(file_path):
+                    self._users[id]._event_tables.get_data_from_table(table_name).to_csv(file_path)
+            for table_name in self._users[id]._form_tables._data:
+                file_path = "../data/{0}/{1}.csv".format(id, table_name)
+                if not os.path.exists(file_path):
+                    self._users[id]._form_tables.get_data_from_table(table_name).to_csv(file_path)
+
+
+        
 
     # set_data
 
@@ -85,12 +95,12 @@ class ExperimentManager:
             experiment_results = pd.concat([experiment_results, results[table]], axis=1)
 
 
+        if len(experiment_results) > 0:
+            experiment_results[experiment_results["SCENARIO"] == "ALL"].to_csv("../results/resultsALL.csv", na_rep='NULL')
+            experiment_results[experiment_results["SCENARIO"] == "ALL"].to_excel("../results/resultsALL.xlsx", na_rep='NULL')
 
-        experiment_results[experiment_results["SCENARIO"] == "ALL"].to_csv("../results/resultsALL.csv", na_rep='NULL')
-        experiment_results[experiment_results["SCENARIO"] == "ALL"].to_excel("../results/resultsALL.xlsx", na_rep='NULL')
-
-        experiment_results[experiment_results["SCENARIO"] != "ALL"].to_csv("../results/resultsSCENARIO.csv", na_rep='NULL')
-        experiment_results[experiment_results["SCENARIO"] != "ALL"].to_excel("../results/resultsSCENARIO.xlsx", na_rep='NULL')
+            experiment_results[experiment_results["SCENARIO"] != "ALL"].to_csv("../results/resultsSCENARIO.csv", na_rep='NULL')
+            experiment_results[experiment_results["SCENARIO"] != "ALL"].to_excel("../results/resultsSCENARIO.xlsx", na_rep='NULL')
 
     # export_results
 

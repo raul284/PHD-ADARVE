@@ -7,8 +7,8 @@ class EventTables:
 
     def __init__(self, user_data) -> None:
         self._data = {}
-        #self._data["gameplay"] = GameplayEventsTable(user_data)
-        #self._data["item_interaction"] = ItemInteractionEventsTable(user_data)
+        self._data["gameplay"] = GameplayEventsTable(user_data)
+        self._data["item_interaction"] = ItemInteractionEventsTable(user_data)
         #self._data["npc_interaction"] = NPCInteractionEventsTable(user_data)
         #self._data["move"] = MoveEventsTable(user_data)
         #self._data["user_input"] = UserInputEventsTable(user_data)

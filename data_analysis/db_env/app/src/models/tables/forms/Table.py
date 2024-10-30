@@ -26,37 +26,36 @@ class Table:
     def set_data(self, filename) -> None:
         self.read_data(filename)
         #self._df = self._df.set_index('id').reset_index(drop=True)
-        self._data["pd"] = self._df[[col for col in self._df.columns if "S-PD" in col]]
-        self._data["app"] = self._df[[col for col in self._df.columns if "S-APP" in col]]
-        self._data["ux"] = self._df[[col for col in self._df.columns if "S-UX" in col]]
-        self._data["sus"] = self._df[[col for col in self._df.columns if "S-SUS" in col]]
-        self._data["cl"] = self._df[[col for col in self._df.columns if "S-CL" in col]]
+        self._data["PD"] = self._df[[col for col in self._df.columns if "S-PD" in col]]
+        self._data["APP"] = self._df[[col for col in self._df.columns if "S-APP" in col]]
+        self._data["UX"] = self._df[[col for col in self._df.columns if "S-UX" in col]]
+        self._data["SUS"] = self._df[[col for col in self._df.columns if "S-SUS" in col]]
+        self._data["CL"] = self._df[[col for col in self._df.columns if "S-CL" in col]]
 
     def read_data(self, filename) -> None:
         self._df = pd.read_excel("../data/{0}".format(filename))
         id_col_name = [col for col in self._df.columns if "[ID]" in col][0]
         self._df = self._df[self._df[id_col_name] == self._user_data["ID"]]
-        #self._df = pd.concat([self._df, df[(df["user_id"] == self._user_data["ID"]) & (df["experiment_id"] == self._user_data["EXP_ID"])]])
     
     def analyse_data(self) -> None:
         results = {}
-        results["app"] = self.analyse_app()
-        results["ux"] = self.analyse_ux()
-        results["sus"] = self.analyse_sus()
-        results["cl"] = self.analyse_cl()
+        results["APP"] = self.analyse_app()
+        results = {**results, **self.analyse_ux()}
+        results["SUS"] = self.analyse_sus()
+        results = {**results, **self.analyse_cl()}
 
         self._results = pd.DataFrame([results])
-        print(self._results)
+        #print(self._results)
 
     def analyse_app(self) -> float:
         result = 0.0
-        df = self._data["app"]
+        df = self._data["APP"]
 
         return result
     
     def analyse_ux(self) -> dict:
         result = {}
-        df = self._data["ux"]
+        df = self._data["UX"]
 
         ids = {
             "attractiveness": [0, 11, 13, 15, 23, 24],
@@ -68,36 +67,38 @@ class Table:
         }
 
         for trait in ids:
-            result[trait[0]] = round(sum([df[df.columns[id]] - 4 for id in ids[trait]]) / len(ids[trait]), 3)
+            result["UX_{0}".format(trait[0].upper())] = float(round(sum([df[df.columns[id]].iloc[0] - 4 for id in ids[trait]]) / len(ids[trait]), 3))
 
         return result
     
     def analyse_sus(self) -> float:
         result = 0.0
-        df = self._data["sus"]
+        df = self._data["SUS"]
         
         # X se calcula con los números impares e Y con los pares
         # Para coger los valores pares e impares estoy lo estoy haciendo a la inversa
         # Los índices pares en programación serían el 0, 2, 4...pero en la vida real esto es 1, 2, 5...
         # Por ello, estoy pillando los índices al contrario.
-        x = sum([df[col] for col in df.columns[::2]]) - 5.0
-        y = 25.0 - sum([df[col] for col in df.columns[1::2]])
+        x = sum([df[col].iloc[0] for col in df.columns[::2]]) - 5.0
+        y = 25.0 - sum([df[col].iloc[0] for col in df.columns[1::2]])
         result = (x + y) * 2.5
 
-        return result
+        return float(result)
     
     def analyse_cl(self) -> float:
-        df = self._data["cl"]
+        df = self._data["CL"]
+        result = {}
 
-        result = {
-            "mental_demand": 0,
-            "physical_demand": 0,
-            "temporal_demand": 0, 
-            "effort": 0,
-            "performance": 0,
-            "frustration": 0
+        scores = {
+            "CL_MD": 0,   # Mental Demand
+            "CL_PD": 0,   # Physical Demand
+            "CL_TD": 0,   # Temporal Demand
+            "CL_E": 0,    # Effort
+            "CL_P": 0,    # Performance
+            "CL_F": 0     # Frustration
         }
-        weights = result.copy()
+
+        weights = {key.replace("_", "_W_"): scores[key] for key in scores}
 
         weight_df = df.iloc[:, 0:15]
         for col in weight_df.columns:
@@ -106,31 +107,32 @@ class Table:
 
             match selected:
                 case "Exigencias Mentales":
-                    weights["mental_demand"] += 1
+                    weights["CL_W_MD"] += 1
                 case "Exigencias Físicas":
-                    weights["physical_demand"] += 1
+                    weights["CL_W_PD"] += 1
                 case "Exigencias Temporales":
-                    weights["temporal_demand"] += 1
+                    weights["CL_W_TD"] += 1
                 case "Esfuerzo":
-                    weights["effort"] += 1
+                    weights["CL_W_E"] += 1
                 case "Rendimiento":
-                    weights["performance"] += 1
+                    weights["CL_W_P"] += 1
                 case "Nivel de Frustración":
-                    weights["frustration"] += 1
+                    weights["CL_W_F"] += 1
             
         for w in weights:
             aux = weights[w] / 15
             weights[w] = aux
+            result[w] = round(aux, 3)
 
-        scores = df.iloc[:, 15:].values[0]
-        score_index = 0
+        user_responses = df.iloc[:, 15:].values[0]
+        response_index = 0
 
-        for key in result:
-            result[key] = scores[score_index] * weights[key]
-            score_index += 1
-
-        cl_score = round(sum(result.values()), 3)
-        print(cl_score)
+        for key in scores:
+            scores[key] = float(round(user_responses[response_index] * weights[key.replace("_", "_W_")], 3))
+            response_index += 1
+        
+        result = {**result, **scores}
+        result["CL_SCORE"] = round(sum(result.values()), 3)
 
         return result
         

@@ -2,7 +2,6 @@ import pandas as pd
 import os
 
 from models.User import User
-from models.form.Form import Form
 
 
 class ExperimentManager:
@@ -20,8 +19,6 @@ class ExperimentManager:
 
     _users: dict
 
-    _form: Form
-
 #endregion
 
 #region METODOS
@@ -30,10 +27,7 @@ class ExperimentManager:
     def __init__(self) -> None:
         '''Inicializa las propiedades de la clase.'''
         # Recoge la información de los cuestionarios almacenados en CSVs
-        #form_manager = FormManager()
-        #form_manager.form_to_dataframe()
         self._users = {}
-        self._form = Form()
 
     # __init__
         
@@ -78,22 +72,40 @@ class ExperimentManager:
         if not os.path.exists("../results/excel"):
             os.makedirs("../results/excel")
 
-        results = {}
+        results = {
+            "events":{},
+            "form":{}
+        }
 
         for id in self._users:
-            user_results = self._users[id].get_results()
-            for table in user_results:
-                if table not in results:
-                    results[table] = pd.DataFrame()
+            # Pedimos los resultados. Este es un dict con las claves: APP para los resultados de 
+            # la aplicación y FORM para los resultados del formulario
+            event_results = self._users[id].get_event_results()
+            for table in event_results:
+                if table not in results["events"]:
+                    results["events"][table] = pd.DataFrame()
+                results["events"][table] = pd.concat([results["events"][table], event_results[table]], axis=0, ignore_index=True)
 
-                results[table] = pd.concat([results[table], user_results[table]], ignore_index=True)
-        
+            form_results = self._users[id].get_form_results()
+            for table in form_results:
+                if table not in results["form"]:
+                    results["form"][table] = pd.DataFrame()
+                results["form"][table] = pd.concat([results["form"][table], form_results[table]], ignore_index=True)          
+
         experiment_results = pd.DataFrame()
-        for table in results:
+        for table in results["events"]:
             if len(experiment_results) > 0:
-                results[table] = results[table].drop(columns=['ID', 'GROUP', 'HMD', 'SCENARIO'], axis=1)
-            experiment_results = pd.concat([experiment_results, results[table]], axis=1)
+                results["events"][table] = results["events"][table].drop(columns=['ID', 'GROUP', 'HMD', 'SCENARIO'], axis=1, errors='ignore')
+            experiment_results = pd.concat([experiment_results, results["events"][table]], axis=1)
+        
+        for table in results["form"]:
+            aux_df = pd.DataFrame()
+            for index, row in results["form"][table].iterrows():
+                for i in range(int(len(experiment_results) / len(self._users))):
+                    aux_df = pd.concat([aux_df, results["form"][table].iloc[index]], axis=1, ignore_index=True) 
+            experiment_results = pd.concat([experiment_results, aux_df.T], axis=1)
 
+        #print(experiment_results)
 
         if len(experiment_results) > 0:
             experiment_results[experiment_results["SCENARIO"] == "ALL"].to_csv("../results/resultsALL.csv", na_rep='NULL')
@@ -119,7 +131,6 @@ class ExperimentManager:
                         group = df.loc[0]["user_group"],
                         hmd = df.loc[0]["hmd_type"],
                         event_datetime = df.loc[0]["event_datetime"])
-        
         
         return users_dict
 

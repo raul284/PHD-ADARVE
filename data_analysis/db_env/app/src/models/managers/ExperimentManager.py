@@ -78,8 +78,6 @@ class ExperimentManager:
         }
 
         for id in self._users:
-            # Pedimos los resultados. Este es un dict con las claves: APP para los resultados de 
-            # la aplicación y FORM para los resultados del formulario
             event_results = self._users[id].get_event_results()
             for table in event_results:
                 if table not in results["events"]:

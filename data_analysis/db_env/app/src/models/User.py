@@ -29,6 +29,7 @@ class User:
     #_manager: UserManager
 
     _results_path: str
+    _results: pd.DataFrame
 
     #endregion
 
@@ -41,7 +42,7 @@ class User:
         self._hmd = hmd
         self._date_created = datetime.strptime(event_datetime, '%Y-%m-%d %H:%M:%S.%f')
 
-        self._main_data = {"ID": self._id, "EXP_ID": self._experiment_id, "GROUP": self._group, "HMD": self._hmd}
+        self._user_data = {"ID": self._id, "EXP_ID": self._experiment_id, "GROUP": self._group, "HMD": self._hmd}
 
         self._result_path = "../results/{0}/".format(self._id)
 
@@ -52,15 +53,17 @@ class User:
         return f'User({self._id}, {self._group}, {self._hmd})'
     
     def set_data(self):
-        self._event_tables = EventTables(self._main_data)
+        self._event_tables = EventTables(self._user_data)
         self._event_tables.set_data()
 
-        self._form_tables = FormTables(self._main_data)
+        self._form_tables = FormTables(self._user_data)
         self._form_tables.set_data()
 
     def analyse_data(self):
         self._event_tables.analyse_data()
         self._form_tables.analyse_data()
+
+        print(self._form_tables.get_results_from_table("usability"))
 
     def export_results(self):
         if not os.path.exists(self._result_path):
@@ -74,7 +77,15 @@ class User:
     #region Getters/Setters
             
     def get_results(self) -> dict:  
+        return self._results
         return {
+            "APP": self.get_event_results(),
+            "FORM": self.get_form_results()
+        }
+
+    def get_splitted_results(self) -> dict:
+        return {
+            "USER_DATA": pd.DataFrame(),
             "APP": self.get_event_results(),
             "FORM": self.get_form_results()
         }

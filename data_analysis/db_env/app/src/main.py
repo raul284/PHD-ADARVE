@@ -6,7 +6,7 @@ def main():
     
     experiment.set_data()
     experiment.analyse_data()
-    experiment.export_results()
+    #experiment.export_results()
     #experiment.create_graphs()   
 
 

@@ -76,14 +76,14 @@ class Table:
 
         results = {}
         print("################ ALL")
-        results["ALL"] = {**self._user_data, **{"SCENARIO": "ALL"}, **self.analyse_df(self._df.copy())}
+        results["ALL"] = {**{"ID": self._user_data["ID"], "SCENARIO": "ALL"}, **self.analyse_df(self._df.copy())}
         
         for scenario in self.SCENARIOS[1:]:
             print("################ {}".format(scenario.upper()))
             if not self._scenarios[scenario].empty:
-                results[scenario] = {**self._user_data, **{"SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario].copy())}
+                results[scenario] = {**{"ID": self._user_data["ID"], "SCENARIO": scenario}, **self.analyse_df(self._scenarios[scenario].copy())}
             else: 
-                results[scenario] = {**self._user_data, **{"SCENARIO": scenario}}
+                results[scenario] = {**{"ID": self._user_data["ID"], "SCENARIO": scenario}}
 
 
         self._results = pd.DataFrame.from_records(list(results.values()))

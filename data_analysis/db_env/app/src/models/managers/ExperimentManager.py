@@ -18,6 +18,7 @@ class ExperimentManager:
 #region VARIABLES GLOBALES
 
     _users: dict
+    _results: pd.DataFrame
 
 #endregion
 
@@ -28,6 +29,7 @@ class ExperimentManager:
         '''Inicializa las propiedades de la clase.'''
         # Recoge la información de los cuestionarios almacenados en CSVs
         self._users = {}
+        self._results = pd.DataFrame()
 
     # __init__
         
@@ -72,45 +74,17 @@ class ExperimentManager:
         if not os.path.exists("../results/excel"):
             os.makedirs("../results/excel")
 
-        results = {
-            "events":{},
-            "form":{}
-        }
-
         for id in self._users:
-            event_results = self._users[id].get_event_results()
-            for table in event_results:
-                if table not in results["events"]:
-                    results["events"][table] = pd.DataFrame()
-                results["events"][table] = pd.concat([results["events"][table], event_results[table]], axis=0, ignore_index=True)
+            self._results = pd.concat([self._results, self._users[id].get_results()], axis=0).reset_index(drop=True)
 
-            form_results = self._users[id].get_form_results()
-            for table in form_results:
-                if table not in results["form"]:
-                    results["form"][table] = pd.DataFrame()
-                results["form"][table] = pd.concat([results["form"][table], form_results[table]], ignore_index=True)          
+        if not self._results.empty:
+            all_results = self._results[self._results["SCENARIO"] == "ALL"]
+            all_results.to_csv("../results/resultsALL.csv", na_rep='NULL')
+            all_results.to_excel("../results/resultsALL.xlsx", na_rep='NULL')
 
-        experiment_results = pd.DataFrame()
-        for table in results["events"]:
-            if len(experiment_results) > 0:
-                results["events"][table] = results["events"][table].drop(columns=['ID', 'GROUP', 'HMD', 'SCENARIO'], axis=1, errors='ignore')
-            experiment_results = pd.concat([experiment_results, results["events"][table]], axis=1)
-        
-        for table in results["form"]:
-            aux_df = pd.DataFrame()
-            for index, row in results["form"][table].iterrows():
-                for i in range(int(len(experiment_results) / len(self._users))):
-                    aux_df = pd.concat([aux_df, results["form"][table].iloc[index]], axis=1, ignore_index=True) 
-            experiment_results = pd.concat([experiment_results, aux_df.T], axis=1)
-
-        #print(experiment_results)
-
-        if len(experiment_results) > 0:
-            experiment_results[experiment_results["SCENARIO"] == "ALL"].to_csv("../results/resultsALL.csv", na_rep='NULL')
-            experiment_results[experiment_results["SCENARIO"] == "ALL"].to_excel("../results/resultsALL.xlsx", na_rep='NULL')
-
-            experiment_results[experiment_results["SCENARIO"] != "ALL"].to_csv("../results/resultsSCENARIO.csv", na_rep='NULL')
-            experiment_results[experiment_results["SCENARIO"] != "ALL"].to_excel("../results/resultsSCENARIO.xlsx", na_rep='NULL')
+            scenarios_results = self._results[self._results["SCENARIO"] != "ALL"]
+            scenarios_results.to_csv("../results/resultsSCENARIO.csv", na_rep='NULL')
+            scenarios_results.to_excel("../results/resultsSCENARIO.xlsx", na_rep='NULL')
 
     # export_results
 

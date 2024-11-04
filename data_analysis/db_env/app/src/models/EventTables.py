@@ -1,12 +1,13 @@
+import pandas as pd
+
+from models.TablesGroup import TablesGroup
 from models.tables.events import *
 
-class EventTables:
+class EventTables(TablesGroup):
     
-    _data: dict
-
-
     def __init__(self, user_data) -> None:
-        self._data = {}
+        super().__init__(user_data)
+
         self._data["gameplay"] = GameplayEventsTable(user_data)
         self._data["item_interaction"] = ItemInteractionEventsTable(user_data)
         #self._data["npc_interaction"] = NPCInteractionEventsTable(user_data)
@@ -24,23 +25,22 @@ class EventTables:
         self._data["walkie_report"] = WalkieReportEventsTable(user_data)'''
 
     def set_data(self) -> None:
-        for table in self._data:
-            assert self._data[table] != None, "La tabla <<{0}>> no tiene valor".format(table)
-            self._data[table].set_data()
-
+        super().set_data()
 
     def analyse_data(self) -> None:
-        for table in self._data:
-            self._data[table].analyse_data()        
-
+        super().analyse_data()    
+    
     def get_data_from_table(self, table_name):
-        return self._data[table_name]._df
+        return super().get_data_from_table(table_name)
+    
+    def get_results_df(self) -> pd.DataFrame:
+        return super().get_results_df()
+
+    def get_results_dict(self) -> dict:
+        return super().get_results_dict()
 
     def get_result_from_table(self, table_name):
-        return self._data[table_name]._results._df
+        return super().get_result_from_table(table_name)
     
     def get_result_dict_from_table(self, table_name):
-        return self.get_result_from_table(table_name=table_name).to_dict()
-    
-    def get_result_value_from_table(self, table_name, key):
-        return self.get_result_dict_from_table(table_name=table_name)[key][0]
+        return super().get_result_dict_from_table(table_name)

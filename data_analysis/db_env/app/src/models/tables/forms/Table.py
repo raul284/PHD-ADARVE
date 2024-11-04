@@ -9,7 +9,7 @@ class Table:
 
     def __init__(self, user_id: str, data: pd.DataFrame) -> None:
         self._user_id = user_id
-
+        
         self._df = data
         self._results = pd.DataFrame()
 
@@ -20,7 +20,7 @@ class Table:
         pass
         
     def get_results(self):
-        return self._results
+        return pd.concat([pd.DataFrame({"ID": [self._user_id]}), self._results], axis=1)
 
     def export_results(self):
         pass

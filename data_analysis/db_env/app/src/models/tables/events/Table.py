@@ -34,15 +34,6 @@ class Table:
         for scenario in self.SCENARIOS:
             self._scenarios[scenario] = self._df[self._df["scenario_type"] == scenario].reset_index()
 
-    def get_cols_till(self, df):
-        cols = []
-        i = 0
-        while df.columns[i] != "user_id":
-            cols.append(df.columns[i])
-            i += 1
-
-        return cols
-
     def read_data(self) -> None:
         filename = self._table_name + "_events.csv"
         for dirpath, dirnames, filenames in os.walk("../data/"):
@@ -70,7 +61,6 @@ class Table:
         return df
     
     def analyse_data(self) -> None:
-        #print(self._df.to_string())
         if len(self._df) == 0:
             print("Usuario <<{0}>>. El DF de la tabla <<{1}>> está vacío".format(self._user_data["ID"], self._table_name))
 

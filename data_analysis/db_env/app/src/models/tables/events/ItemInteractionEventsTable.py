@@ -133,7 +133,7 @@ class ItemInteractionEventsTable(Table):
                 left = self.get_time_btw_two_type(
                         df[(df["actor_id"] == index.value) & (df["hand"] == "Left") & (df["event_type"] == "start_detection")],
                         df[(df["actor_id"] == index.value) & (df["hand"] == "Left") & (df["event_type"] == "stop_detection")], ["scenario_type", "actor_name"])
-    
+            
                 results["OI_T_SS_a_{0}".format(index.value)] = round(np.nanmean([right, left]), 3)
 
             else: 

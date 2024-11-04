@@ -14,4 +14,3 @@ from models.tables.events.RBQEventsTable import RBQEventsTable
 from models.tables.events.TutorialTaskEventsTable import TutorialTaskEventsTable
 from models.tables.events.VideoEventsTable import VideoEventsTable
 from models.tables.events.WalkieReportEventsTable import WalkieReportEventsTable
-from models.tables.events.CombinedEventsTable import CombinedEventsTable

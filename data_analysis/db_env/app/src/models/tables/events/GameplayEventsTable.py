@@ -86,7 +86,6 @@ class GameplayEventsTable(Table):
     def analyse_time(self, df):
         results = {}
 
-        #results["GP_T"] = self.get_time_btw_datetimes(df[df["event_state"] == "Completed"]["event_datetime"].to_list())
         results["GP_T"] = self.get_time_btw_two_type(df[df["event_state"] == "Started"], df[df["event_state"] == "Completed"], ["event_type"])
 
         return results

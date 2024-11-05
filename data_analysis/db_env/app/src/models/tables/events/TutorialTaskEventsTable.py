@@ -46,6 +46,7 @@ class TutorialTaskEventsTable(Table):
     def analyse_time(self, df):
         results = {}
 
+        results["TT_N"] = len(df[df["event_type"] == "completed"])
         results["TT_T"] = self.get_time_btw_two_type(df[df["event_type"] == "started"], df[df["event_type"] == "completed"], ["tutorial_item_id"])
 
         return results

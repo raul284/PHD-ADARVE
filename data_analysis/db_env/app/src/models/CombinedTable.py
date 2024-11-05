@@ -45,8 +45,9 @@ class CombinedTable():
         self.analyse_time()
     
     def analyse_number(self):
-        self._results["C_OI_GP_N"] = self.calculate("item_interaction", "OI_N", "gameplay", "GP_N")
-        self._results["C_NPC_GP_N"] = self.calculate("npc_interaction", "NPC_N", "gameplay", "GP_N")
+        pass
+        #self._results["C_OI_N_GP_N"] = self.calculate("item_interaction", "OI_N", "gameplay", "GP_N")
+        #self._results["C_NPC_N_GP_N"] = self.calculate("npc_interaction", "NPC_N", "gameplay", "GP_N")
    
     def analyse_time(self):
         pass

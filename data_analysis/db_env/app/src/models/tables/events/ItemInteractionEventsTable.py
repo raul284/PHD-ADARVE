@@ -152,6 +152,9 @@ class ItemInteractionEventsTable(Table):
 
             else: 
                 results["OI_T_GR_a_{0}".format(index.value)] = np.nan
+        
+
+        results["OI_T_EPD"] = self.get_epd_stats(df)
 
         return results
 
@@ -167,6 +170,20 @@ class ItemInteractionEventsTable(Table):
 
     def actor_is_in_scenario(self, actor_id, df):
         return actor_id in df["actor_id"].unique()
+
+    def get_epd_stats(self, df):
+
+        epd_grab_df = df[(df["actor_id"] == ItemType.EPD.value)  & (df["event_type"] == "grab")]
+        epd_release_df = df[(df["actor_id"] == ItemType.EPD.value)  & (df["event_type"] == "release")]
+        epd_times = []
+
+        for i in range(len(epd_grab_df)):
+            epd_times.append(self.get_time_btw_two_type(
+                epd_grab_df.iloc[[i]], 
+                epd_release_df.iloc[[i]], 
+                ["scenario_type"]))
+            
+        return sum(epd_times)
 
     #endregion
     

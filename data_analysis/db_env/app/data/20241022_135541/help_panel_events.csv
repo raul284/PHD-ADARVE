@@ -1,10 +1,10 @@
-id,user_id,scenario_type,event_type,tutorial_item_id,event_datetime
-0,"AA","T2_BasicEmergency","open","None","2024-10-22 14:1:9.772"
-1,"AA","T2_BasicEmergency","demand_help","MOV_RealWorldLimits","2024-10-22 14:1:12.28"
-2,"AA","T2_BasicEmergency","close","None","2024-10-22 14:1:23.657"
-3,"AA","T2_BasicEmergency","open","None","2024-10-22 14:1:24.513"
-4,"AA","T2_BasicEmergency","close","None","2024-10-22 14:1:27.665"
-5,"AA","T2_BasicEmergency","open","None","2024-10-22 14:1:28.703"
-6,"AA","T2_BasicEmergency","demand_help","MOV_RealWorldLimits","2024-10-22 14:1:49.37"
-7,"AA","T2_BasicEmergency","demand_help","MOV_VirtualWorldLimits","2024-10-22 14:1:53.568"
-8,"AA","T2_BasicEmergency","close","None","2024-10-22 14:2:0.305"
+id,user_id,experiment_id,scenario_type,event_type,tutorial_item_id,event_datetime
+0,AA,1,T2_BasicEmergency,open,,2024-10-22 14:1:9.772
+1,AA,1,T2_BasicEmergency,demand_help,MOV_RealWorldLimits,2024-10-22 14:1:12.28
+2,AA,1,T2_BasicEmergency,close,,2024-10-22 14:1:23.657
+3,AA,1,T2_BasicEmergency,open,,2024-10-22 14:1:24.513
+4,AA,1,T2_BasicEmergency,close,,2024-10-22 14:1:27.665
+5,AA,1,T2_BasicEmergency,open,,2024-10-22 14:1:28.703
+6,AA,1,T2_BasicEmergency,demand_help,MOV_RealWorldLimits,2024-10-22 14:1:49.37
+7,AA,1,T2_BasicEmergency,demand_help,MOV_VirtualWorldLimits,2024-10-22 14:1:53.568
+8,AA,1,T2_BasicEmergency,close,,2024-10-22 14:2:0.305

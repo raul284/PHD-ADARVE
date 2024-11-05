@@ -38,10 +38,10 @@ class NPCInteractionEventsTable(Table):
         results["NPC_N"] = float(len(df))
 
         for index in NPCInteractionType:
-            results["NPC_N_type_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
+            results["NPC_N_t_{0}".format(index.value)] = float(len(df[df["event_type"].str.upper() == index.name]))
 
         for index in NPCType:
-            results["NPC_N_actor_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
+            results["NPC_N_a_{0}".format(index.value)] = float(len(df[df["actor_id"] == index.value]))
 
         return results
 
@@ -75,29 +75,6 @@ class NPCInteractionEventsTable(Table):
 
     def create_graphs(self):
         pass
-
-    '''def get_time_btw_two_type(self, fst_df, snd_df):
-        #super().get_time_btw_two_type(fst_df, snd_df)
-
-        time_btw = []
-
-        while not fst_df.empty and not snd_df.empty:
-            first_event = fst_df.iloc[0]
-            snd_event = snd_df.iloc[0]
-
-            print(fst_df)
-            print(snd_df)
-                
-            time = self.get_time_btw_datetimes([first_event["event_datetime"], snd_event["event_datetime"]])
-            if time < 0: print("Hay un tiempo entre interacciones de NPC negativo.")
-
-            time_btw.append(time)
-
-            fst_df = fst_df.iloc[1:]
-            snd_df = snd_df.iloc[1:]
-
-        if len(time_btw) > 0: return statistics.mean(time_btw)
-        else: return np.nan'''
 
     #endregion
 

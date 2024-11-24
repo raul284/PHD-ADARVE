@@ -1,8 +1,0 @@
-id,user_id,scenario_type,actor_id,actor_name,dose_rate,dose_absortion,event_datetime
-0,"AB","T2_BasicEmergency","1","PickableItem_2","477.441138","25.213932","2024-10-25 13:53:3.630"
-1,"AB","T2_BasicEmergency","11","RadiationEmissionPoint_1","28860.000595","1587.236127","2024-10-25 13:53:11.418"
-2,"AB","T2_BasicEmergency","11","RadiationEmissionPoint_1","28860.000595","1591.225322","2024-10-25 13:53:11.916"
-3,"AB","T2_BasicEmergency","11","RadiationEmissionPoint_1","28860.000595","1593.255715","2024-10-25 13:53:12.182"
-4,"AB","T2_BasicEmergency","11","RadiationEmissionPoint_1","28860.000595","1595.271067","2024-10-25 13:53:12.432"
-5,"AB","T2_BasicEmergency","1","PickableItem_2","477.262785","26.594824","2024-10-25 13:53:13.971"
-6,"AB","T2_BasicEmergency","1","PickableItem_2","477.262507","26.603525","2024-10-25 13:53:14.25"

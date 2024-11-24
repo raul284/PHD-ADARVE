@@ -1,3 +1,0 @@
-id,user_id,scenario_type,actor_id,actor_name,place_point_name,activation_count,start_datetime,end_datetime
-0,"AB","T1_BasicMechanics","3","Dosimeter_SABG100_2","BP_PlacePoint10","7","2024-10-25 13:45:25.21","2024-10-25 13:45:25.22"
-1,"AB","T1_BasicMechanics","1","TrafficCone_5","BP_PlacePoint9","4","2024-10-25 13:45:32.713","2024-10-25 13:45:32.713"

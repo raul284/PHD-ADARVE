@@ -1,6 +1,0 @@
-id,user_id,experiment_id,scenario_type,tutorial_item_id,event_type,event_datetime
-0,AA,1,T2_BasicEmergency,RBQ_Functionality,started,2024-10-22 13:56:25.787
-1,AA,1,T2_BasicEmergency,OI_WalkieTalkie,started,2024-10-22 13:57:41.898
-2,AA,1,T2_BasicEmergency,OI_SABG100,started,2024-10-22 13:59:11.380
-3,AA,1,T2_BasicEmergency,OI_EPD,started,2024-10-22 14:0:2.494
-4,AA,1,T2_BasicEmergency,HP_Functionality,started,2024-10-22 14:0:56.194

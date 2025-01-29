@@ -1,0 +1,7 @@
+{
+    "num_of_groups": 2,
+    "groups": {
+        "CTRL": 0,
+        "TSV": 1
+    }
+}

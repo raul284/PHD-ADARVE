@@ -8,9 +8,22 @@ public class RadiationRoom : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(
+			new string[] { 
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+				// Default Modules
+				"Core", 
+				"CoreUObject", 
+				"Engine", 
+				"InputCore",
+				
+				// New Modules
+				"Json",
+				"JsonUtilities"
+			});
+
+		PrivateDependencyModuleNames.AddRange(
+			new string[] {  });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

@@ -1,0 +1,25 @@
+[
+	{
+		"Name": "Data",
+		"IDs By Group": [
+			{
+				"GroupType": "TSV",
+				"IDs": [
+					"CSN_AA", "CSN_AB", "CSN_AC", "CSN_AD", "CSN_AE", "CSN_AF", "CSN_AG", 
+					"CSN_AH", "CSN_AI", "CSN_AJ", "CSN_AK", "CSN_AL", "CSN_AM", "CSN_AN",
+					"CSN_AO", "CSN_AP", "CSN_AQ", "CSN_AR", "CSN_AS", "CSN_AT", "CSN_AU", 
+					"CSN_AV", "CSN_AW", "CSN_AX", "CSN_AY", "CSN_AZ" 
+				]
+			},
+			{
+				"GroupType": "CTRL",
+				"IDs": [
+					"CSN_BA", "CSN_BB", "CSN_BC", "CSN_BD", "CSN_BE", "CSN_BF", "CSN_BG", 
+					"CSN_BH", "CSN_BI", "CSN_BJ", "CSN_BK", "CSN_BL", "CSN_BM", "CSN_BN",
+					"CSN_BO", "CSN_BP", "CSN_BQ", "CSN_BR", "CSN_BS", "CSN_BT", "CSN_BU", 
+					"CSN_BV", "CSN_BW", "CSN_BX", "CSN_BY", "CSN_BZ" 
+				]
+			}
+		]
+	}
+]
